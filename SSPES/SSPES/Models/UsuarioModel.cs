@@ -11,6 +11,7 @@ namespace SSPES.Models {
         Conexion con = new Conexion();
 
         public DataTable consultarUsuarios() {
+
             return new DataTable();
         }
     }
