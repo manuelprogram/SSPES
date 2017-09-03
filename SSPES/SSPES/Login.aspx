@@ -21,10 +21,9 @@
 </head>
 <body style="background-color: white">
     <form id="form1" runat="server">
+
         <div class="row">
-            <br />
-            <br />
-            <br />
+            <br /><br /><br />
             <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="panel-default">
                     <div class="panel-heading">
@@ -54,19 +53,26 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <a href="Registrar.aspx"><i class="fa fa-sign-out fa-fw"></i>Registrarme</a>
+                        <a href="#">Registrarme</a>
                     </div>
                 </div>
 
             </div>
         </div>
+
         <script src="public/Admin/vendor/jquery/jquery.min.js"></script>
+
         <script src="public/Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+
         <script src="public/Admin/vendor/metisMenu/metisMenu.min.js"></script>
         <script src="public/Admin/vendor/raphael/raphael.min.js"></script>
         <script src="public/Admin/vendor/morrisjs/morris.min.js"></script>
         <script src="public/Admin/data/morris-data.js"></script>
+
         <script src="public/Admin/dist/js/sb-admin-2.js"></script>
+
+
+
     </form>
 </body>
 </html>
