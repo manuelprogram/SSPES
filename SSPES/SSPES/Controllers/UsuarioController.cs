@@ -11,10 +11,14 @@ namespace SSPES.Controllers
 {
     public class UsuarioController : ApiController
     {
-        UsuarioModel user = new UsuarioModel();
+        UsuarioModel useres = new UsuarioModel();
 
-        public DataTable consultarUsuarios() {
-            return user.consultarUsuarios();
+        //public DataTable consultarUsuarios() {
+        //    return useres.consultarUsuarios();
+        //}
+
+        public void Insertar(UsuarioModel obj) {
+            obj.insertar(obj);
         }
     }
 }

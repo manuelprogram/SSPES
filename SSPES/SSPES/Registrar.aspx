@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SSPES.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registrar.aspx.cs" Inherits="SSPES.Registrarse" %>
 
 <!DOCTYPE html>
 
@@ -17,10 +17,10 @@
     <link href="public/Admin/dist/css/sb-admin-2.css" rel="stylesheet" />
     <link href="public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />
     <link href="public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body style="background-color: white">
     <form id="form1" runat="server">
+
         <div class="row">
             <br />
             <br />
@@ -28,7 +28,8 @@
             <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="panel-default">
                     <div class="panel-heading">
-                        <h1 class="page-header">Iniciar sesión
+                        <br />
+                        <h1 class="page-header">Registrar Datos
                         </h1>
                     </div>
                     <div class="panel-body">
@@ -50,11 +51,8 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <asp:Button ID="BIniciarSesion" runat="server" CssClass="btn btn-info btn-block" Text="Iniciar sesión" OnClick="BIniciarSesion_Click" />
+                            <asp:Button ID="BRegistrar" runat="server" CssClass="btn btn-info btn-block" Text="Registrar" OnClick="BRegistrar_Click" />
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <a href="Registrar.aspx"><i class="fa fa-sign-out fa-fw"></i>Registrarme</a>
                     </div>
                 </div>
 
