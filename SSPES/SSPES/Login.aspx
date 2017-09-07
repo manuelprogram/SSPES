@@ -54,7 +54,8 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <a href="Registrar.aspx"><i class="fa fa-sign-out fa-fw"></i>Registrarme</a>
+                       <br />
+                      <br />
                     </div>
                 </div>
 
