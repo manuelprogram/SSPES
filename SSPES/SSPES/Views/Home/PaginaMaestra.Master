@@ -258,13 +258,19 @@
                                 <a href="../Home/Principal.aspx"><i class="fa fa-dashboard fa-fw"></i>Inicio</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Proyectos<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-male"></i> Persona<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="../Usuarios/RegistrarUsuario.aspx">Registrar</a>
                                     </li>
                                     <li>
                                         <a href="../Usuarios/ConsultarUsuarios.aspx">Consultar</a>
+                                    </li>
+                                  <li>
+                                        <a href="../Usuarios/ConsultarUsuarios.aspx">Actualizar</a>
+                                    </li>
+                                  <li>
+                                        <a href="../Usuarios/ConsultarUsuarios.aspx">Eliminar</a>
                                     </li>
                                 </ul>
                             </li>

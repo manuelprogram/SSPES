@@ -17,9 +17,16 @@
     <link href="public/Admin/dist/css/sb-admin-2.css" rel="stylesheet" />
     <link href="public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />
     <link href="public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    .fondo{
+      background-image: url("Imagenes/images.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 200%; 
+    }
+  </style>
 
 </head>
-<body style="background-color: white">
+<body class="fondo"> 
     <form id="form1" runat="server">
         <div class="row">
             <br />
