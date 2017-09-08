@@ -10,8 +10,8 @@ using System.Web.UI.WebControls;
 namespace SSPES {
     public partial class Login : System.Web.UI.Page {
 
-        UsuarioController userc = new UsuarioController();
-        UsuarioModel us = new UsuarioModel();
+        CuentaController userc = new CuentaController();
+        CuentaModel us = new CuentaModel();
 
         protected void Page_Load(object sender, EventArgs e) {
             //userc.consultarUsuarios();
@@ -21,10 +21,10 @@ namespace SSPES {
             try {
 
                 if (!String.IsNullOrEmpty(TUsuario.Text) && !String.IsNullOrEmpty(TContrasenia.Text)) {
-                    us.user = TUsuario.Text;
-                    us.password = TContrasenia.Text;
+                    us.Usuario = TUsuario.Text;
+                    us.Password = TContrasenia.Text;
 
-                    if (us.ConsultarUsuario(us)) {
+                    if (us.ConsultarCuenta(us)) {
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {
                         LMensaje.Text = "Error en el Usuario";

@@ -10,5 +10,14 @@ namespace SSPES.Views.Usuarios {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
+
+
+        protected void Registrar(object sender, EventArgs e) {
+            try {
+
+               
+
+            } catch (Exception) { }
+        }
     }
 }

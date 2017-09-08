@@ -10,19 +10,19 @@ using System.Web.UI.WebControls;
 namespace SSPES {
     public partial class Registrarse : System.Web.UI.Page {
 
-        UsuarioModel obj = new UsuarioModel(); 
+        CuentaModel obj = new CuentaModel(); 
         protected void Page_Load(object sender, EventArgs e) {
 
         }
 
         protected void BRegistrar_Click(object sender, EventArgs e) {
-            obj.user = TUsuario.Text;
-            obj.password = TContrasenia.Text;
-            if (obj.ConsultarUsuario(obj)) {
+            obj.Usuario = TUsuario.Text;
+            obj.Password = TContrasenia.Text;
+            if (obj.ValidarCuentaExistente(obj)) {
                 LMensaje.Text = "Usuario Existente!";
             } else {
                 LMensaje.Text = "Correcto!";
-                obj.insertar(obj);
+                obj.insertarNuevaCuenta(obj);
                 Response.Redirect("Login.aspx");
             }
         }

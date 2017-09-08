@@ -45,7 +45,7 @@
         <label>Contraseña *</label>
         <input type="password" class="form-control" placeholder="Contraseña" />
         <br />
-        <input type="submit" class="btn btn-primary btn-block" name="BRegistrar" id="boton" value="Registrar" class="form-control"/>
+        <input type="submit" class="btn btn-primary btn-block" name="BRegistrar" id="boton" value="Registrar" class="form-control" onclick="Registrar"/>
       </div>
     </div>
   </div>

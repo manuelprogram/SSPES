@@ -7,18 +7,16 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace SSPES.Controllers
-{
-    public class UsuarioController : ApiController
-    {
-        UsuarioModel useres = new UsuarioModel();
+namespace SSPES.Controllers {
+    public class CuentaController : ApiController {
+        CuentaModel useres = new CuentaModel();
 
         //public DataTable consultarUsuarios() {
         //    return useres.consultarUsuarios();
         //}
 
-        public void Insertar(UsuarioModel obj) {
-            obj.insertar(obj);
+        public void Insertar(CuentaModel obj) {
+            obj.insertarNuevaCuenta(obj);
         }
     }
 }
