@@ -9,7 +9,7 @@
       <h1 class="page-header">Registrar usuario</h1>
       <div class="form-group">
         <label>Primer Nombre *</label>
-        <input type="text"  id="LPrimerN" class="form-control" placeholder="Primer Nombre" />
+        <input type="text" id="LPrimerN" class="form-control" placeholder="Primer Nombre" />
         <br />
         <label>Segundo Nombre</label>
         <input type="text" id="LSegundoN" class="form-control" placeholder="Segundo Nombre" />
@@ -34,7 +34,7 @@
         <input type="tel" id="TeTelef" class="form-control" placeholder="000000000" />
         <br />
         <label>Profesión</label>
-         <select class="form-control">
+        <select class="form-control">
           <option>Ingeniería Agroecologica</option>
           <option>Bilogía</option>
           <option>Química</option>
@@ -47,16 +47,12 @@
         <input type="text" id="TUsuario" class="form-control" placeholder="Usuario" />
         <br />
         <label>Contraseña *</label>
-        <input type="password" id="TContrase"  class="form-control" placeholder="Contraseña" />
+        <input type="password" id="TContrase" class="form-control" placeholder="Contraseña" />
         <br />
         <label>Verifique su Contraseña *</label>
-        <input type="password" id="TVContra"  class="form-control" placeholder="Verifique Contraseña" />
+        <input type="password" id="TVContra" class="form-control" placeholder="Verifique Contraseña" />
         <br />
-<<<<<<< HEAD
-        <input type="submit" class="btn btn-primary btn-block" name="BRegistrar" id="boton" value="Registrar"/>
-=======
-        <input type="submit" class="btn btn-primary btn-block" name="BRegistrar" id="boton" value="Registrar" class="form-control" onclick="Registrar"/>
->>>>>>> origin/master
+        <input type="submit" class="btn btn-primary btn-block" name="BRegistrar" id="boton" value="Registrar" />
       </div>
     </div>
   </div>
