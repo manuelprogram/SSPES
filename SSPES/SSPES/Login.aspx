@@ -27,7 +27,6 @@
   </style>
 
 </head>
-<<<<<<< HEAD
 <body class="fondo">
   <form id="form1" runat="server">
     <div class="col-md-12 col-md-offset-0">
@@ -41,49 +40,6 @@
                 <img src="Imagenes/SSPES.png" width="150" height="130" />
               </div>
             </header>
-=======
-<body class="fondo"> 
-    <form id="form1" runat="server">
-        <div class="row">
-            <br />
-            <br />
-            <br />
-            hol
-            <div class="col-md-4 col-md-offset-4 text-center">
-                <div class="panel-default">
-                    <div class="panel-heading">
-                        <h1 class="page-header">Iniciar sesión
-                        </h1>
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <asp:Label ID="LMensaje" runat="server" Text=""></asp:Label>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Usuario</label>
-                                <asp:TextBox ID="TUsuario" CssClass="form-control" runat="server" required="true" pattern="[A-Z a-z]*" title="Sólo se aceptan letras"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Contraseña</label>
-                                <asp:TextBox ID="TContrasenia" TextMode="Password" CssClass="form-control" runat="server" required="true"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <asp:Button ID="BIniciarSesion" runat="server" CssClass="btn btn-info btn-block" Text="Iniciar sesión" OnClick="BIniciarSesion_Click" />
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                       <br />
-                      <br />
-                    </div>
-                </div>
->>>>>>> origin/master
-
           </div>
           <div class="panel-body">
             <fieldset>
