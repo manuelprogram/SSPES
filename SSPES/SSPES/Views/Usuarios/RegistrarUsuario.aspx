@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <h1 class="page-header">Registrar usuario</h1>
             <div class="form-group">
-                <label id="q" runat="server">Primer Nombre *</label>
+                <label id="labelnombre" runat="server">Primer Nombre *</label>
                 <input type="text" id="nombre1" name="pr" runat="server" class="form-control" placeholder="Primer Nombre" />
                 <br />
                 <label>Segundo Nombre</label>
@@ -35,9 +35,6 @@
                 <br />
                 <label>Profesión</label>
                 <select class="form-control" id="profesion" runat="server">
-                    <option>Ingeniería Agroecologica</option>
-                    <option>Bilogía</option>
-                    <option>Química</option>
                 </select>
                 <br />
                 <label>Correo Electronico *</label>
@@ -53,6 +50,7 @@
                 <input type="password" id="rpassword" class="form-control" runat="server" placeholder="Verifique Contraseña" />
                 <br />
                 <asp:Button ID="Button1" Text="Registrar" OnClick="Registrar" runat="server" />
+                <br />
                 <%--<input type="submit" class="btn btn-primary btn-block" runat="server"  name="BRegistrar" id="boton" value="Registrar" />--%>
                 <label id="resultado" runat="server">...</label>
                 <br />

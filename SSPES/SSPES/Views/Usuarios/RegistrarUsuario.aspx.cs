@@ -4,16 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SSPES.Controllers;
 
 namespace SSPES.Views.Usuarios {
     public partial class RegistrarUsuario : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            //profesion.Items.Add();
+            ProfesionController p = new ProfesionController();
+            List<string> lista = p.consultarProfesiones(p.modelo);
+            profesion.Items.Clear();
+            for (int i = 0; i < lista.Count; i++) {
+                profesion.Items.Add(lista[i]);
+            }
         }
 
         protected bool validarNombre(string h, bool requerido) {
             h = h.ToUpper();
-            resultado.InnerText = "llego la cadena " + h;
             if (requerido) {
                 if (h.Length < 3) return false;
             } else {
@@ -31,7 +36,7 @@ namespace SSPES.Views.Usuarios {
             if (!requerido && h.Length == 0) return true;
             try {
                 long l = long.Parse(h);
-                if (l < 0 || h.Length != longitud) return false;
+                if (l < 0 || h.Length > longitud) return false;
             } catch {
                 return false;
             }
@@ -46,36 +51,56 @@ namespace SSPES.Views.Usuarios {
                 || valor.Length - n < 3 || n == 0 || valor[n + 1] == '.'));
         }
 
+        public string tipoDocumento() {
+            switch (tDocumento.SelectedIndex) {
+                case 0:
+                    return "TI";
+                case 1:
+                    return "CC";
+                default:
+                    return "CE";
+            }
+        }
+
         protected void Registrar(object sender, EventArgs e) {
             try {
-                if (validarNombre(nombre1.ToString(), true) && validarNombre(nombre2.ToString(), false) &&
-                        validarNombre(apellido1.ToString(), true) && validarNombre(apellido2.ToString(), false)) {
-                    if (validarNumero(nTelefono.ToString(), 10, false) ) {
-                        if(validarNumero(nDocumento.ToString(), 12, true)) {
-                            if (validarCorreo(correo.ToString())) {
+                if (validarNombre(nombre1.Value.ToString(), true) && validarNombre(nombre2.Value.ToString(), false) &&
+                            validarNombre(apellido1.Value.ToString(), true) && validarNombre(apellido2.Value.ToString(), false)) {
+                    if (validarNumero(nTelefono.Value.ToString(), 10, false)) {
+                        if (validarNumero(nDocumento.Value.ToString(), 12, true)) {
+                            if (validarCorreo(correo.Value.ToString())) {
                                 if (Usuario.Size != 0) {
-                                    if ((password.Equals(rpassword))) {
-                                        resultado.InnerText = "correcto";
-                                    }else {
+                                    if ((password.Value.ToString().Equals(rpassword.Value.ToString()))) {
+
+                                        PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
+                                            apellido1.Value.ToString(), apellido2.Value.ToString(),
+                                            tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
+                                            correo.Value.ToString(), (profesion.SelectedIndex + 1));
+
+                                        resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
+
+                                    } else {
                                         resultado.InnerText = "password no coinciden";
                                     }
-                                }else {
+                                } else {
                                     resultado.InnerText = "nombre de usuario ya registrado";
                                 }
-                            }else {
+                            } else {
                                 resultado.InnerText = "verifique correo electronico";
                             }
-                        }else {
+                        } else {
                             resultado.InnerText = "verifique numero de documento";
                         }
-                    }else {
+                    } else {
                         resultado.InnerText = "verifique numero de telefono";
                     }
-                }else {
-                    //resultado.InnerText = "Verifique los nombres!!!";
+                } else {
+                    resultado.InnerText = "Verifique los nombres!!!";
                 }
 
-            } catch (Exception) { }
+            } catch (Exception) {
+                resultado.InnerText = "Ha ocurrido un error inesperado!!!";
+            }
         }
     }
 }
