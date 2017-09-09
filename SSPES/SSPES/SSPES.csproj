@@ -92,7 +92,9 @@
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
