@@ -9,14 +9,14 @@ using System.Web.Http;
 
 namespace SSPES.Controllers {
     public class CuentaController : ApiController {
-        CuentaModel useres = new CuentaModel();
+        public CuentaModel useres = new CuentaModel();
 
-        //public DataTable consultarUsuarios() {
-        //    return useres.consultarUsuarios();
-        //}
+        public bool Insertar(CuentaModel obj) {
+            return obj.insertarNuevaCuenta(obj);
+        }
 
-        public void Insertar(CuentaModel obj) {
-            obj.insertarNuevaCuenta(obj);
+        public bool cuentaExiste(CuentaModel obj) {
+            return obj.ValidarCuentaExistente(obj);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SSPES.Models//push de prueba
         public string Usuario { get; set; }
         public string Password { get; set; }
         public char Estado { get; set;  }
-        //public string k { get; set; }
+        public int FK_PERSONA { get; set; }
 
         Conexion con = new Conexion();
 
@@ -28,9 +28,9 @@ namespace SSPES.Models//push de prueba
         }
 
         public bool insertarNuevaCuenta(CuentaModel obj) {//PASSWORD();
-            string sql = "INSERT INTO CUENTA (USER, PASSWORD, ESTADO) VALUES ('{0}','{1}');";
+            string sql = "INSERT INTO CUENTA (USUARIO, PASSWORD, ESTADO, FK_PERSONA) VALUES ('{0}','{1}', 'A', '{2}');";
             string[] ar = new string[1];
-            ar[0] = string.Format(sql, obj.Usuario, obj.Password);
+            ar[0] = string.Format(sql, obj.Usuario, obj.Password, obj.FK_PERSONA.ToString());
             return con.RealizarTransaccion(ar);
         }
     }
