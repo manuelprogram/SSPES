@@ -9,7 +9,6 @@ using System.Web;
 namespace SSPES.BD {
     public class Conexion {
         private static MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
-
         private static bool Conectar() {
             try {
                 conexion.Open();
@@ -18,7 +17,6 @@ namespace SSPES.BD {
                 return false;
             }
         }
-
         private static void Desconectar() {
             conexion.Close();
         }
@@ -33,8 +31,6 @@ namespace SSPES.BD {
 
             return resultado.Tables[0];
         }
-
-
         public bool RealizarTransaccion(string[] cadena) {
             bool state = false;
             if (Conectar()) {
