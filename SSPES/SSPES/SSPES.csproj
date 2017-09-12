@@ -90,6 +90,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Registrar.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
+    <Content Include="Views\Proyectos\ConsultarProyectos.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
     <Content Include="Web.config">
@@ -144,6 +145,13 @@
     <Compile Include="Views\Home\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Proyectos\ConsultarProyectos.aspx.cs">
+      <DependentUpon>ConsultarProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Proyectos\ConsultarProyectos.aspx.designer.cs">
+      <DependentUpon>ConsultarProyectos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,7 +186,6 @@
     <Folder Include="public\Admin\vendor\" />
     <Folder Include="public\Inicio\" />
     <Folder Include="Views\Plataforma\" />
-    <Folder Include="Views\Proyectos\" />
     <Folder Include="Views\Usuarios\App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
