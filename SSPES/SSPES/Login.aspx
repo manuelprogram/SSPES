@@ -45,7 +45,7 @@
             <fieldset>
               <div class="form-group">
                 <label>Usuario</label>
-                <asp:TextBox ID="TUsuario" CssClass="form-control" runat="server" required="true" pattern="[A-Z a-z]*" title="Sólo se aceptan letras"></asp:TextBox>
+                <asp:TextBox ID="TUsuario" CssClass="form-control" runat="server" required="true" pattern="[A-Z a-z 0-9 .]*" title="Formato no coincide"></asp:TextBox>
               </div>
               <div class="form-group">
                 <label>Contraseña</label>
