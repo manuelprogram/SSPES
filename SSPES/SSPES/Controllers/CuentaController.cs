@@ -18,5 +18,9 @@ namespace SSPES.Controllers {
         public bool cuentaExiste(CuentaModel obj) {
             return obj.ValidarCuentaExistente(obj);
         }
+
+        public DataTable consultarMenu(string idCuenta) {
+            return useres.consultarMenu(idCuenta);
+        }
     }
 }
