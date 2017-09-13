@@ -102,7 +102,7 @@
     <Compile Include="BD\Conexion.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
-    <Compile Include="Controllers\ProfesionController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,7 +122,7 @@
     </Compile>
     <Compile Include="Models\CuentaModel.cs" />
     <Compile Include="Models\PersonaModel.cs" />
-    <Compile Include="Models\ProfesionModel.cs" />
+    <Compile Include="Models\RolModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrar.aspx.cs">
       <DependentUpon>Registrar.aspx</DependentUpon>

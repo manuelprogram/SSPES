@@ -33,8 +33,8 @@
                 <label>Telefono</label>
                 <input type="tel" id="nTelefono" class="form-control" runat="server" placeholder="000000000" />
                 <br />
-                <label>Profesión</label>
-                <select class="form-control" id="profesion" runat="server">
+                <label>Rol</label>
+                <select class="form-control" id="rol" runat="server">
                 </select>
                 <br />
                 <label>Correo Electronico *</label>

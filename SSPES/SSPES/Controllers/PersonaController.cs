@@ -23,7 +23,7 @@ namespace SSPES.Controllers {
             p.N_documento = f;
             p.Telefono = g;
             p.Correo = h;
-            p.Profesion = i;
+            p.rol = i;
         }
         
         public string Insertar(PersonaModel obj, string user, string pass) {

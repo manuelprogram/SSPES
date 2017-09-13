@@ -23,7 +23,6 @@ namespace SSPES {
                 if (!String.IsNullOrEmpty(TUsuario.Text) && !String.IsNullOrEmpty(TContrasenia.Text)) {
                     us.Usuario = TUsuario.Text;
                     us.Password = TContrasenia.Text;
-
                     if (us.ConsultarCuenta(us)) {
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {

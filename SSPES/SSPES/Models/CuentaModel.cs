@@ -34,16 +34,15 @@ namespace SSPES.Models//push de prueba
         }
 
 
-        public DataTable consultarMenu(string idCuenta) {
-            string sql = @"SELECT
-                        *
-                        FROM roles__usuarios rous
-                        INNER JOIN rol ro ON rous.FK_CUENTA = ";
-            sql += idCuenta + @" AND rous.FK_ROL = ro.PK_ROL AND rous.ESTADO = 'A'
-                        INNER JOIN menu_usuario meus ON meus.FK_ROL = ro.PK_ROL AND meus.ESTADO_MENU = 'A'
-                        INNER JOIN subopcion_menu sume ON meus.FK_SUBOPCION_MENU = sume.PK_SUBOPCION_MENU
-                        INNER JOIN opcion_menu opme ON sume.FK_OPCION_MENU = opme.PK_OPCION_MENU
-                        ORDER BY opme.NOMBRE_OPCION; ";
+        public DataTable consultarMenu(string idRol) {
+            string sql = @"SELECT *
+                           FROM ROL_CUENTA rous
+                           INNER JOIN ROL ro ON rous.FK_CUENTA =1 AND rous.FK_ROL =";
+                           sql += idRol + @" AND rous.ESTADO = 'A'
+                           INNER JOIN menu_usuario meus ON meus.FK_ROL = ro.PK_ROL AND meus.ESTADO_MENU = 'A'
+                           INNER JOIN sub_menu sume ON meus.FK_SUB_MENU = sume.PK_SUB_MENU
+                           INNER JOIN menu opme ON sume.FK_MENU = opme.PK_MENU
+                           ORDER BY opme.MENU_NOMBRE; ";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
