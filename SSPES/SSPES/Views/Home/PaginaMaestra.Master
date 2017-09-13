@@ -245,7 +245,7 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search..."/>
+                                    <input type="text" class="form-control" placeholder="Search..." />
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button">
                                             <i class="fa fa-search"></i>
@@ -254,11 +254,70 @@
                                 </div>
                                 <!-- /input-group -->
                             </li>
+
                             <li>
                                 <a href="../Home/Principal.aspx"><i class="fa fa-dashboard fa-fw"></i>Inicio</a>
                             </li>
+
+                            <%
+                                if (dtMenu != null) {
+                                    for (int i = 0; i < dtMenu.Rows.Count; i++) {
+                                        drMenu = dtMenu.Rows[i];
+
+                                        if (i == 0) {
+                            %>
                             <li>
-                                <a href="#"><i class="fa fa-male"></i> Persona<span class="fa arrow"></span></a>
+                                <a href="#"><i class="<%= drMenu["ICONO_OPCION"].ToString() %>"></i>    <%= drMenu["NOMBRE_OPCION"].ToString() %><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+
+                                    <% for (int j = 0; j < dtMenu.Rows.Count; j++) {
+                                            if (dtMenu.Rows[j]["FK_OPCION_MENU"].ToString().Equals(drMenu["PK_OPCION_MENU"].ToString())) {
+                                            %>
+                                    <li>
+                                        <a href="<%= dtMenu.Rows[j]["URL_SUBOPCION"].ToString() %>"><%= dtMenu.Rows[j]["NOMBRE_SUBOPCION"].ToString() %></a>
+                                    </li>
+
+                                    <%
+                                            }
+                                        } %>
+
+                                    
+                                </ul>
+                            </li>
+                            <%
+                                }else if (!dtMenu.Rows[i-1]["NOMBRE_OPCION"].ToString().Equals(drMenu["NOMBRE_OPCION"].ToString())) {
+
+                            %>
+                            <li>
+                                <a href="#"><i class="<%= drMenu["ICONO_OPCION"].ToString() %>"></i>    <%= drMenu["NOMBRE_OPCION"].ToString() %><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+
+                                    <% for (int j = 0; j < dtMenu.Rows.Count; j++) {
+                                            if (dtMenu.Rows[j]["FK_OPCION_MENU"].ToString().Equals(drMenu["PK_OPCION_MENU"].ToString())) {
+                                            %>
+                                    <li>
+                                        <a href="<%= dtMenu.Rows[j]["URL_SUBOPCION"].ToString() %>"><%= dtMenu.Rows[j]["NOMBRE_SUBOPCION"].ToString() %></a>
+                                    </li>
+
+                                    <%
+                                            }
+                                        } %>
+
+                                    
+                                </ul>
+                            </li>
+                            <%
+                                        }
+                                    }
+                                }
+
+
+
+                            %>
+
+                            
+                            <li>
+                                <a href="#"><i class="fa fa-male"></i>Persona<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="../Usuarios/RegistrarUsuario.aspx">Registrar</a>
@@ -266,10 +325,10 @@
                                     <li>
                                         <a href="../Usuarios/ConsultarUsuarios.aspx">Consultar</a>
                                     </li>
-                                  <li>
+                                    <li>
                                         <a href="../Usuarios/ConsultarUsuarios.aspx">Actualizar</a>
                                     </li>
-                                  <li>
+                                    <li>
                                         <a href="../Usuarios/ConsultarUsuarios.aspx">Eliminar</a>
                                     </li>
                                 </ul>

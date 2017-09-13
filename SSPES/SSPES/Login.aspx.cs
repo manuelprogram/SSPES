@@ -27,10 +27,10 @@ namespace SSPES {
                     if (us.ConsultarCuenta(us)) {
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {
-                        LMensaje.Text = "Error en el Usuario";
+                        //LMensaje.Text = "Error en el Usuario"; Se debe agregar un label para mostrar esto
                     }
                 } else {
-                    LMensaje.Text = "Digite la credenciales";
+                    //LMensaje.Text = "Digite la credenciales"; Se debe agregar un label para mostrar esto
                 }
 
             } catch (Exception) { }
