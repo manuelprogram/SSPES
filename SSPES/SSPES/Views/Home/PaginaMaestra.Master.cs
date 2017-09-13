@@ -12,13 +12,12 @@ namespace SSPES.Views.Home {
 
         public DataTable dtMenu = new DataTable();
         public DataRow drMenu;
-
         public string aux="";
 
         CuentaController cuenta = new CuentaController();
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
-                this.CargarMenu("1");
+                this.CargarMenu("3");
             }
         }
 

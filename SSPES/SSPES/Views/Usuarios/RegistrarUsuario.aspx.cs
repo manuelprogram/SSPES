@@ -10,11 +10,11 @@ using System.Text.RegularExpressions;
 namespace SSPES.Views.Usuarios {
     public partial class RegistrarUsuario : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            ProfesionController p = new ProfesionController();
-            List<string> lista = p.consultarProfesiones(p.modelo);
-            profesion.Items.Clear();
+            RolController p = new RolController();
+            List<string> lista = p.consultarRoles(p.modelo);
+            rol.Items.Clear();
             for (int i = 0; i < lista.Count; i++) {
-                profesion.Items.Add(lista[i]);
+                rol.Items.Add(lista[i]);
             }
         }
 
@@ -96,7 +96,7 @@ namespace SSPES.Views.Usuarios {
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
                                             apellido1.Value.ToString(), apellido2.Value.ToString(),
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
-                                            correo.Value.ToString(), (profesion.SelectedIndex + 1));
+                                            correo.Value.ToString(), (rol.SelectedIndex + 1));
                 resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
                 /*string fecha = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
                 string sql = "INSERT INTO PERSONA (NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, T_DOCUMENTO, N_DOCUMENTO,";

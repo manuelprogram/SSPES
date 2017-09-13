@@ -85,13 +85,13 @@ namespace SSPES.Views.Usuarios {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl nTelefono;
         
         /// <summary>
-        /// Control profesion.
+        /// Control rol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect profesion;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect rol;
         
         /// <summary>
         /// Control correo.
