@@ -13,7 +13,7 @@ namespace SSPES.Views.Usuarios {
             RolController p = new RolController();
             List<string> lista = p.consultarRoles(p.modelo);
             rol.Items.Clear();
-            for (int i = 0; i < lista.Count; i++) {
+            for (int i = 1; i < lista.Count; i++) {
                 rol.Items.Add(lista[i]);
             }
         }
