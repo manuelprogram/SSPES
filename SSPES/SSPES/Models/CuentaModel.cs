@@ -27,12 +27,11 @@ namespace SSPES.Models//push de prueba
         }
 
         public bool insertarNuevaCuenta(CuentaModel obj) {//PASSWORD();
-            string sql = "INSERT INTO CUENTA (USUARIO, PASSWORD, ESTADO, FK_PERSONA) VALUES ('{0}','{1}', 'A', '{2}');";
+            string sql = "INSERT INTO CUENTA (USUARIO, PASSWORD, ESTADO, FK_PERSONA,FK_GRUPO) VALUES ('{0}','{1}', 'A', '{2}',1);";
             string[] ar = new string[1];
             ar[0] = string.Format(sql, obj.Usuario, obj.Password, obj.FK_PERSONA.ToString());
             return con.RealizarTransaccion(ar);
         }
-
 
         public DataTable consultarMenu(string idRol) {
             string sql = @"SELECT *
