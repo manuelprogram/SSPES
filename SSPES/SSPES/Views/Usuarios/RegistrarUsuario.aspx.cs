@@ -69,28 +69,37 @@ namespace SSPES.Views.Usuarios {
         }
 
         protected void Registrar(object sender, EventArgs e) {
+           
             try {
                 if (!(validarNombre(nombre1.Value.ToString(), true) && validarNombre(nombre2.Value.ToString(), false) &&
                             validarNombre(apellido1.Value.ToString(), true) && validarNombre(apellido2.Value.ToString(), false))) {
-                    resultado.InnerText = "Verifique los nombres y apellidos!!!"; return;
+                    Response.Write("<script> alert('Verifique los nombres y apellidos'); </script>");
+                    return;
                 }
                 if (!validarNumero(nTelefono.Value.ToString(), 10, false)) {
-                    resultado.InnerText = "verifique numero de telefono"; return;
+                    Response.Write("<script> alert('verifique numero de telefono'); </script>");
+                    return;
                 }
                 if (!validarNumero(nDocumento.Value.ToString(), 12, true)) {
-                    resultado.InnerText = "verifique numero de documento"; return;
+                    Response.Write("<script> alert('verifique numero de documento'); </script>");
+                    return;
                 }
                 if (!validarCorreo(correo.Value.ToString())) {
-                    resultado.InnerText = "verifique correo electronico"; return;
+                    Response.Write("<script> alert('verifique correo electronico'); </script>");
+                    return;
                 }
                 if (!validarUsuarioPassword(Usuario.Value.ToString(), password.Value.ToString())) {
-                    resultado.InnerText = "Caracteres no valido en usuario y/o password"; return;
+                    Response.Write("<script> alert('Caracteres no valido en usuario y/o password'); </script>");
+                    return;
                 }
                 if (password.Value.Length < 5) {
-                    resultado.InnerText = "Usuario y Password debe ser de al menos 5 caracteres"; return;
+
+                    Response.Write("<script> alert('Usuario y Password debe ser de al menos 5 caracteres'); </script>");
+                    return;
                 }
                 if (!(password.Value.ToString().Equals(rpassword.Value.ToString()))) {
-                    resultado.InnerText = "password no coinciden"; return;
+                    Response.Write("<script> alert('password no coinciden'); </script>");
+                     return;
                 }
 
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
@@ -98,15 +107,7 @@ namespace SSPES.Views.Usuarios {
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
                                             correo.Value.ToString(), (rol.SelectedIndex + 1));
                 resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
-                /*string fecha = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
-                string sql = "INSERT INTO PERSONA (NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, T_DOCUMENTO, N_DOCUMENTO,";
-                sql = sql + " CELULAR, CORREO, REGISTRO, FK_PROFESION) VALUES";
-                sql = sql + "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}', '{9}');";
-                string[] ar = new string[1];
-                ar[0] = string.Format(sql, p.p.Nombre_1, p.p.Nombre_2, p.p.Apellido_1, p.p.Apellido_2, p.p.T_documento
-                        , p.p.N_documento, p.p.Telefono, p.p.Correo, fecha,
-                        (p.p.Profesion + ""));
-                resultado.InnerText = ar[0];*/
+                
 
             } catch (Exception) {
                 resultado.InnerText = "Ha ocurrido un error inesperado!!!, contacte con el administrador";
