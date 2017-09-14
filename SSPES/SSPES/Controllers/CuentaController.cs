@@ -10,6 +10,7 @@ using System.Web.Http;
 namespace SSPES.Controllers {
     public class CuentaController : ApiController {
         public CuentaModel useres = new CuentaModel();
+        
 
         public bool Insertar(CuentaModel obj) {
             return obj.insertarNuevaCuenta(obj);
@@ -21,6 +22,10 @@ namespace SSPES.Controllers {
 
         public DataTable consultarMenu(string idCuenta) {
             return useres.consultarMenu(idCuenta);
+        }
+
+        public string GetPkcuenta(string obj) {
+            return useres.GetFk_cuenta(obj);
         }
     }
 }
