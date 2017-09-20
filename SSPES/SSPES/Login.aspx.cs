@@ -15,10 +15,10 @@ namespace SSPES {
         CuentaModel us = new CuentaModel();
         DataRow dato;
         DataTable aux;
-        private int script;
+        //private int script;
 
         protected void Page_Load(object sender, EventArgs e) {
-            //userc.consultarUsuarios();
+            Session["PK_CUENTA"] = null;
         }
 
         protected void BIniciarSesion_Click(object sender, EventArgs e) {
