@@ -187,8 +187,8 @@
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
     <Folder Include="public\Inicio\" />
+    <Folder Include="Views\Grupo\" />
     <Folder Include="Views\Plataforma\" />
-    <Folder Include="Views\Usuarios\App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

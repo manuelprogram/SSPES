@@ -289,7 +289,7 @@
 
                             %>
                             <li>
-                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i>    <%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
+                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i> <%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
 
                                     <% for (int j = 0; j < dtMenu.Rows.Count; j++) {

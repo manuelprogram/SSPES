@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SSPES.Views.Usuarios {
+namespace SSPES.Views.Grupo {
     
     
-    public partial class RegistrarUsuario {
+    public partial class RegistrarGrupo {
+        
+        /// <summary>
+        /// Control ngrup.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ngrup;
         
         /// <summary>
         /// Control labelnombre.
@@ -22,49 +31,49 @@ namespace SSPES.Views.Usuarios {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl labelnombre;
         
         /// <summary>
-        /// Control nombre1.
+        /// Control GrupoNombre1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoNombre1;
         
         /// <summary>
-        /// Control apellido1.
+        /// Control GrupoApellido1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText apellido1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoApellido1;
         
         /// <summary>
-        /// Control rol.
+        /// Control GrupoRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect rol;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect GrupoRol;
         
         /// <summary>
-        /// Control Usuario.
+        /// Control GrupoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoUsuario;
         
         /// <summary>
-        /// Control password.
+        /// Control GrupoPassword1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword GrupoPassword1;
         
         /// <summary>
         /// Control rpassword.
@@ -76,31 +85,40 @@ namespace SSPES.Views.Usuarios {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword rpassword;
         
         /// <summary>
-        /// Control nombre2.
+        /// Control GrupoInstitucion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoInstitucion;
         
         /// <summary>
-        /// Control apellido2.
+        /// Control GrupoNombre2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText apellido2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoNombre2;
         
         /// <summary>
-        /// Control correo.
+        /// Control GrupoApellido2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoApellido2;
+        
+        /// <summary>
+        /// Control GrupoCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl GrupoCorreo;
         
         /// <summary>
         /// Control tDocumento.
@@ -112,39 +130,39 @@ namespace SSPES.Views.Usuarios {
         protected global::System.Web.UI.HtmlControls.HtmlSelect tDocumento;
         
         /// <summary>
-        /// Control nDocumento.
+        /// Control GrupoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nDocumento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText GrupoDocumento;
         
         /// <summary>
-        /// Control nTelefono.
+        /// Control GrupoTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl nTelefono;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl GrupoTelefono;
         
         /// <summary>
-        /// Control resultado.
+        /// Control GrupoResultado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultado;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GrupoResultado;
         
         /// <summary>
-        /// Control Button1.
+        /// Control GrupoButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button GrupoButton;
     }
 }

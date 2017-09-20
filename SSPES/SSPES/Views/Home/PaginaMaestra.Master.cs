@@ -15,8 +15,12 @@ namespace SSPES.Views.Home {
 
         CuentaController cuenta = new CuentaController();
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                this.CargarMenu(Session["PK_CUENTA"].ToString());
+            if (Session["PK_CUENTA"]==null) {
+                Response.Redirect("../../Login.aspx");
+            } else {
+                if (!IsPostBack) {
+                    this.CargarMenu(Session["PK_CUENTA"].ToString());
+                }
             }
         }
 
