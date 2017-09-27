@@ -17,7 +17,7 @@
     <link href="../../public/Admin/dist/css/sb-admin-2.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
+
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>

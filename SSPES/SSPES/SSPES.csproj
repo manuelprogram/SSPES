@@ -88,9 +88,10 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
-    <Content Include="Registrar.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\Proyectos\ConsultarProyectos.aspx" />
+    <Content Include="Views\Roles\ModificarRol.aspx" />
+    <Content Include="Views\Roles\RegistrarRol.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
     <Content Include="Web.config">
@@ -126,13 +127,6 @@
     <Compile Include="Models\RolCuentaModel.cs" />
     <Compile Include="Models\RolModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar.aspx.cs">
-      <DependentUpon>Registrar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registrar.aspx.designer.cs">
-      <DependentUpon>Registrar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +147,20 @@
     </Compile>
     <Compile Include="Views\Proyectos\ConsultarProyectos.aspx.designer.cs">
       <DependentUpon>ConsultarProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\ModificarRol.aspx.cs">
+      <DependentUpon>ModificarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Roles\ModificarRol.aspx.designer.cs">
+      <DependentUpon>ModificarRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\RegistrarRol.aspx.cs">
+      <DependentUpon>RegistrarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Roles\RegistrarRol.aspx.designer.cs">
+      <DependentUpon>RegistrarRol.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
