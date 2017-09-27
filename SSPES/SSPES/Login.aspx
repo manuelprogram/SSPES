@@ -48,7 +48,8 @@
                 <asp:TextBox ID="TUsuario" CssClass="form-control" runat="server" required="true" pattern="[A-Z a-z 0-9 .]*" title="Formato no coincide"></asp:TextBox>
               </div>
               <div class="form-group">
-                <label>Contraseña</label>
+
+                <label id="msj" runat="server">Contraseña</label>
                 <asp:TextBox ID="TContrasenia" TextMode="Password" CssClass="form-control" runat="server" required="true"></asp:TextBox>
               </div>
               <div class="form-group">

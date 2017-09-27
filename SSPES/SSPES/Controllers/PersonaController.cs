@@ -23,18 +23,25 @@ namespace SSPES.Controllers {
             p.N_documento = f;
             p.Telefono = g;
             p.Correo = h;
-            p.Profesion = i;
+            p.rol = i;
         }
         
         public string Insertar(PersonaModel obj, string user, string pass) {
             CuentaController c = new CuentaController();
+            RolCuentaController rcc = new RolCuentaController();
             c.useres.Usuario = user;
             c.useres.Password = pass;
             if (c.cuentaExiste(c.useres)) return "usuario ya existe!!!";
             if (!obj.InsertarNuevaPersona(obj)) return "Error al resgistrar la persona, ¿identificacion correcta?";
             c.useres.FK_PERSONA = p.ConsultarIdUsuario(p);
             if (c.Insertar(c.useres)) {
-                return "exitoso";
+                rcc.RC.fk_cuenta = c.GetPkcuenta(user);
+                rcc.RC.fk_rol = p.rol.ToString();
+                rcc.RC.InsertarRolCuenta(rcc.RC);
+
+                return "INSERT INTO rol_cuenta values('"+rcc.RC.fk_cuenta+"', '"+rcc.RC.fk_rol+"', 'A')";
+               // return "exitoso";
+
             }else {
                 return "Error al crear cuenta";
             }

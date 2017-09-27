@@ -13,12 +13,16 @@ namespace SSPES.Views.Home {
         public DataTable dtMenu = new DataTable();
         public DataRow drMenu;
 
-        public string aux="";
-
         CuentaController cuenta = new CuentaController();
+
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                this.CargarMenu("1");
+            if (Session["PK_CUENTA"]==null) {
+                Response.Redirect("../../Login.aspx");
+            } else {
+                if (!this.IsPostBack) {
+                    Response.Write("<script> alert('"+Session["Id_Session"]+"'); </script>");
+                    this.CargarMenu(Session["PK_CUENTA"].ToString());
+                }
             }
         }
 
