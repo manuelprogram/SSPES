@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title>SSPES</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,14 +17,12 @@
     <link href="../../public/Admin/dist/css/sb-admin-2.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-
+    
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-
         <div id="wrapper">
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -267,12 +266,12 @@
                                         if (i == 0) {
                             %>
                             <li>
-                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i>    <%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
+                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i><%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
 
                                     <% for (int j = 0; j < dtMenu.Rows.Count; j++) {
                                             if (dtMenu.Rows[j]["FK_MENU"].ToString().Equals(drMenu["PK_MENU"].ToString())) {
-                                            %>
+                                    %>
                                     <li>
                                         <a href="<%= dtMenu.Rows[j]["SUB_MENU_URL"].ToString() %>"><%= dtMenu.Rows[j]["SUB_MENU_NOMBRE"].ToString() %></a>
                                     </li>
@@ -280,21 +279,19 @@
                                     <%
                                             }
                                         } %>
-
-                                    
                                 </ul>
                             </li>
                             <%
-                                }else if (!dtMenu.Rows[i-1]["MENU_NOMBRE"].ToString().Equals(drMenu["MENU_NOMBRE"].ToString())) {
+                                } else if (!dtMenu.Rows[i - 1]["MENU_NOMBRE"].ToString().Equals(drMenu["MENU_NOMBRE"].ToString())) {
 
                             %>
                             <li>
-                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i> <%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
+                                <a href="#"><i class="<%= drMenu["MENU_ICONO"].ToString() %>"></i><%= drMenu["MENU_NOMBRE"].ToString() %><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
 
                                     <% for (int j = 0; j < dtMenu.Rows.Count; j++) {
                                             if (dtMenu.Rows[j]["FK_MENU"].ToString().Equals(drMenu["PK_MENU"].ToString())) {
-                                            %>
+                                    %>
                                     <li>
                                         <a href="<%= dtMenu.Rows[j]["SUB_MENU_URL"].ToString() %>"><%= dtMenu.Rows[j]["SUB_MENU_NOMBRE"].ToString() %></a>
                                     </li>
@@ -302,8 +299,6 @@
                                     <%
                                             }
                                         } %>
-
-                                    
                                 </ul>
                             </li>
                             <%
@@ -312,7 +307,7 @@
                                 }
                             %>
 
-                            
+
                             <%--<li>
                                 <a href="#"><i class="fa fa-male"></i>Persona<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">

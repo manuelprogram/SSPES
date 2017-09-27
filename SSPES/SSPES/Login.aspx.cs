@@ -18,7 +18,7 @@ namespace SSPES {
         //private int script;
 
         protected void Page_Load(object sender, EventArgs e) {
-            Session["PK_CUENTA"] = null;
+            Session.Clear();
         }
 
         protected void BIniciarSesion_Click(object sender, EventArgs e) {
@@ -31,6 +31,9 @@ namespace SSPES {
                     if (aux.Rows.Count > 0) {
                         dato = aux.Rows[0];
                         Session["PK_CUENTA"] = dato["PK_CUENTA"].ToString();
+                        Session["Id_Session"] =Session.SessionID.ToString();
+
+                       
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {
                         Response.Write("<script> alert('VERIFIQUE USUARIO O CONTRASEÑA'); </script>");
