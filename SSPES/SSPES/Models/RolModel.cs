@@ -21,5 +21,12 @@ namespace SSPES.Models {
             }
             return lista;
         }
+
+        public bool InsertarRol(string cad) {
+            string sql = "INSERT INTO rol (ROL_NOMBRE) VALUES ('{0}');";
+            string[] ar = new string[1];
+            ar[0] = string.Format(sql, cad);
+            return con.RealizarTransaccion(ar);
+        }
     }
 }

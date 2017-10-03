@@ -69,7 +69,7 @@ namespace SSPES.Views.Usuarios {
         }
 
         protected void Registrar(object sender, EventArgs e) {
-           
+
             try {
                 if (!(validarNombre(nombre1.Value.ToString(), true) && validarNombre(nombre2.Value.ToString(), false) &&
                             validarNombre(apellido1.Value.ToString(), true) && validarNombre(apellido2.Value.ToString(), false))) {
@@ -99,7 +99,7 @@ namespace SSPES.Views.Usuarios {
                 }
                 if (!(password.Value.ToString().Equals(rpassword.Value.ToString()))) {
                     Response.Write("<script> alert('password no coinciden'); </script>");
-                     return;
+                    return;
                 }
 
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
@@ -107,7 +107,7 @@ namespace SSPES.Views.Usuarios {
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
                                             correo.Value.ToString(), (rol.SelectedIndex + 1));
                 resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
-                
+
 
             } catch (Exception) {
                 resultado.InnerText = "Ha ocurrido un error inesperado!!!, contacte con el administrador";
