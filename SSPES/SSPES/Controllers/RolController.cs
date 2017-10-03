@@ -12,5 +12,8 @@ namespace SSPES.Controllers {
         public List<string> consultarRoles(RolModel obj) {
             return obj.consultarRoles(obj);
         }
+        public bool RegistrarRol(string cad) {
+            return modelo.InsertarRol(cad);
+        }
     }
 }
