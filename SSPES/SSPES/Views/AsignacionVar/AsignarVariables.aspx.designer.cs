@@ -7,36 +7,27 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SSPES.Views.Proyectos {
+namespace SSPES.Views.AsignacionVariables {
     
     
-    public partial class ModificarProyecto {
+    public partial class AsignarVariables {
         
         /// <summary>
-        /// Control nombreProyecto.
+        /// Control variables.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreProyecto;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect variables;
         
         /// <summary>
-        /// Control descripcionProyecto.
+        /// Control proyectos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea descripcionProyecto;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect proyectos;
     }
 }
