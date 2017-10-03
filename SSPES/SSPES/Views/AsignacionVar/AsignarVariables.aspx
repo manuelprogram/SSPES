@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <h2 class="page-header" align="center">Registrar nueva variable</h2>
+        <h1 class="page-header" align="center">Registrar nueva variable</h1>
 
         <div class="col-md-6 control-label">
 
@@ -25,3 +25,5 @@
         </div>
     </div>
 </asp:Content>
+
+
