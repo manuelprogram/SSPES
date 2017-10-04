@@ -32,6 +32,7 @@ namespace SSPES.Views.Home {
             }
             CuentaController cc = new CuentaController();
             string saludo = "Bienvenido(a): " + cc.GetNombresUsuario(Int32.Parse(Session["PK_CUENTA"].ToString())).ToUpper();
+            Session["NombreUsuario"] = saludo;
             mensaje.InnerText = saludo;
         }
     }
