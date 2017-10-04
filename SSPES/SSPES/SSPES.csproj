@@ -101,15 +101,13 @@
     <Content Include="Views\Proyectos\VisualizarProyecto.aspx" />
     <Content Include="Views\RolesProyectos\EliminarRolesProyectos.aspx" />
     <Content Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx" />
-    <Content Include="Views\Roles\ModificarRol.aspx" />
-    <Content Include="Views\Roles\RegistrarRol.aspx" />
+    <Content Include="Views\Roles\Administrar.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
     <Content Include="Views\Usuarios\EliminarUsuarios.aspx" />
     <Content Include="Views\Usuarios\ModificarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
     <Content Include="Views\Variables\EliminarVariables.aspx" />
     <Content Include="Views\Variables\ModificarVariables.aspx" />
-    <Content Include="Views\Variables\RegistrarVariables.aspx" />
     <Content Include="Views\Variables\VisualizarVariables.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -246,19 +244,12 @@
     <Compile Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx.designer.cs">
       <DependentUpon>RegistrarRolesProyectos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Roles\ModificarRol.aspx.cs">
-      <DependentUpon>ModificarRol.aspx</DependentUpon>
+    <Compile Include="Views\Roles\Administrar.aspx.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Roles\ModificarRol.aspx.designer.cs">
-      <DependentUpon>ModificarRol.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Roles\RegistrarRol.aspx.cs">
-      <DependentUpon>RegistrarRol.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Roles\RegistrarRol.aspx.designer.cs">
-      <DependentUpon>RegistrarRol.aspx</DependentUpon>
+    <Compile Include="Views\Roles\Administrar.aspx.designer.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
@@ -301,13 +292,6 @@
     </Compile>
     <Compile Include="Views\Variables\ModificarVariables.aspx.designer.cs">
       <DependentUpon>ModificarVariables.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables\RegistrarVariables.aspx.cs">
-      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Variables\RegistrarVariables.aspx.designer.cs">
-      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Variables\VisualizarVariables.aspx.cs">
       <DependentUpon>VisualizarVariables.aspx</DependentUpon>
