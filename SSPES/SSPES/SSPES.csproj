@@ -108,6 +108,7 @@
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
     <Content Include="Views\Variables\EliminarVariables.aspx" />
     <Content Include="Views\Variables\ModificarVariables.aspx" />
+    <Content Include="Views\Variables\RegistrarVariables.aspx" />
     <Content Include="Views\Variables\VisualizarVariables.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -292,6 +293,13 @@
     </Compile>
     <Compile Include="Views\Variables\ModificarVariables.aspx.designer.cs">
       <DependentUpon>ModificarVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Variables\RegistrarVariables.aspx.cs">
+      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Variables\RegistrarVariables.aspx.designer.cs">
+      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Variables\VisualizarVariables.aspx.cs">
       <DependentUpon>VisualizarVariables.aspx</DependentUpon>

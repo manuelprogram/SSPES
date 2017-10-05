@@ -54,7 +54,6 @@
                 <label>Telefono</label>
                 <input type="tel" id="nTelefono" class="form-control" runat="server" placeholder="000000000" />
                 <br />
-                <label id="resultado" runat="server">...</label>
             </div>
         </div>
         <div class="row">
