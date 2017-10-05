@@ -101,16 +101,13 @@ namespace SSPES.Views.Usuarios {
                     Response.Write("<script> alert('password no coinciden'); </script>");
                     return;
                 }
-
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
                                             apellido1.Value.ToString(), apellido2.Value.ToString(),
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
-                                            correo.Value.ToString(), (rol.SelectedIndex + 1));
-                resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
-
-
+                                            correo.Value.ToString(), (rol.SelectedIndex + 2));
+                Response.Write("<script> alert('" + p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString()) + "'); </script>");
             } catch (Exception) {
-                resultado.InnerText = "Ha ocurrido un error inesperado!!!, contacte con el administrador";
+                Response.Write("<script> alert('Error inesperado!'); </script>");
             }
         }
     }

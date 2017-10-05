@@ -7,45 +7,63 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SSPES.Views.Roles {
+namespace SSPES.Views.Variables {
     
     
-    public partial class ModificarRoles {
+    public partial class RegistrarVariables {
         
         /// <summary>
-        /// Control select_roles.
+        /// Control mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect select_roles;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
         
         /// <summary>
-        /// Control brt.
+        /// Control nombreVariable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button brt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreVariable;
         
         /// <summary>
-        /// Control Button2.
+        /// Control descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText descripcion;
         
         /// <summary>
-        /// Control Button1.
+        /// Control tDato.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tDato;
+        
+        /// <summary>
+        /// Control resultado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultado;
+        
+        /// <summary>
+        /// Control BOTON.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BOTON;
     }
 }

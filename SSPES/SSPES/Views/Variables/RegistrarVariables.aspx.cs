@@ -1,14 +1,13 @@
-﻿using System;
+﻿using SSPES.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SSPES.Controllers;
-using SSPES.Models;
 
 namespace SSPES.Views.Variables {
-    public partial class CrearVariable : System.Web.UI.Page {
+    public partial class RegistrarVariables : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
         }
 
@@ -29,9 +28,10 @@ namespace SSPES.Views.Variables {
                 descripcion.Value.ToString(), tDato.Value);
             if (obj.Registrar()) {
                 resultado.InnerText = "Registro exitoso";
-            }else {
+            } else {
                 resultado.InnerText = "Error al registrar";
             }
         }
+
     }
 }

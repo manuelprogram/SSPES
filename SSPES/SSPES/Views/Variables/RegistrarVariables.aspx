@@ -1,11 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="RegistrarVariables.aspx.cs" Inherits="SSPES.Views.Variables.CrearVariable" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="RegistrarVariables.aspx.cs" Inherits="SSPES.Views.Variables.RegistrarVariables" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <title>Crear nueva variable</title>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    
     <div class="row">
         <h1 class="page-header" align="center">Registrar nueva variable</h1>
 
@@ -42,7 +39,6 @@
                 <div class="col-md-4">
                 </div>
             </div>
-
         </div>
     </div>
 </asp:Content>
