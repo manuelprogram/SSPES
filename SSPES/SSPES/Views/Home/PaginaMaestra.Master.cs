@@ -30,6 +30,9 @@ namespace SSPES.Views.Home {
             if(dtMenu.Rows.Count>0) {
                 drMenu = dtMenu.Rows[0];
             }
+            CuentaController cc = new CuentaController();
+            string saludo = "Bienvenido(a): " + cc.GetNombresUsuario(Int32.Parse(Session["PK_CUENTA"].ToString())).ToUpper();
+            mensaje.InnerText = saludo;
         }
     }
 }
