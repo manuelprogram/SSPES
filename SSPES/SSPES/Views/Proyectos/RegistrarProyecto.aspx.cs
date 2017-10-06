@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SSPES.Controllers;
+using System.IO;
+using System.Data;
 
 namespace SSPES.Views.Proyectos {
     public partial class RegistrarProyecto : System.Web.UI.Page {
@@ -37,12 +39,20 @@ namespace SSPES.Views.Proyectos {
                 return;
             }
 
-            ProyectoController p = new ProyectoController(nombreProyecto.Value.ToString(),
-               descripcionProyecto.Value.ToString(), d);
+            ProyectoController p;
+            if (archivo.HasFile) {
+                p = new ProyectoController(nombreProyecto.Value.ToString(), 
+                    descripcionProyecto.Value.ToString(), d, archivo.PostedFile);
+            }else {
+                p = new ProyectoController(nombreProyecto.Value.ToString(),
+                    descripcionProyecto.Value.ToString(), d, null);
+            }
+            HttpPostedFile h = archivo.PostedFile;
+
             if (p.insertarProyecto()) {
                 Response.Write("<script> alert('exitoso'); </script>");
             }else {
-                Response.Write("<script> alert('Error al registrar'); </script>");
+                Response.Write("<script> alert('Error al crear proyecto'); </script>");
             }
         }
     }

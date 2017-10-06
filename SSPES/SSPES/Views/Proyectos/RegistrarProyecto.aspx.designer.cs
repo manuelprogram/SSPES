@@ -46,7 +46,7 @@ namespace SSPES.Views.Proyectos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile archivo;
+        protected global::System.Web.UI.WebControls.FileUpload archivo;
         
         /// <summary>
         /// Control Button1.
