@@ -65,5 +65,30 @@ namespace SSPES.BD {
             }
             return state;
         }
+        
+        public bool GuardarArchivo(string cadena, HttpPostedFile file) {
+            //cmd.CommandText = "INSERT INTO imagenes(Nombre, Image) VALUES (@Nombre, @imgArr)";
+            //cmd.Parameters.AddWithValue("@imgArr", doc);
+
+            if (!Conectar()) return false;
+            try {
+                byte[] doc = new byte[file.InputStream.Length];
+                file.InputStream.Read(doc, 0, doc.Length);
+
+                using (MySqlConnection conn = conexion) {
+                    using (MySqlCommand cmd = new MySqlCommand()) {
+                        cmd.Connection = conn;
+                        cmd.CommandText = cadena;
+                        cmd.Parameters.AddWithValue("@doc", doc);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            } catch (Exception) {
+                Desconectar();
+                return true;
+            }
+            Desconectar();
+            return true;
+        }
     }
 }

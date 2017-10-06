@@ -26,7 +26,7 @@
                 <br />
                 <br />
                 <label>Archivo</label>
-                <input name="archivo" id="archivo" type="file" size="20" runat="server" />
+                <asp:FileUpload id="archivo" size="20" runat="server" />
             </div>
         </div>
     </div>

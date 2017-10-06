@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SSPES.Models;
+using System.Data;
 
 namespace SSPES.Controllers {
     public class ProyectoController {
@@ -13,8 +14,8 @@ namespace SSPES.Controllers {
             obj = new ProyectoModel();
         }
 
-        public ProyectoController(string a, string b, DateTime c) {
-            obj = new ProyectoModel(a, b, c);
+        public ProyectoController(string a, string b, DateTime c, HttpPostedFile d) {
+            obj = new ProyectoModel(a, b, c, d);
         }
 
         public List<string> consultarProyectosActivos() {
@@ -23,6 +24,10 @@ namespace SSPES.Controllers {
 
         public bool insertarProyecto() {
             return obj.registrarProyecto();
+        }
+
+        public DataTable descargarDocumento(int pk) {
+            return obj.cargarDocumento(pk);
         }
     }
 }
