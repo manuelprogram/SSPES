@@ -326,7 +326,11 @@
     <Folder Include="public\Admin\js\" />
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
-    <Folder Include="public\Inicio\" />
+    <Folder Include="public\Inicio\contactform\" />
+    <Folder Include="public\Inicio\css\" />
+    <Folder Include="public\Inicio\img\" />
+    <Folder Include="public\Inicio\js\" />
+    <Folder Include="public\Inicio\lib\" />
     <Folder Include="Views\Grupo\" />
     <Folder Include="Views\Plataforma\" />
   </ItemGroup>
