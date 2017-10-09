@@ -18,8 +18,8 @@ namespace SSPES.Controllers {
             obj = new ProyectoModel(a, b, c, d);
         }
 
-        public List<string> consultarProyectosActivos() {
-            return obj.ConsultarProyectos();
+        public List<string> consultarNombreProyectos() {
+            return obj.consultarNombreProyectos();
         }
 
         public bool insertarProyecto() {
@@ -28,6 +28,10 @@ namespace SSPES.Controllers {
 
         public DataTable descargarDocumento(int pk) {
             return obj.cargarDocumento(pk);
+        }
+
+        public DataTable consultarProyectos() {
+            return obj.consultarProyectos();
         }
     }
 }

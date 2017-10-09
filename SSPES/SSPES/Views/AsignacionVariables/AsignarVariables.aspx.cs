@@ -19,7 +19,7 @@ namespace SSPES.Views.AsignacionVariables {
             }
 
             ProyectoController obj2 = new ProyectoController();
-            List<string> var2 = obj2.consultarProyectosActivos();
+            List<string> var2 = obj2.consultarNombreProyectos();
             foreach (string s in var2) {
                 proyectos.Items.Add(s);
             }

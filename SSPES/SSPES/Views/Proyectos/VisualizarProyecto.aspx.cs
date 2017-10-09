@@ -10,21 +10,36 @@ using System.Web.UI.WebControls;
 
 namespace SSPES.Views.Proyectos {
     public partial class VisualizarProyecto : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
 
+        public DataTable dt;
+        public DataRow dr;
+
+        protected void Page_Load(object sender, EventArgs e) {
+            if (!this.IsPostBack) {
+                cargarProyectos();
+            }
         }
 
-        protected void Button2_Click(object sender, EventArgs e) {
+        protected void cargarProyectos() {
+            ProyectoController pc = new ProyectoController();
+            dt = pc.consultarProyectos();
+            rep.DataSource = dt;
+            rep.DataBind();
+        }
 
+        protected void descargar(Object sender, CommandEventArgs e) {
+
+            int pk_proyecto = Int32.Parse(e.CommandArgument.ToString());
             try {
                 ProyectoController p = new ProyectoController();
-                DataTable data = p.descargarDocumento(Int32.Parse(idProyecto.Value.ToString()));
+                DataTable data = p.descargarDocumento(pk_proyecto);
                 byte[] arr = (byte[])(data.Rows[0]["ARCHIVO"]); //System.UnauthorizedAccessException
                 string nombre = data.Rows[0]["NOMBREARCHIVO"].ToString();
 
                 FileStream h = new FileStream(nombre, FileMode.Create);
                 h.Write(arr, 0, Convert.ToInt32(arr.Length));
                 h.Close();
+
                 System.Diagnostics.Process obj = new System.Diagnostics.Process();
                 obj.StartInfo.FileName = nombre;
 
@@ -36,7 +51,11 @@ namespace SSPES.Views.Proyectos {
                 Response.AddHeader("Content-disposition", "attachment; filename=" + nombre);
                 Response.BinaryWrite(buffer);
                 Response.ContentType = "application/msword";
-            } catch (Exception) { return; }
+            } catch (Exception) {
+                Response.Write("<script> alert('No hay documento'); </script>");
+                return;
+            }
         }
+        
     }
 }
