@@ -26,7 +26,7 @@ namespace SSPES.Models {
         public ProyectoModel() {
         }
 
-        public List<string> ConsultarProyectos() {
+        public List<string> consultarNombreProyectos() {
             List<string> lista = new List<string>();
             string sql = "SELECT NOMBRE FROM proyecto WHERE ESTADO = 'A';";
             DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
@@ -53,6 +53,11 @@ namespace SSPES.Models {
 
         public DataTable cargarDocumento(int pk) {
             string sql = "SELECT ARCHIVO, NOMBREARCHIVO FROM proyecto WHERE PK_PROYECTO = '" + pk + "' AND ESTADO = 'A';";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
+
+        public DataTable consultarProyectos() {
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A';";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
