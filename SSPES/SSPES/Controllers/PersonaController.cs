@@ -14,7 +14,7 @@ namespace SSPES.Controllers {
         }
 
         public PersonaController(string a, string b, string c, string d, string e, string f, string g,
-                string h, int i) {
+                string h, string i) {
             p.Nombre_1 = a;
             p.Nombre_2 = b;
             p.Apellido_1 = c;

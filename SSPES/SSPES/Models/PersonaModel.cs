@@ -16,7 +16,7 @@ namespace SSPES.Models {
         public string N_documento { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        public int rol { get; set; }
+        public string rol { get; set; }
 
         Conexion con = new Conexion();
 

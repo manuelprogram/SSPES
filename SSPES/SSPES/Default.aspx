@@ -4,17 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+     
     <meta charset="utf-8" />
-    <title>Imperial Boootstrap Template</title>
+    <title>SSPES</title>
+    <link rel="shortcut icon" href="Imagenes/SSPES.png" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
-    <meta property="og:title" content="" />
+    <%--<meta property="og:title" content="" />
     <meta property="og:image" content="" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="" />--%>
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="" />
