@@ -13,6 +13,24 @@ namespace SSPES.Views.AsignacionVariables {
     public partial class AsignarVariables {
         
         /// <summary>
+        /// Control proyectos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect proyectos;
+        
+        /// <summary>
+        /// Control boton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button boton;
+        
+        /// <summary>
         /// Control variables.
         /// </summary>
         /// <remarks>
@@ -22,12 +40,21 @@ namespace SSPES.Views.AsignacionVariables {
         protected global::System.Web.UI.HtmlControls.HtmlSelect variables;
         
         /// <summary>
-        /// Control proyectos.
+        /// Control asignarVariable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect proyectos;
+        protected global::System.Web.UI.WebControls.Button asignarVariable;
+        
+        /// <summary>
+        /// Control mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
     }
 }
