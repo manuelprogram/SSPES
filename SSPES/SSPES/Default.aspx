@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     
+
     <meta charset="utf-8" />
     <title>SSPES</title>
     <link rel="shortcut icon" href="Imagenes/SSPES.png" />
@@ -36,41 +36,37 @@
     <div id="preloader"></div>
     <header id="header">
         <div class="container">
-
             <div id="logo" class="pull-left">
-                <a href="#hero">
-                    <img src="img/SSPES.png" alt="" title="" /></a>
+                <h1>SSPES</h1>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#hero">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="Login.aspx">Login</a></li>
+                    <li class="menu-active"><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">A cerca de</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="Login.aspx">Ingresar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-     <!--==========================
+    <!--==========================
       Hero Section
     ============================-->
     <section id="hero">
         <div class="hero-container">
             <div class="wow fadeIn">
-                <div class="hero-logo">
-                    <img class="" src="public/Inicio/img/logo.png" alt="Imperial" />
-                </div>
-
-                <h1>Welcome to Imperial studios</h1>
-                <h2>We create <span class="rotating">beautiful graphics, functional websites, working mobile apps</span></h2>
-                <div class="actions">
-                    <a href="#about" class="btn-get-started">Get Strated</a>
-                    <a href="#services" class="btn-services">Our Services</a>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <img src="Imagenes/SSPES.png" class="img-responsive" />
+                        <h2>Plataforma <span class="rotating">Segura,Practica,Innovadora</span></h2>
+                        <div class="actions">
+                            <a href="Login.aspx" class="btn-services">Ingresar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,25 +80,28 @@
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">About Us</h3>
+                    <h3 class="section-title">a cerca de </h3>
                     <div class="section-title-divider"></div>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+                    <h4 class="section-description">Software para la sistematización en los drocesos de estudios de suelos </h4>
                 </div>
             </div>
         </div>
         <div class="container about-container wow fadeInUp">
             <div class="row">
-                <div class="col-md-6 col-md-push-6 about-content">
-                    <h2 class="about-title">We provide great services and ideass</h2>
-                    <p class="about-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    </p>
-                    <p class="about-text">
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                    <p class="about-text">
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                <div class="col-md-6 about-content">
+                    <img src="public/Inicio/img/SSPES.png" class="img-responsive" />
+                </div>
+                <div class="col-md-6 about-content">
+                    <h2 class="about-title section-description">Sobre que trata el software</h2>
+                    <h4 class="about-text">
+                        SSPES es una idea innovadora desarrollada por tres estudiantes de la Univerdad de la Amazonia, y es pensada para los investigadores dedicados a la captura de datos cuantitavos que desarrollan investigaciones en gran escala, esta plataforma permite la gestión de la información de los proyectos de investigación. 
+                    </h4>
+                    <h4 class="about-text">
+                        Así mismo el director de las investigaciones podrá asociar investigadores a cada uno de sus proyectos, en este sentido les otorgará permisos para contribuir en el registro de nuevas muestra a sus proyectos en tiempo real.                                                                                         
+                    </h4>
+                    <h4 class="about-text">
+                        A futuro se busca que el aplicativo web le permita al director la gestion de actividades por proyecto y de igual manera un procesamiento matématico de los datos una vez haya finalizado el proceso de recolección en cada proyecto.
+                    </h4>
                 </div>
             </div>
         </div>
@@ -115,42 +114,27 @@
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Our Services</h3>
+                    <h3 class="section-title">Servicios</h3>
                     <div class="section-title-divider"></div>
-                    <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+                    <h4 class="section-description">Estos son los servicios que brinda el aplicativo web</h4>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-desktop"></i></div>
-                    <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                    <h4 class="service-title"><a>Gestión de información</a></h4>
+                    <h4 class="service-description">La plataforma de forma segura permite administrar contenidos asociados a un proyecto de investigación en tiempo real.</h4>
                 </div>
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-                    <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
-                    <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                </div>
+                    <h4 class="service-title"><a>Trazabilidad</a></h4>
+                    <h4 class="service-description">La plataforma llevará un registro minucioso de cada proyecto, evaluando constantemente el estado en el cúal se encuentra.</h4>
+                 </div>
                 <div class="col-md-4 service-item">
-                    <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-                    <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                </div>
-                <div class="col-md-4 service-item">
-                    <div class="service-icon"><i class="fa fa-photo"></i></div>
-                    <h4 class="service-title"><a href="">Magni Dolores</a></h4>
-                    <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-                <div class="col-md-4 service-item">
-                    <div class="service-icon"><i class="fa fa-road"></i></div>
-                    <h4 class="service-title"><a href="">Nemo Enim</a></h4>
-                    <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                </div>
-                <div class="col-md-4 service-item">
-                    <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-                    <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
-                    <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                    <div class="service-icon"><i class="fa fa fa-database"></i></div>
+                    <h4 class="service-title"><a>Seguridad en información</a></h4>
+                    <h4 class="service-description">La plataforma cuanta con altos estadares de seguridad, debido a la sencibilidad de la información tratada.</h4>
                 </div>
             </div>
         </div>
@@ -162,239 +146,75 @@
     <section id="subscribe">
         <div class="container wow fadeInUp">
             <div class="row">
-                <div class="col-md-8">
-                    <h3 class="subscribe-title">Subscribe For Updates</h3>
-                    <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+                <div class="col-lg-4"></div>
+                <div class="col-md-8 ">
+                    <h3 class="subscribe-title">Adquierelo Ya!</h3>
+                    <p class="subscribe-text">Cientos de investigadores al rededor del mundo lo usan  <br />¿ Qué esperas ?</p>
                 </div>
+                <div class="col-lg-4"></div>
+
                 <div class="col-md-4 subscribe-btn-container">
-                    <a class="subscribe-btn" href="#">Subscribe Now</a>
+                    <a class="subscribe-btn" href="#contact">Contactar</a>
                 </div>
             </div>
         </div>
     </section>
-
     <!--==========================
-  Porfolio Section
-============================-->
-    <section id="portfolio">
-        <div class="container wow fadeInUp">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="section-title">Portfolio</h3>
-                    <div class="section-title-divider"></div>
-                    <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-1.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 1</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-2.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 2</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-3.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 3</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-4.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 4</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-5.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 5</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-6.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 6</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-7.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 7</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3">
-                    <a class="portfolio-item" style="background-image: url(public/Inicio/img/portfolio-8.jpg);" href="">
-                        <div class="details">
-                            <h4>Portfolio 8</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!--==========================
-  Testimonials Section
-============================-->
-    <section id="testimonials">
-        <div class="container wow fadeInUp">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="section-title">Testimonials</h3>
-                    <div class="section-title-divider"></div>
-                    <p class="section-description">Erdo lide, nora porodo filece, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="profile">
-                        <div class="pic">
-                            <img src="public/Inicio/img/client-1.jpg" alt=""/>
-                        </div>
-                        <h4>Saul Goodman</h4>
-                        <span>Lawless Inc</span>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="quote">
-                        <b>
-                            <img src="public/Inicio/img/quote_sign_left.png" alt=""/></b> Proin iaculis purus consequat sem cure  digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small>
-                                <img src="public/Inicio/img/quote_sign_right.png" alt=""/></small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="quote">
-                        <b>
-                            <img src="public/Inicio/img/quote_sign_left.png" alt=""/></b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small>
-                                <img src="public/Inicio/img/quote_sign_right.png" alt=""/></small>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile">
-                        <div class="pic">
-                            <img src="public/Inicio/img/client-2.jpg" alt=""/>
-                        </div>
-                        <h4>Sara Wilsson</h4>
-                        <span>Odeo Inc</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!--==========================
-  Team Section
-============================-->
+      Team Section
+    ============================-->
     <section id="team">
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Our Team</h3>
+                    <h3 class="section-title">Equipo de Trabajo</h3>
                     <div class="section-title-divider"></div>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                    <p class="section-description">La plataforma esta desarrollada por Ingenieros de sistemas de la Universidad de la Amazonia</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="member">
                         <div class="pic">
-                            <img src="public/Inicio/img/team-1.jpg" alt=""/>
+                            <img src="public/Inicio/img/team-1.jpg" alt="" />
                         </div>
-                        <h4>Walter White</h4>
-                        <span>Chief Executive Officer</span>
+                        <h4>Manuel Hernandez</h4>
+                        <span>Desarrollador Software</span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
+                            <a href=" https://www.facebook.com/manuel.hernandz.5" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="member">
                         <div class="pic">
-                            <img src="public/Inicio/img/team-2.jpg" alt=""/>
+                            <img src="public/Inicio/img/team-2.jpg" alt="" />
                         </div>
-                        <h4>Sarah Jhinson</h4>
-                        <span>Product Manager</span>
+                        <h4>Valentina Rios</h4>
+                        <span>Desarrolladora Software</span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/juanavalentina.serna" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="member">
                         <div class="pic">
-                            <img src="public/Inicio/img/team-3.jpg" alt=""/>
+                            <img src="public/Inicio/img/team-3.jpg" alt="" />
                         </div>
-                        <h4>William Anderson</h4>
-                        <span>CTO</span>
+                        <h4>Wilmer Castrillon</h4>
+                        <span>Desarrollador Software</span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
+
+                            <a href="https://www.facebook.com/wilmeremiro.castrilloncalderon" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-3">
-                    <div class="member">
-                        <div class="pic">
-                            <img src="public/Inicio/img/team-4.jpg" alt=""/>
-                        </div>
-                        <h4>Amanda Jepson</h4>
-                        <span>Accountant</span>
-                        <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -406,9 +226,9 @@
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Contact Us</h3>
+                    <h3 class="section-title">Contactanos</h3>
                     <div class="section-title-divider"></div>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                    <p class="section-description">Si quieres hacer uso de esta plataforma innovadora, simplemente envianos tu información</p>
                 </div>
             </div>
 
@@ -418,19 +238,20 @@
                         <div>
                             <i class="fa fa-map-marker"></i>
                             <p>
-                                A108 Adam Street<br>
-                                New York, NY 535022
+                                Campus Porvenir Uniamazonia
+                                <br />
+                                Florencia - Caquetá
                             </p>
                         </div>
 
                         <div>
                             <i class="fa fa-envelope"></i>
-                            <p>info@example.com</p>
+                            <p>programacion@udla.edu.co</p>
                         </div>
 
                         <div>
                             <i class="fa fa-phone"></i>
-                            <p>+1 5589 55488 55s</p>
+                            <p>+57 321-266-37702</p>
                         </div>
 
                     </div>
@@ -442,23 +263,23 @@
                         <div id="errormessage"></div>
                         <form action="" method="post" role="form" class="contactForm">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Su Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Su Correo" data-rule="email" data-msg="Please enter a valid email" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Telefono" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
                                 <div class="validation"></div>
                             </div>
                             <div class="text-center">
-                                <button type="submit">Send Message</button>
+                                <button type="submit">Enviar Mensaje</button>
                             </div>
                         </form>
                     </div>
@@ -476,16 +297,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright">
-                        &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
+                        &copy; Copyright <strong>Universidad de la Amazonia</strong>. Derechos Reservados
                     </div>
                     <div class="credits">
-                        <!-- 
-                All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-              -->
-                        Bootstrap Themes by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        <a href="https://uniamazonia.edu.co/">Uniamazoia</a>
                     </div>
                 </div>
             </div>
