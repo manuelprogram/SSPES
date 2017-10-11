@@ -18,7 +18,7 @@ namespace SSPES.Controllers {
             obj = new ProyectoModel(a, b, c, d);
         }
 
-        public DataTable consultarNombreProyectos() {
+        public List<string> consultarNombreProyectos() {
             return obj.consultarNombreProyectos();
         }
 

@@ -26,10 +26,14 @@ namespace SSPES.Models {
         public ProyectoModel() {
         }
 
-        public DataTable consultarNombreProyectos() {
-            string sql = "SELECT NOMBRE, PK_PROYECTO FROM proyecto WHERE ESTADO = 'A' ORDER BY NOMBRE;";
+        public List<string> consultarNombreProyectos() {
+            List<string> lista = new List<string>();
+            string sql = "SELECT NOMBRE FROM proyecto WHERE ESTADO = 'A';";
             DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
-            return data;
+            foreach (DataRow row in data.Rows) {
+                lista.Add(row[0].ToString());
+            }
+            return lista;
         }
 
         public bool registrarProyecto() {

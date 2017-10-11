@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SSPES.Models;
-using System.Data;
 
 namespace SSPES.Controllers {
     public class VariableController {
 
         protected VariableModel obj;
-        
+
         public VariableController(string a, string b, string c) {
             obj = new VariableModel(a, b, c);
         }
@@ -22,12 +21,8 @@ namespace SSPES.Controllers {
             return obj.registrarVariable();
         }
 
-        public DataTable consulatarNombreVariablesDisponibles(int pk) {
-            return obj.consultarVariablesDisponibles(pk);
-        }
-
-        public bool asignarVariable(int pro, int var) {
-            return obj.asignarVariable(pro, var);
+        public List<string> consulatarNombreVariables() {
+            return obj.consultarVariables();
         }
     }
 }

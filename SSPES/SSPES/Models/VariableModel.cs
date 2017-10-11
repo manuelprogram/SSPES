@@ -28,19 +28,15 @@ namespace SSPES.Models {
             ar[0] += "('" + nombre + "', '" + tipoDato + "', '" + descripcion + "', 'A');";
             return con.RealizarTransaccion(ar);
         }
-        
-        public DataTable consultarVariablesDisponibles(int pk_pro) {
-            string sql = "SELECT idVARIABLE, NOMBRE_VARIABLE FROM variable, variable_proyecto ";
-            sql += "WHERE variable.idVARIABLE = variable_proyecto.PK_VARIABLE_PROYECTO ";
-            sql += "AND variable_proyecto.FK_PROYECTO != " + pk_pro + " ORDER BY NOMBRE_VARIABLE; ";
-            return con.EjecutarConsulta(sql, CommandType.Text);
-        }
 
-        public bool asignarVariable(int pkProyecto, int pkVariable) {
-            string[] sql = new string[1];
-            sql[0] = "INSERT INTO variable_proyecto (FK_PROYECTO, FK_VARIABLE)";
-            sql[0] += "VALUES(" + pkProyecto + ", " + pkVariable + ");";
-            return con.RealizarTransaccion(sql);
+        public List<string> consultarVariables() {
+            List<string> lista = new List<string>();
+            string sql = "SELECT NOMBRE_VARIABLE FROM variable;";
+            DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
+            foreach (DataRow row in data.Rows) {
+                lista.Add(row[0].ToString());
+            }
+            return lista;
         }
     }
 }
