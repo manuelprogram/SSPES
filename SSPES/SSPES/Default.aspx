@@ -36,9 +36,9 @@
     <div id="preloader"></div>
     <header id="header">
         <div class="container">
-            <%--<div id="logo" class="pull-left">
+            <div id="logo" class="pull-left">
                 <h1>SSPES</h1>
-            </div>--%>
+            </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -61,9 +61,7 @@
                 <div class="row">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4">
-                        <h1 style="font-size:100px">SSPES</h1>
-                        <br />
-                        <%--<img src="Imagenes/SSPES.png" class="img-responsive" />--%>
+                        <img src="Imagenes/SSPES.png" class="img-responsive" />
                         <h2>Plataforma <span class="rotating">Segura,Practica,Innovadora</span></h2>
                         <div class="actions">
                             <a href="Login.aspx" class="btn-services">Ingresar</a>
@@ -126,12 +124,12 @@
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-desktop"></i></div>
                     <h4 class="service-title"><a>Gestión de información</a></h4>
-                    <h4 class="service-description">Podras administrar de forma segura contenidos asociados a un proyecto de investigación en tiempo real.</h4>
+                    <h4 class="service-description">La plataforma de forma segura permite administrar contenidos asociados a un proyecto de investigación en tiempo real.</h4>
                 </div>
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
                     <h4 class="service-title"><a>Trazabilidad</a></h4>
-                    <h4 class="service-description">Podras llevar un registro minucioso de cada proyecto, evaluando constantemente el estado en el cúal se encuentra.</h4>
+                    <h4 class="service-description">La plataforma llevará un registro minucioso de cada proyecto, evaluando constantemente el estado en el cúal se encuentra.</h4>
                  </div>
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa fa-database"></i></div>
