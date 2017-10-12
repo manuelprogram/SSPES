@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <link rel="shortcut icon" href="../../Imagenes/SSPES.png" />
 
     <link href="../../public/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
