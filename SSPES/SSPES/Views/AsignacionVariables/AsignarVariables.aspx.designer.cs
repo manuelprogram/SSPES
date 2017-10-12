@@ -22,13 +22,22 @@ namespace SSPES.Views.AsignacionVariables {
         protected global::System.Web.UI.HtmlControls.HtmlSelect proyectos;
         
         /// <summary>
-        /// Control boton.
+        /// Control nombre_pro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button boton;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_pro;
+        
+        /// <summary>
+        /// Control Button.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button;
         
         /// <summary>
         /// Control variables.
@@ -47,14 +56,5 @@ namespace SSPES.Views.AsignacionVariables {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button asignarVariable;
-        
-        /// <summary>
-        /// Control mensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
     }
 }

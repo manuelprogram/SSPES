@@ -31,27 +31,32 @@ namespace SSPES.Views.AsignacionVariables {
         }
 
         protected void asignarVariable_Click(object sender, EventArgs e) {
-            string h = "";
-            int index = variables.SelectedIndex;
-            dt2 = (DataTable)Session["datos_dt2"];
-            int pk_pro = Int32.Parse(dt2.Rows[proyectos.SelectedIndex]["PK_PROYECTO"].ToString());
-            dt1 = (DataTable)Session["datos_dt1"];
-            int pk_var = Int32.Parse(dt1.Rows[index]["idVARIABLE"].ToString());
-            VariableController obj = new VariableController();
-            if (obj.asignarVariable(pk_pro, pk_var)) {
-                h += "exitoso";
-            } else {
-                h += "no exitoso";
+            try {
+                int index = variables.SelectedIndex;
+                dt2 = (DataTable)Session["datos_dt2"];
+                int pk_pro = Int32.Parse(Session["pk_pro"].ToString());
+                dt1 = (DataTable)Session["datos_dt1"];
+                int pk_var = Int32.Parse(dt1.Rows[index]["idVARIABLE"].ToString());
+                VariableController obj = new VariableController();
+                if (obj.asignarVariable(pk_pro, pk_var)) {
+                    Response.Write("<script> alert('Exitoso'); </script>");
+                } else {
+                    Response.Write("<script> alert('Error al asignar'); </script>");
+                }
+            } catch (Exception) {
+                Response.Write("<script> alert('Error inesperado'); </script>");
             }
-            cargarVariables(pk_pro);
+            variables.Items.Clear();
         }
 
-        protected void boton_Click(object sender, EventArgs e) {
-            dt2 = (DataTable) Session["datos_dt2"];
+        protected void Button_Click(object sender, EventArgs e) {
+            dt2 = (DataTable)Session["datos_dt2"];//Proyecto seleccionado
             int pk_pro = Int32.Parse(dt2.Rows[proyectos.SelectedIndex]["PK_PROYECTO"].ToString());
+            Session["pk_pro"] = pk_pro.ToString();
+            nombre_pro.InnerText = "Proyecto seleccionado: " + proyectos.Value.ToString();
             cargarVariables(pk_pro);
         }
-
+        
         public void cargarVariables(int pk_pro) {
             variables.Items.Clear();
             VariableController obj = new VariableController();

@@ -30,9 +30,13 @@ namespace SSPES.Models {
         }
         
         public DataTable consultarVariablesDisponibles(int pk_pro) {
-            string sql = "SELECT idVARIABLE, NOMBRE_VARIABLE FROM variable, variable_proyecto ";
-            sql += "WHERE variable.idVARIABLE = variable_proyecto.PK_VARIABLE_PROYECTO ";
-            sql += "AND variable_proyecto.FK_PROYECTO != " + pk_pro + " ORDER BY NOMBRE_VARIABLE; ";
+            string sql = "SELECT idVARIABLE, NOMBRE_VARIABLE ";
+                sql += "FROM variable WHERE NOT EXISTS ( ";
+                sql += "   SELECT * FROM variable_proyecto ";
+                sql += "   WHERE variable.idVARIABLE = variable_proyecto.FK_VARIABLE ";
+                sql += "   AND variable_proyecto.FK_PROYECTO = " + pk_pro;
+                sql += ") ";
+                sql += "ORDER BY NOMBRE_VARIABLE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
