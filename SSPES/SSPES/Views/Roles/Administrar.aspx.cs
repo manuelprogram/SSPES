@@ -13,10 +13,10 @@ namespace SSPES.Views.Roles {
             RolController Rol = new RolController();
             List<string> lista = Rol.consultarRoles(Rol.modelo);
             select_roles.Items.Clear();
+            Permisos = Rol.Permisos();
             for (int i = 0; i < lista.Count; i++) {
                 select_roles.Items.Add(lista[i]);
             }
-
         }
 
         protected void brt_Click(object sender, EventArgs e) {
@@ -29,7 +29,6 @@ namespace SSPES.Views.Roles {
                 aux= "Error campos vacios";
             }
             Response.Write("<script> alert('"+aux+"'); </script>");
-
         }
     }
 }

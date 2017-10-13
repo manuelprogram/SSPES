@@ -35,12 +35,12 @@ namespace SSPES.Models {
             return con.RealizarTransaccion(ar);
         }
 
-        public List<string> ConsultarPermisos(string rol) {
+        public List<string> ConsultarPermisos() {
             List<string> lista = new List<string>();
             string sql = @"SELECT menu_nombre, sub_menu_nombre FROM rol r 
-                           inner join menu_usuario mu ON mu.FK_ROL = r.PK_ROL and r.PK_ROL =";
-            sql += rol + @"inner join sub_menu sm ON mu.FK_SUB_MENU = sm.PK_SUB_MENU
-                           inner join menu m ON sm.FK_MENU = m.PK_MENU;";
+                            inner join menu_usuario mu ON mu.FK_ROL = r.PK_ROL
+                            inner join sub_menu sm ON mu.FK_SUB_MENU = sm.PK_SUB_MENU
+                            inner join menu m ON sm.FK_MENU = m.PK_MENU;";
             DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
             foreach (DataRow row in data.Rows) {
                 lista.Add(row[0].ToString() + " - " + row[1].ToString());
