@@ -382,6 +382,7 @@
     <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="public\Inicio\lib\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\sspes.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
