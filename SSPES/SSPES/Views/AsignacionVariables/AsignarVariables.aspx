@@ -6,39 +6,20 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h2 class="page-header" align="center">Registrar nueva variable</h2>
+    <br />
+
     <div class="row">
-        <h2 class="page-header" align="center">Registrar nueva variable</h2>
+        <div class="col-md-5 control-label">
+            <asp:ListBox ID="proyecto" runat="server" Width="300" Height="200"
+                OnSelectedIndexChanged="Button_Click" AutoPostBack="true"></asp:ListBox>
+        </div>
 
-        <div class="row">
-            <div class="col-md-5 control-label">
-                <select class="form-control" runat="server" id="proyectos" onchange="cambioProyecto">
-                </select>
-            </div>
-
-            <div class="col-md-5 control-label">
-                <label id="nombre_pro" runat="server">Proyecto seleccionado</label>
-            </div>
+        <div class="col-md-5 control-label">
+            <asp:ListBox ID="variable" runat="server" Width="300" Height="200"></asp:ListBox>
             <br />
+            <br />
+            <asp:Button ID="asignarVariable" runat="server" Text="Asignar variable" OnClick="asignarVariable_Click" />
         </div>
-
-        <div class="row">
-            <div class="col-md-5 control-label">
-                <br />
-                <asp:Button ID="Button" runat="server" Text="Proyecto seleccionado:" OnClick="Button_Click" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5 control-label">
-                <br />
-                <br />
-                <select class="form-control" runat="server" id="variables">
-                    <option>Texto</option>
-                </select>
-                <br />
-                <asp:Button ID="asignarVariable" runat="server" Text="Asignar variable" OnClick="asignarVariable_Click" />
-            </div>
-        </div>
-
     </div>
 </asp:Content>

@@ -13,40 +13,22 @@ namespace SSPES.Views.AsignacionVariables {
     public partial class AsignarVariables {
         
         /// <summary>
-        /// Control proyectos.
+        /// Control proyecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect proyectos;
+        protected global::System.Web.UI.WebControls.ListBox proyecto;
         
         /// <summary>
-        /// Control nombre_pro.
+        /// Control variable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_pro;
-        
-        /// <summary>
-        /// Control Button.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button;
-        
-        /// <summary>
-        /// Control variables.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect variables;
+        protected global::System.Web.UI.WebControls.ListBox variable;
         
         /// <summary>
         /// Control asignarVariable.

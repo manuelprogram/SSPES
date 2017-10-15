@@ -56,5 +56,19 @@ namespace SSPES.Models {
             string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A';";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
+
+        public DataTable consultarProyectosDirector(string pk_dir) {
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION FROM proyecto WHERE ESTADO = 'A' ";
+            sql += "AND FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
+
+        public bool agregarIntegrante(int pk_cuenta, int pk_pro, int pk_rolpro) {
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
+            string[] sql = new string[1];
+            sql[0] = @"INSERT INTO integrante_proyecto (ESTADO, REGISTRO, FK_CUENTA, FK_PROYECTO, FK_ROL_PROYECTO) 
+                    VALUES('A', '" + fecha + "', '" + pk_cuenta + "', '" + pk_pro + "', '" + pk_rolpro + "') ;";
+            return con.RealizarTransaccion(sql);
+        }
     }
 }

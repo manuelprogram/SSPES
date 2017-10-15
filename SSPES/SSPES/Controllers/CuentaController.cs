@@ -34,10 +34,14 @@ namespace SSPES.Controllers {
         public string GetPkcuenta(string obj) {
             return useres.GetFk_cuenta(obj);
         }
-
+        
         public string GetNombresUsuario(int pkcuenta) {
             PersonaModel p = new PersonaModel();
             return p.ConsultarNombresUsuario(useres.cosultarPKPersona(pkcuenta));
+        }
+
+        public DataTable consultarUsuariosDisponiblesProyecto(int pk_pro) {
+            return useres.consultarUsuariosDisponiblesProyecto(pk_pro);
         }
     }
 }
