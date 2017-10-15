@@ -20,14 +20,14 @@
     <link href="public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <style>
         .fondo {
-            background-image: url("Imagenes/nat.jpg");
+            background: url("Imagenes/nat.jpg") top center fixed;
             background-repeat: no-repeat;
             background-size: 110% 140%;
         }
     </style>
 
 </head>
-<body class="fondo">
+<body class="fondo img-responsive">
     <form id="form1" runat="server">
         <div class="col-md-12 col-md-offset-0">
             <br />
@@ -37,7 +37,7 @@
                     <div class="panel-heading">
                         <header>
                             <div style="color: forestgreen">
-                                <img src="Imagenes/SSPES.png" width="150" height="130" />
+                                <img src="Imagenes/SSPES.png" width="150" height="130"/>
                             </div>
                         </header>
                     </div>

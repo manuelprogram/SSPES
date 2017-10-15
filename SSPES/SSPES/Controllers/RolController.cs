@@ -17,8 +17,8 @@ namespace SSPES.Controllers {
             return modelo.InsertarRol(cad);
         }
 
-        public List<string> Permisos(string rol) {
-            return modelo.ConsultarPermisos(rol);
+        public List<string> Permisos() {
+            return modelo.ConsultarPermisos();
         }
 
         public string ConsultarPk(string obj) {

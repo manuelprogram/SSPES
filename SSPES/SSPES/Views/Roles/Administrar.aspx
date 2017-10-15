@@ -38,12 +38,19 @@
                                                             <ul class="nav nav-tabs">
                                                                 <li class="active">
                                                                     <h3 class="box-title">
-                                                                        <span id="MainContent_TituloPermisos">Permisos Asignados</span>
+                                                                        <span">Permisos Asignados</span>
                                                                     </h3>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                         <!-- /.box-header -->
+                                                        <div class="row">
+                                                            <% foreach (string cad in Permisos) { %>
+                                                                <div class="col-lg-4">
+                                                                    <p> <%=cad %></p>
+                                                                </div>
+                                                            <%}%>
+                                                        </div>
                                                         <div class="box-body">
                                                             <div class="form-group">
                                                                 <div class="checkbox">
