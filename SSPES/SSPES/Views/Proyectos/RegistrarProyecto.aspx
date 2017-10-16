@@ -8,7 +8,7 @@
         <div class="col-md-6 control-label">
             <div class="form-group">
                 <br />
-                <label>Nombre Proyecto*</label>
+                <label id="mensaje" runat="server" >Nombre Proyecto*</label>
                 <input type="text" id="nombreProyecto" name="pr" runat="server" class="form-control" placeholder="Nombre Proyecto" />
                 <br />
                 <label>Descripción</label>
