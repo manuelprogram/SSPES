@@ -63,5 +63,18 @@ namespace SSPES.Models//push de prueba
             string sql = "SELECT FK_PERSONA FROM CUENTA where(PK_CUENTA = '" + pkCuenta + "' AND ESTADO= 'A');";
             return Int32.Parse(con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["FK_PERSONA"].ToString());
         }
+
+        public DataTable consultarUsuariosDisponiblesProyecto(int pk_pro) {
+            //string sql = "SELECT PK_CUENTA, USUARIO, FK_PERSONA ";
+            //sql = "FROM cuenta WHERE NOT EXISTS ( ";
+            //sql = "SELECT * FROM integrante_proyecto WHERE ";
+            //sql = "cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA ";
+            //sql = "AND integrante_proyecto.FK_PROYECTO = " + pk_pro + " ";
+            //sql = ") ORDER BY USUARIO ;";
+            string sql = @"SELECT PK_CUENTA, USUARIO, FK_PERSONA FROM cuenta WHERE NOT EXISTS ( 
+            SELECT * FROM integrante_proyecto WHERE cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA 
+            AND integrante_proyecto.FK_PROYECTO = '" + pk_pro + "' ) ORDER BY USUARIO ;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
     }
 }

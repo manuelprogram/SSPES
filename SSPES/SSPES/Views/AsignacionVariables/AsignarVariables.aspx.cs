@@ -10,7 +10,7 @@ using System.Data;
 namespace SSPES.Views.AsignacionVariables {
     public partial class AsignarVariables : System.Web.UI.Page {
 
-        public DataTable dt1, dt2;
+        public DataTable dtVariables, dtProyectos;
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
@@ -19,24 +19,44 @@ namespace SSPES.Views.AsignacionVariables {
         }
 
         public void cargarProyectos() {
-            variables.Items.Clear();
-            proyectos.Items.Clear();
+            variable.Items.Clear();
+            proyecto.Items.Clear();
 
             ProyectoController obj2 = new ProyectoController();
-            dt2 = obj2.consultarNombreProyectos();
-            for (int i = 0; i < dt2.Rows.Count; i++) {
-                proyectos.Items.Add(dt2.Rows[i]["NOMBRE"].ToString());
+            dtProyectos = obj2.consultarProyectosDirector(Session["PK_CUENTA"].ToString());
+            for (int i = 0; i < dtProyectos.Rows.Count; i++) {
+                proyecto.Items.Add(dtProyectos.Rows[i]["NOMBRE"].ToString());
             }
-            Session["datos_dt2"] = dt2;
+            Session["datos_dtProyecto"] = dtProyectos;
+        }
+
+        protected void Button_Click(object sender, EventArgs e) {
+            dtProyectos = (DataTable)Session["datos_dtProyecto"];//Proyecto seleccionado
+            int pk_pro = Int32.Parse(dtProyectos.Rows[proyecto.SelectedIndex]["PK_PROYECTO"].ToString());
+            Session["pk_pro"] = pk_pro.ToString();
+            cargarVariables(pk_pro);
+        }
+
+        public void cargarVariables(int pk_pro) {
+            variable.Items.Clear();
+            VariableController obj = new VariableController();
+            dtVariables = obj.consulatarNombreVariablesDisponibles(pk_pro);
+            for (int i = 0; i < dtVariables.Rows.Count; i++) {
+                variable.Items.Add(dtVariables.Rows[i]["NOMBRE_VARIABLE"].ToString());
+            }
+            Session["datos_dtVariables"] = dtVariables;
         }
 
         protected void asignarVariable_Click(object sender, EventArgs e) {
+            int pk_pro = -1;
             try {
-                int index = variables.SelectedIndex;
-                dt2 = (DataTable)Session["datos_dt2"];
-                int pk_pro = Int32.Parse(Session["pk_pro"].ToString());
-                dt1 = (DataTable)Session["datos_dt1"];
-                int pk_var = Int32.Parse(dt1.Rows[index]["idVARIABLE"].ToString());
+                int index = variable.SelectedIndex;
+                if (index < 0) return;
+                dtProyectos = (DataTable)Session["datos_dtProyecto"];
+                pk_pro = Int32.Parse(Session["pk_pro"].ToString());
+                dtVariables = (DataTable)Session["datos_dtVariables"];
+                int pk_var = Int32.Parse(dtVariables.Rows[index]["idVARIABLE"].ToString());
+
                 VariableController obj = new VariableController();
                 if (obj.asignarVariable(pk_pro, pk_var)) {
                     Response.Write("<script> alert('Exitoso'); </script>");
@@ -45,26 +65,10 @@ namespace SSPES.Views.AsignacionVariables {
                 }
             } catch (Exception) {
                 Response.Write("<script> alert('Error inesperado'); </script>");
+                pk_pro = -1;
             }
-            variables.Items.Clear();
-        }
-
-        protected void Button_Click(object sender, EventArgs e) {
-            dt2 = (DataTable)Session["datos_dt2"];//Proyecto seleccionado
-            int pk_pro = Int32.Parse(dt2.Rows[proyectos.SelectedIndex]["PK_PROYECTO"].ToString());
-            Session["pk_pro"] = pk_pro.ToString();
-            nombre_pro.InnerText = "Proyecto seleccionado: " + proyectos.Value.ToString();
-            cargarVariables(pk_pro);
-        }
-        
-        public void cargarVariables(int pk_pro) {
-            variables.Items.Clear();
-            VariableController obj = new VariableController();
-            dt1 = obj.consulatarNombreVariablesDisponibles(pk_pro);
-            for (int i = 0; i < dt1.Rows.Count; i++) {
-                variables.Items.Add(dt1.Rows[i]["NOMBRE_VARIABLE"].ToString());
-            }
-            Session["datos_dt1"] = dt1;
+            if (pk_pro != -1) cargarVariables(pk_pro);
+            else variable.Items.Clear();
         }
     }
 }

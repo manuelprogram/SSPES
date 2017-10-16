@@ -171,6 +171,7 @@
     <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\RolCuentaController.cs" />
+    <Compile Include="Controllers\RolProyectoController.cs" />
     <Compile Include="Controllers\VariableController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -194,6 +195,7 @@
     <Compile Include="Models\ProyectoModel.cs" />
     <Compile Include="Models\RolCuentaModel.cs" />
     <Compile Include="Models\RolModel.cs" />
+    <Compile Include="Models\RolProyectoModel.cs" />
     <Compile Include="Models\VariableModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AsignacionVariables\AsignarVariables.aspx.cs">

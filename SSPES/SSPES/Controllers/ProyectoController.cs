@@ -33,5 +33,13 @@ namespace SSPES.Controllers {
         public DataTable consultarProyectos() {
             return obj.consultarProyectos();
         }
+        
+        public DataTable consultarProyectosDirector(string pk_dir) {
+            return obj.consultarProyectosDirector(pk_dir);
+        }
+
+        public bool agregarIntegrante(string a, string b, string c) {
+            return obj.agregarIntegrante(Int32.Parse(a), Int32.Parse(b), Int32.Parse(c));
+        }
     }
 }
