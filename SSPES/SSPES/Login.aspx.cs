@@ -15,6 +15,7 @@ namespace SSPES {
         CuentaModel us = new CuentaModel();
         DataRow dato;
         DataTable aux;
+        public String mjs = "";
         //private int script;
 
         protected void Page_Load(object sender, EventArgs e) {
@@ -31,18 +32,20 @@ namespace SSPES {
                     if (aux.Rows.Count > 0) {
                         dato = aux.Rows[0];
                         Session["PK_CUENTA"] = dato["PK_CUENTA"].ToString();
-                        Session["Id_Session"] =Session.SessionID.ToString();
-
-                       
+                        Session["Id_Session"] = Session.SessionID.ToString();
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {
-                        Response.Write("<script> alert('VERIFIQUE USUARIO O CONTRASEÑA'); </script>");
+                        mjs = "VERIFIQUE SUS DATOS";
+                        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                     }
                 } else {
-                    Response.Write("<script> alert('CAMPOS NO PUEDEN SER VACIOS'); </script>");
+                    mjs = "CAMPOS NO PUEDEN SER VACIOS";
+                    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 }
-
-            } catch (Exception) { Response.Write("<script> alert(':('); </script>"); }
+            } catch (Exception) {
+                mjs = "Intente en un momento";
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
+            }
         }
     }
 }
