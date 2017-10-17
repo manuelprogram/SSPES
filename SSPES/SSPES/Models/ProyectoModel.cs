@@ -11,16 +11,18 @@ namespace SSPES.Models {
     public class ProyectoModel {
 
         private Conexion con = new Conexion();
-        protected string nombre { get; set; }
-        protected string descripcion { get; set; }
-        protected DateTime fecha { get; set; }
-        protected HttpPostedFile archivo { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public DateTime fecha { get; set; }
+        public HttpPostedFile archivo { get; set; }
+        public string fkCuenta { get; set; }
 
-        public ProyectoModel(string a, string b, DateTime c, HttpPostedFile d) {
+        public ProyectoModel(string a, string b, DateTime c, HttpPostedFile d, string e) {
             nombre = a;
             descripcion = b;
             fecha = c;
             archivo = d;
+            fkCuenta = e;
         }
 
         public ProyectoModel() {
@@ -37,12 +39,13 @@ namespace SSPES.Models {
             string f = fecha.Year + "-" + fecha.Month + "-" + fecha.Day;
 
             if (archivo == null) {
-                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO) VALUES(";
-                sql[0] += "'" + nombre + "', '" + descripcion + "', '" + f + "', 'A');";
+                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO, FK_CUENTA_PROYECTO) VALUES(";
+                sql[0] += "'" + nombre + "', '" + descripcion + "', '" + f + "', 'A', '" + fkCuenta + "');";
                 return con.RealizarTransaccion(sql);
             } else {
-                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO, ARCHIVO, NOMBREARCHIVO) VALUES(";
-                sql[0] += "'" + nombre + "', '" + descripcion + "', '" + f + "', 'A', @doc, '" + archivo.FileName + "');";
+                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO, ARCHIVO, NOMBREARCHIVO, FK_CUENTA_PROYECTO) ";
+                sql[0] += " VALUES( '" + nombre + "', '" + descripcion + "', '" + f + "', 'A', @doc, ";
+                sql[0] += " '" + archivo.FileName + "', '" + fkCuenta + "');";
                 return con.GuardarArchivo(sql[0], archivo);
             }
         }
