@@ -25,9 +25,33 @@
             background-size: 110% 140%;
         }
     </style>
+    <script>
+        function Confirm() {
+            $('#myModal').modal('show');
+            return true;
+        };
+    </script>
 
 </head>
-<body class="fondo img-responsive">
+<body class="fondo">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm info">
+            <div class="modal-content info">
+                <div class="modal-header info">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p><%=mjs %></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <form id="form1" runat="server">
         <div class="col-md-12 col-md-offset-0">
             <br />
@@ -37,7 +61,7 @@
                     <div class="panel-heading">
                         <header>
                             <div style="color: forestgreen">
-                                <img src="Imagenes/SSPES.png" width="150" height="130"/>
+                                <img src="Imagenes/SSPES.png" width="150" height="130" />
                             </div>
                         </header>
                     </div>
