@@ -40,7 +40,7 @@ namespace SSPES.Controllers {
             return p.ConsultarNombresUsuario(useres.cosultarPKPersona(pkcuenta));
         }
 
-        public DataTable consultarUsuariosDisponiblesProyecto(int pk_pro) {
+        public DataTable consultarUsuariosDisponiblesProyecto(string pk_pro) {
             return useres.consultarUsuariosDisponiblesProyecto(pk_pro);
         }
     }

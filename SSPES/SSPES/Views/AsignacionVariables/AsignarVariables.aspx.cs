@@ -51,7 +51,10 @@ namespace SSPES.Views.AsignacionVariables {
             int pk_pro = -1;
             try {
                 int index = variable.SelectedIndex;
-                if (index < 0) return;
+                if (index < 0) {
+                    Response.Write("<script> alert('Seleccione una variable'); </script>");
+                    return;
+                }
                 dtProyectos = (DataTable)Session["datos_dtProyecto"];
                 pk_pro = Int32.Parse(Session["pk_pro"].ToString());
                 dtVariables = (DataTable)Session["datos_dtVariables"];

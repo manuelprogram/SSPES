@@ -22,7 +22,7 @@ namespace SSPES.Views.Proyectos {
 
         protected void cargarProyectos() {
             ProyectoController pc = new ProyectoController();
-            dt = pc.consultarProyectos();
+            dt = pc.consultarProyectosDirector(Session["PK_CUENTA"].ToString());
             rep.DataSource = dt;
             rep.DataBind();
         }

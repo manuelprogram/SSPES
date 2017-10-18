@@ -6,17 +6,17 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h2 class="page-header" align="center">Registrar integrantes</h2>
     <br />
+
     <div class="col-lg-4">
-        <label>Proyecto:</label>
-        <br />
+        <h4>Seleccione el proyecto:</h4>
         <asp:ListBox ID="proyectos" runat="server" Width="300" Height="200"
             OnSelectedIndexChanged="proyectos_SelectedIndexChanged" AutoPostBack="true"></asp:ListBox>
         <br />
 
         <br />
-        <label id="descripcion" runat="server">Descripcion Proyecto.</label>
-        <br />
+        <h4 id="descripcion" runat="server">Descripcion Proyecto.</h4>
         <asp:TextBox ID="texto" runat="server" ReadOnly="true" Height="100" Width="300"
             BorderColor="#D3D3D3" BorderStyle="Solid" BorderWidth="1">
                     Texto.
@@ -24,19 +24,17 @@
     </div>
 
     <div class="col-lg-4">
-        <label>¿Que usuario desea agregar?</label>
-        <br />
+        <h4>¿Que usuario desea agregar?</h4>
         <asp:ListBox ID="user" runat="server" Width="300" Height="200"
             OnSelectedIndexChanged="user_SelectedIndexChanged" AutoPostBack="true"></asp:ListBox>
     </div>
 
     <div class="col-lg-4">
-        <label>Aca irian los checkbox</label>
-        <br />
+        <h4>Seleccione el rol a asignar.</h4>
         <asp:ListBox ID="rolProyecto" runat="server" Width="300" Height="200"></asp:ListBox>
         <br />
         <br />
-        <asp:Button ID="boton" runat="server" OnClick="boton_Click" Text="Registrar usuario" />
+        <asp:Button CssClass="btn btn-primary col-lg-5" ID="boton" runat="server" OnClick="boton_Click" Text="Registrar usuario" />
     </div>
 
 </asp:Content>

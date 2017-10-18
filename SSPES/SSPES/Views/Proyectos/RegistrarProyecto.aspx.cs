@@ -42,12 +42,11 @@ namespace SSPES.Views.Proyectos {
             ProyectoController p;
             if (archivo.HasFile) {
                 p = new ProyectoController(nombreProyecto.Value.ToString(), 
-                    descripcionProyecto.Value.ToString(), d, archivo.PostedFile);
+                    descripcionProyecto.Value.ToString(), d, archivo.PostedFile, Session["PK_CUENTA"].ToString());
             }else {
                 p = new ProyectoController(nombreProyecto.Value.ToString(),
-                    descripcionProyecto.Value.ToString(), d, null);
+                    descripcionProyecto.Value.ToString(), d, null, Session["PK_CUENTA"].ToString());
             }
-            HttpPostedFile h = archivo.PostedFile;
 
             if (p.insertarProyecto()) {
                 Response.Write("<script> alert('exitoso'); </script>");
