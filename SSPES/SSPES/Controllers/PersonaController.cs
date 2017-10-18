@@ -13,8 +13,8 @@ namespace SSPES.Controllers {
         public PersonaController() {
         }
 
-        public PersonaController(string a, string b, string c, string d, string e, string f, string g, 
-                string h, int i) {
+        public PersonaController(string a, string b, string c, string d, string e, string f, string g,
+                string h, string i) {
             p.Nombre_1 = a;
             p.Nombre_2 = b;
             p.Apellido_1 = c;
@@ -25,24 +25,21 @@ namespace SSPES.Controllers {
             p.Correo = h;
             p.rol = i;
         }
-        
+
         public string Insertar(PersonaModel obj, string user, string pass) {
             CuentaController c = new CuentaController();
             RolCuentaController rcc = new RolCuentaController();
             c.useres.Usuario = user;
             c.useres.Password = pass;
-            if (c.cuentaExiste(c.useres)) return "usuario ya existe!!!";
-            if (!obj.InsertarNuevaPersona(obj)) return "Error al resgistrar la persona, ¿identificacion correcta?";
+            if (c.cuentaExiste(c.useres)) return "Usuario ya existe!";
+            if (!obj.InsertarNuevaPersona(obj)) return "¿Identificacion Correcta?";
             c.useres.FK_PERSONA = p.ConsultarIdUsuario(p);
             if (c.Insertar(c.useres)) {
                 rcc.RC.fk_cuenta = c.GetPkcuenta(user);
                 rcc.RC.fk_rol = p.rol.ToString();
                 rcc.RC.InsertarRolCuenta(rcc.RC);
-
-                return "INSERT INTO rol_cuenta values('"+rcc.RC.fk_cuenta+"', '"+rcc.RC.fk_rol+"', 'A')";
-               // return "exitoso";
-
-            }else {
+                return "Operacion Exitosa!";
+            } else {
                 return "Error al crear cuenta";
             }
         }

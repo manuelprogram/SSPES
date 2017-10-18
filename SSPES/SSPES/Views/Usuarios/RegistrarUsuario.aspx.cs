@@ -13,7 +13,7 @@ namespace SSPES.Views.Usuarios {
             RolController p = new RolController();
             List<string> lista = p.consultarRoles(p.modelo);
             rol.Items.Clear();
-            for (int i = 1; i < lista.Count; i++) {
+            for (int i = 0; i < lista.Count; i++) {
                 rol.Items.Add(lista[i]);
             }
         }
@@ -69,10 +69,11 @@ namespace SSPES.Views.Usuarios {
         }
 
         protected void Registrar(object sender, EventArgs e) {
-           
+
             try {
+
                 if (!(validarNombre(nombre1.Value.ToString(), true) && validarNombre(nombre2.Value.ToString(), false) &&
-                            validarNombre(apellido1.Value.ToString(), true) && validarNombre(apellido2.Value.ToString(), false))) {
+                      validarNombre(apellido1.Value.ToString(), true) && validarNombre(apellido2.Value.ToString(), false))) {
                     Response.Write("<script> alert('Verifique los nombres y apellidos'); </script>");
                     return;
                 }
@@ -99,18 +100,15 @@ namespace SSPES.Views.Usuarios {
                 }
                 if (!(password.Value.ToString().Equals(rpassword.Value.ToString()))) {
                     Response.Write("<script> alert('password no coinciden'); </script>");
-                     return;
+                    return;
                 }
-
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
                                             apellido1.Value.ToString(), apellido2.Value.ToString(),
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
-                                            correo.Value.ToString(), (rol.SelectedIndex + 1));
-                resultado.InnerText = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
-                
-
+                                            correo.Value.ToString(), (new RolController()).ConsultarPk(rol.Value.ToString()));
+                Response.Write("<script> alert('" + p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString()) + "'); </script>");
             } catch (Exception) {
-                resultado.InnerText = "Ha ocurrido un error inesperado!!!, contacte con el administrador";
+                Response.Write("<script> alert('Error inesperado!'); </script>");
             }
         }
     }

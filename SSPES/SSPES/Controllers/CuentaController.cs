@@ -11,6 +11,13 @@ namespace SSPES.Controllers {
     public class CuentaController : ApiController {
         public CuentaModel useres = new CuentaModel();
         
+        public CuentaController() {
+            useres = new CuentaModel();
+        }
+
+        public CuentaController(string a, string b, char c, int d) {
+            useres = new CuentaModel(a, b, c, d);
+        }
 
         public bool Insertar(CuentaModel obj) {
             return obj.insertarNuevaCuenta(obj);
@@ -26,6 +33,15 @@ namespace SSPES.Controllers {
 
         public string GetPkcuenta(string obj) {
             return useres.GetFk_cuenta(obj);
+        }
+        
+        public string GetNombresUsuario(int pkcuenta) {
+            PersonaModel p = new PersonaModel();
+            return p.ConsultarNombresUsuario(useres.cosultarPKPersona(pkcuenta));
+        }
+
+        public DataTable consultarUsuariosDisponiblesProyecto(int pk_pro) {
+            return useres.consultarUsuariosDisponiblesProyecto(pk_pro);
         }
     }
 }

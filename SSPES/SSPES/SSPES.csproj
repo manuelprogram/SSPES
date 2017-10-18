@@ -88,11 +88,77 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
-    <Content Include="Registrar.aspx" />
+    <Content Include="public\Inicio\contactform\readme.txt" />
+    <Content Include="public\Inicio\css\style.css" />
+    <Content Include="public\Inicio\img\about-img.jpg" />
+    <Content Include="public\Inicio\img\client-1.jpg" />
+    <Content Include="public\Inicio\img\client-2.jpg" />
+    <Content Include="public\Inicio\img\hero-bg.jpg" />
+    <Content Include="public\Inicio\img\logo.png" />
+    <Content Include="public\Inicio\img\portfolio-1.jpg" />
+    <Content Include="public\Inicio\img\portfolio-2.jpg" />
+    <Content Include="public\Inicio\img\portfolio-3.jpg" />
+    <Content Include="public\Inicio\img\portfolio-4.jpg" />
+    <Content Include="public\Inicio\img\portfolio-5.jpg" />
+    <Content Include="public\Inicio\img\portfolio-6.jpg" />
+    <Content Include="public\Inicio\img\portfolio-7.jpg" />
+    <Content Include="public\Inicio\img\portfolio-8.jpg" />
+    <Content Include="public\Inicio\img\preloader.svg" />
+    <Content Include="public\Inicio\img\quote_sign_left.png" />
+    <Content Include="public\Inicio\img\quote_sign_right.png" />
+    <Content Include="public\Inicio\img\services-bg.jpg" />
+    <Content Include="public\Inicio\img\SSPES.png" />
+    <Content Include="public\Inicio\img\subscribe-bg.jpg" />
+    <Content Include="public\Inicio\img\team-1.jpg" />
+    <Content Include="public\Inicio\img\team-2.jpg" />
+    <Content Include="public\Inicio\img\team-3.jpg" />
+    <Content Include="public\Inicio\img\team-4.jpg" />
+    <Content Include="public\Inicio\js\custom.js" />
+    <Content Include="public\Inicio\lib\animate-css\animate.min.css" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="public\Inicio\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\Inicio\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="public\Inicio\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="public\Inicio\lib\bootstrap\js\npm.js" />
+    <Content Include="public\Inicio\lib\easing\easing.js" />
+    <Content Include="public\Inicio\lib\easing\easing.min.js" />
+    <Content Include="public\Inicio\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="public\Inicio\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\Inicio\lib\jquery\jquery.min.js" />
+    <Content Include="public\Inicio\lib\morphext\morphext.js" />
+    <Content Include="public\Inicio\lib\morphext\morphext.min.js" />
+    <Content Include="public\Inicio\lib\stickyjs\sticky.js" />
+    <Content Include="public\Inicio\lib\superfish\hoverIntent.js" />
+    <Content Include="public\Inicio\lib\superfish\superfish.js" />
+    <Content Include="public\Inicio\lib\superfish\superfish.min.js" />
+    <Content Include="public\Inicio\lib\wow\wow.js" />
+    <Content Include="public\Inicio\lib\wow\wow.min.js" />
+    <Content Include="Views\AsignacionVariables\AsignarVariables.aspx" />
+    <Content Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
-    <Content Include="Views\Proyectos\ConsultarProyectos.aspx" />
+    <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
+    <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
+    <Content Include="Views\Permisos\EliminarPermisos.aspx" />
+    <Content Include="Views\Permisos\RegistrarPermisos.aspx" />
+    <Content Include="Views\Proyectos\EliminarProyecto.aspx" />
+    <Content Include="Views\Proyectos\ModificarProyecto.aspx" />
+    <Content Include="Views\Proyectos\RegistrarProyecto.aspx" />
+    <Content Include="Views\Proyectos\VisualizarProyecto.aspx" />
+    <Content Include="Views\RolesProyectos\EliminarRolesProyectos.aspx" />
+    <Content Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx" />
+    <Content Include="Views\Roles\Administrar.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
+    <Content Include="Views\Usuarios\EliminarUsuarios.aspx" />
+    <Content Include="Views\Usuarios\ModificarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
+    <Content Include="Views\Variables\EliminarVariables.aspx" />
+    <Content Include="Views\Variables\ModificarVariables.aspx" />
+    <Content Include="Views\Variables\RegistrarVariables.aspx" />
+    <Content Include="Views\Variables\VisualizarVariables.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -102,8 +168,11 @@
     <Compile Include="BD\Conexion.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\RolCuentaController.cs" />
+    <Compile Include="Controllers\RolProyectoController.cs" />
+    <Compile Include="Controllers\VariableController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,15 +192,25 @@
     </Compile>
     <Compile Include="Models\CuentaModel.cs" />
     <Compile Include="Models\PersonaModel.cs" />
+    <Compile Include="Models\ProyectoModel.cs" />
     <Compile Include="Models\RolCuentaModel.cs" />
     <Compile Include="Models\RolModel.cs" />
+    <Compile Include="Models\RolProyectoModel.cs" />
+    <Compile Include="Models\VariableModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar.aspx.cs">
-      <DependentUpon>Registrar.aspx</DependentUpon>
+    <Compile Include="Views\AsignacionVariables\AsignarVariables.aspx.cs">
+      <DependentUpon>AsignarVariables.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registrar.aspx.designer.cs">
-      <DependentUpon>Registrar.aspx</DependentUpon>
+    <Compile Include="Views\AsignacionVariables\AsignarVariables.aspx.designer.cs">
+      <DependentUpon>AsignarVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx.cs">
+      <DependentUpon>EliminarAsignacionVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx.designer.cs">
+      <DependentUpon>EliminarAsignacionVariables.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
@@ -147,12 +226,82 @@
     <Compile Include="Views\Home\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Proyectos\ConsultarProyectos.aspx.cs">
-      <DependentUpon>ConsultarProyectos.aspx</DependentUpon>
+    <Compile Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx.cs">
+      <DependentUpon>EliminarIntegrantesProyectos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Proyectos\ConsultarProyectos.aspx.designer.cs">
-      <DependentUpon>ConsultarProyectos.aspx</DependentUpon>
+    <Compile Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx.designer.cs">
+      <DependentUpon>EliminarIntegrantesProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.cs">
+      <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.designer.cs">
+      <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permisos\EliminarPermisos.aspx.cs">
+      <DependentUpon>EliminarPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Permisos\EliminarPermisos.aspx.designer.cs">
+      <DependentUpon>EliminarPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permisos\RegistrarPermisos.aspx.cs">
+      <DependentUpon>RegistrarPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Permisos\RegistrarPermisos.aspx.designer.cs">
+      <DependentUpon>RegistrarPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proyectos\EliminarProyecto.aspx.cs">
+      <DependentUpon>EliminarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Proyectos\EliminarProyecto.aspx.designer.cs">
+      <DependentUpon>EliminarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proyectos\ModificarProyecto.aspx.cs">
+      <DependentUpon>ModificarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Proyectos\ModificarProyecto.aspx.designer.cs">
+      <DependentUpon>ModificarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proyectos\RegistrarProyecto.aspx.cs">
+      <DependentUpon>RegistrarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Proyectos\RegistrarProyecto.aspx.designer.cs">
+      <DependentUpon>RegistrarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proyectos\VisualizarProyecto.aspx.cs">
+      <DependentUpon>VisualizarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Proyectos\VisualizarProyecto.aspx.designer.cs">
+      <DependentUpon>VisualizarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RolesProyectos\EliminarRolesProyectos.aspx.cs">
+      <DependentUpon>EliminarRolesProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RolesProyectos\EliminarRolesProyectos.aspx.designer.cs">
+      <DependentUpon>EliminarRolesProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx.cs">
+      <DependentUpon>RegistrarRolesProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx.designer.cs">
+      <DependentUpon>RegistrarRolesProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\Administrar.aspx.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Roles\Administrar.aspx.designer.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
@@ -161,6 +310,20 @@
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.designer.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuarios\EliminarUsuarios.aspx.cs">
+      <DependentUpon>EliminarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios\EliminarUsuarios.aspx.designer.cs">
+      <DependentUpon>EliminarUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuarios\ModificarUsuarios.aspx.cs">
+      <DependentUpon>ModificarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios\ModificarUsuarios.aspx.designer.cs">
+      <DependentUpon>ModificarUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuarios\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,10 +331,60 @@
     <Compile Include="Views\Usuarios\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Variables\EliminarVariables.aspx.cs">
+      <DependentUpon>EliminarVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Variables\EliminarVariables.aspx.designer.cs">
+      <DependentUpon>EliminarVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Variables\ModificarVariables.aspx.cs">
+      <DependentUpon>ModificarVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Variables\ModificarVariables.aspx.designer.cs">
+      <DependentUpon>ModificarVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Variables\RegistrarVariables.aspx.cs">
+      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Variables\RegistrarVariables.aspx.designer.cs">
+      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Variables\VisualizarVariables.aspx.cs">
+      <DependentUpon>VisualizarVariables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Variables\VisualizarVariables.aspx.designer.cs">
+      <DependentUpon>VisualizarVariables.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\Home\PaginaMaestra.Master" />
+    <Content Include="public\Inicio\css\style.scss" />
+    <Content Include="public\Inicio\css\_footer.scss" />
+    <Content Include="public\Inicio\css\_general.scss" />
+    <Content Include="public\Inicio\css\_header.scss" />
+    <Content Include="public\Inicio\css\_hero.scss" />
+    <Content Include="public\Inicio\css\_nav.scss" />
+    <Content Include="public\Inicio\css\_sections.scss" />
+    <Content Include="public\Inicio\css\_variables.scss" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="public\Inicio\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="public\Inicio\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\Inicio\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\Inicio\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\Inicio\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\Inicio\lib\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\sspes.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +399,6 @@
     <Folder Include="public\Admin\js\" />
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
-    <Folder Include="public\Inicio\" />
     <Folder Include="Views\Grupo\" />
     <Folder Include="Views\Plataforma\" />
   </ItemGroup>

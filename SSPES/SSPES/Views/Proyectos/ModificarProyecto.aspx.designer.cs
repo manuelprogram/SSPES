@@ -13,13 +13,22 @@ namespace SSPES.Views.Proyectos {
     public partial class ModificarProyecto {
         
         /// <summary>
-        /// Control nombre1.
+        /// Control nombreProyecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreProyecto;
+        
+        /// <summary>
+        /// Control descripcionProyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea descripcionProyecto;
         
         /// <summary>
         /// Control Button1.

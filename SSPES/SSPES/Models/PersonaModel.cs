@@ -16,7 +16,7 @@ namespace SSPES.Models {
         public string N_documento { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        public int rol { get; set; }
+        public string rol { get; set; }
 
         Conexion con = new Conexion();
 
@@ -26,6 +26,13 @@ namespace SSPES.Models {
                 return Int32.Parse(row[0].ToString());
             }
             return -1;
+        }
+
+        public string ConsultarNombresUsuario(int pk) {
+            string sql = "SELECT NOMBRE_1, APELLIDO_1 FROM PERSONA where(PK_PERSONA='" + pk + "');";
+            DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
+            string nombres = dt.Rows[0]["NOMBRE_1"].ToString() + " " + dt.Rows[0]["APELLIDO_1"];
+            return nombres;
         }
 
         public bool InsertarNuevaPersona(PersonaModel obj) {

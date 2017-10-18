@@ -7,54 +7,63 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SSPES {
+namespace SSPES.Views.Variables {
     
     
-    public partial class Registrarse {
+    public partial class RegistrarVariables {
         
         /// <summary>
-        /// Control form1.
+        /// Control mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
         
         /// <summary>
-        /// Control LMensaje.
+        /// Control nombreVariable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LMensaje;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreVariable;
         
         /// <summary>
-        /// Control TUsuario.
+        /// Control descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText descripcion;
         
         /// <summary>
-        /// Control TContrasenia.
+        /// Control tDato.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TContrasenia;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tDato;
         
         /// <summary>
-        /// Control BRegistrar.
+        /// Control resultado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BRegistrar;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultado;
+        
+        /// <summary>
+        /// Control BOTON.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BOTON;
     }
 }

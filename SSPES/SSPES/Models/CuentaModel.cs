@@ -13,8 +13,17 @@ namespace SSPES.Models//push de prueba
         public string Password { get; set; }
         public char Estado { get; set; }
         public int FK_PERSONA { get; set; }
+        private Conexion con = new Conexion();
 
-        Conexion con = new Conexion();
+        public CuentaModel() {
+        }
+
+        public CuentaModel(string a, string b, char c, int d) {
+            Usuario = a;
+            Password = b;
+            Estado = c;
+            FK_PERSONA = d;
+        }
 
         public bool ValidarCuentaExistente(CuentaModel obj) {
             string sql = "SELECT USUARIO FROM CUENTA where(USUARIO='" + obj.Usuario + "');";
@@ -33,7 +42,7 @@ namespace SSPES.Models//push de prueba
             return con.RealizarTransaccion(ar);
         }
         public string GetFk_cuenta(string obj) {//PASSWORD();
-            string sql = "SELECT PK_CUENTA FROM CUENTA WHERE USUARIO='"+obj+"';";
+            string sql = "SELECT PK_CUENTA FROM CUENTA WHERE USUARIO='" + obj + "';";
             return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["PK_CUENTA"].ToString();
         }
 
@@ -41,12 +50,30 @@ namespace SSPES.Models//push de prueba
             string sql = @"SELECT  *
                         FROM rol_cuenta rous
                        INNER JOIN rol ro ON rous.FK_CUENTA = ";
-                         sql += idCuenta + @" AND rous.FK_ROL = ro.PK_ROL AND rous.ESTADO = 'A'
+            sql += idCuenta + @" AND rous.FK_ROL = ro.PK_ROL AND rous.ESTADO = 'A'
                         INNER JOIN menu_usuario meus ON meus.FK_ROL = ro.PK_ROL AND meus.ESTADO_MENU = 'A'
                         INNER JOIN sub_menu sume ON meus.FK_SUB_MENU = sume.PK_SUB_MENU
                         INNER JOIN menu opme ON sume.FK_MENU = opme.PK_MENU
                         ORDER BY opme.MENU_NOMBRE; ";
 
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
+
+        public int cosultarPKPersona(int pkCuenta) {
+            string sql = "SELECT FK_PERSONA FROM CUENTA where(PK_CUENTA = '" + pkCuenta + "' AND ESTADO= 'A');";
+            return Int32.Parse(con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["FK_PERSONA"].ToString());
+        }
+
+        public DataTable consultarUsuariosDisponiblesProyecto(int pk_pro) {
+            //string sql = "SELECT PK_CUENTA, USUARIO, FK_PERSONA ";
+            //sql = "FROM cuenta WHERE NOT EXISTS ( ";
+            //sql = "SELECT * FROM integrante_proyecto WHERE ";
+            //sql = "cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA ";
+            //sql = "AND integrante_proyecto.FK_PROYECTO = " + pk_pro + " ";
+            //sql = ") ORDER BY USUARIO ;";
+            string sql = @"SELECT PK_CUENTA, USUARIO, FK_PERSONA FROM cuenta WHERE NOT EXISTS ( 
+            SELECT * FROM integrante_proyecto WHERE cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA 
+            AND integrante_proyecto.FK_PROYECTO = '" + pk_pro + "' ) ORDER BY USUARIO ;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
