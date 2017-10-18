@@ -43,7 +43,7 @@ namespace SSPES.Views.IntegrantesProyectos {
             dtProyectos = (DataTable) Session["dtProyectos"];
             try {
                 texto.Text = dtProyectos.Rows[index - 1]["DESCRIPCION"].ToString();
-                llenarUsuarios(Int32.Parse(dtProyectos.Rows[index - 1]["PK_PROYECTO"].ToString()));
+                llenarUsuarios(dtProyectos.Rows[index - 1]["PK_PROYECTO"].ToString());
             } catch (Exception) {
                 texto.Text = "Error inesperado";
                 user.Items.Clear();
@@ -51,13 +51,13 @@ namespace SSPES.Views.IntegrantesProyectos {
             }
         }
 
-        public void llenarUsuarios(int pk_pro) {
+        public void llenarUsuarios(string pk_pro) {
             user.Items.Clear();
             CuentaController cc = new CuentaController();
             dtintegrantes = cc.consultarUsuariosDisponiblesProyecto(pk_pro);
             Session["dtIntegrantes"] = dtintegrantes;
             foreach (DataRow dr in dtintegrantes.Rows) {
-                user.Items.Add(dr["USUARIO"].ToString());
+                user.Items.Add(dr["NOMBRE_1"].ToString() + "  " + dr["APELLIDO_1"].ToString());
             }
         }
 
@@ -89,7 +89,7 @@ namespace SSPES.Views.IntegrantesProyectos {
                 Response.Write("<script> alert('Error al registrar'); </script>");
             }
             rolProyecto.Items.Clear();
-            llenarUsuarios(Int32.Parse(dtProyectos.Rows[proyectos.SelectedIndex - 1]["PK_PROYECTO"].ToString()));
+            llenarUsuarios(dtProyectos.Rows[proyectos.SelectedIndex - 1]["PK_PROYECTO"].ToString());
         }
     }
 }
