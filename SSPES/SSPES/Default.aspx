@@ -182,7 +182,7 @@
                         <span>Desarrollador Software</span>
                         <div class="social">
                             <a href=" https://www.facebook.com/manuel.hernandz.5" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/manuelstuner" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                         <span>Desarrolladora Software</span>
                         <div class="social">
                             <a href="https://www.facebook.com/juanavalentina.serna" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/ValentinaRiA" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                         <div class="social">
 
                             <a href="https://www.facebook.com/wilmeremiro.castrilloncalderon" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/wilmercastrillon" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
