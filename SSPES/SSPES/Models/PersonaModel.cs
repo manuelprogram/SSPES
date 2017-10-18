@@ -35,6 +35,11 @@ namespace SSPES.Models {
             return nombres;
         }
 
+        public DataTable ConsultarDatosPersonas() {
+            string sql = "SELECT t.N_DOCUMENTO as Documento, t.NOMBRE_1 as Nombre,t.APELLIDO_1 as Apellido,t.CELULAR as Celular,t.CORREO as Correo FROM persona t order by t.NOMBRE_1;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
+
         public bool InsertarNuevaPersona(PersonaModel obj) {
             string fecha = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
             string sql = "INSERT INTO PERSONA (NOMBRE_1, NOMBRE_2, APELLIDO_1, APELLIDO_2, T_DOCUMENTO, N_DOCUMENTO,";
