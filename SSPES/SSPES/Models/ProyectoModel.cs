@@ -61,7 +61,7 @@ namespace SSPES.Models {
         }
 
         public DataTable consultarProyectosDirector(string pk_dir) {
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION FROM proyecto WHERE ESTADO = 'A' ";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
             sql += "AND FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
