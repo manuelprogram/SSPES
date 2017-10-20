@@ -31,10 +31,12 @@ namespace SSPES.Views.Proyectos {
             }
 
             string[] fecha = fechaInicio.Value.ToString().Split(new Char[] { '-' }); //año mes dia
+            string[] fecha2 = fechaFin.Value.ToString().Split(new Char[] { '-' }); //año mes dia
             DateTime d = new DateTime(Int32.Parse(fecha[0]), Int32.Parse(fecha[1]), Int32.Parse(fecha[2]));
+            DateTime dfin = new DateTime(Int32.Parse(fecha2[0]), Int32.Parse(fecha2[1]), Int32.Parse(fecha2[2]));
             DateTime ant = new DateTime(DateTime.Now.Year - 15, DateTime.Now.Month, DateTime.Now.Day);
             DateTime sig = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
-            if (d.CompareTo(sig) > 0 || d.CompareTo(ant) < 0) {
+            if (d.CompareTo(sig) > 0 || d.CompareTo(ant) < 0 || d.CompareTo(dfin) > 0) {
                 Response.Write("<script> alert('error en la fecha'); </script>");
                 return;
             }
@@ -42,10 +44,10 @@ namespace SSPES.Views.Proyectos {
             ProyectoController p;
             if (archivo.HasFile) {
                 p = new ProyectoController(nombreProyecto.Value.ToString(), 
-                    descripcionProyecto.Value.ToString(), d, archivo.PostedFile, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, archivo.PostedFile, Session["PK_CUENTA"].ToString());
             }else {
                 p = new ProyectoController(nombreProyecto.Value.ToString(),
-                    descripcionProyecto.Value.ToString(), d, null, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, null, Session["PK_CUENTA"].ToString());
             }
 
             if (p.insertarProyecto()) {
