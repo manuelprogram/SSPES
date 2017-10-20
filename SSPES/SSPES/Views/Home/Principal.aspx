@@ -23,12 +23,12 @@
                                 <i class="fa fa-folder-open fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
+                                <div class="huge">10</div>
                                 <div>PROYECTOS</div>
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="../Proyectos/VisualizarProyecto.aspx">
                         <div class="panel-footer">
                             <span class="pull-left">Visualizar</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -45,12 +45,12 @@
                                 <i class="fa fa-street-view fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
+                                <div class="huge">14</div>
                                 <div>USUARIOS</div>
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="../Usuarios/ConsultarUsuarios.aspx">
                         <div class="panel-footer">
                             <span class="pull-left">Visualizar</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -67,7 +67,7 @@
                                 <i class="fa fa-folder-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
+                                <div class="huge">4</div>
                                 <div>FINALIZADOS</div>
                             </div>
                         </div>
