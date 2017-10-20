@@ -4,7 +4,18 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row">
+     <br />
+  <div class="tab-content">
+    <div class="tab-pane active">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="card card-inverse" style="padding: 5px; background-color: #0099CC; border-color: #333;">
+                <div class="card-block">
+                  <h1 class="page-header" style="color: #ffffff;" align="center">Administrar Roles</h1>
+                </div>
+              </div>
         <div class="col-md-12">
             <br />
             <div class="tab-content">
@@ -54,8 +65,6 @@
                                                         <div class="box-body">
                                                             <div class="form-group">
                                                                 <div class="checkbox">
-                                                                    <br />
-                                                                    <br />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -111,6 +120,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+             </div>
                 </div>
             </div>
         </div>
