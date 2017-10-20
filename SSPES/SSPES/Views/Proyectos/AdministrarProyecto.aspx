@@ -6,13 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
-    .chkBoxList tr{
-       height:30px;
-    }
+        .chkBoxList tr {
+            height: 30px;
+        }
 
-    .chkBoxList td{
-       width:160px; /* or percent value: 25% */
-    }
+        .chkBoxList td {
+            width: 160px; /* or percent value: 25% */
+        }
     </style>
 
     <div class="row">
