@@ -142,8 +142,7 @@
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
     <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
-    <Content Include="Views\Permisos\EliminarPermisos.aspx" />
-    <Content Include="Views\Permisos\RegistrarPermisos.aspx" />
+    <Content Include="Views\Proyectos\AdministrarProyecto.aspx" />
     <Content Include="Views\Proyectos\EliminarProyecto.aspx" />
     <Content Include="Views\Proyectos\ModificarProyecto.aspx" />
     <Content Include="Views\Proyectos\RegistrarProyecto.aspx" />
@@ -240,19 +239,12 @@
     <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.designer.cs">
       <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Permisos\EliminarPermisos.aspx.cs">
-      <DependentUpon>EliminarPermisos.aspx</DependentUpon>
+    <Compile Include="Views\Proyectos\AdministrarProyecto.aspx.cs">
+      <DependentUpon>AdministrarProyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Permisos\EliminarPermisos.aspx.designer.cs">
-      <DependentUpon>EliminarPermisos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Permisos\RegistrarPermisos.aspx.cs">
-      <DependentUpon>RegistrarPermisos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Permisos\RegistrarPermisos.aspx.designer.cs">
-      <DependentUpon>RegistrarPermisos.aspx</DependentUpon>
+    <Compile Include="Views\Proyectos\AdministrarProyecto.aspx.designer.cs">
+      <DependentUpon>AdministrarProyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Proyectos\EliminarProyecto.aspx.cs">
       <DependentUpon>EliminarProyecto.aspx</DependentUpon>
