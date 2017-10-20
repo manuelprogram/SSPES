@@ -71,7 +71,7 @@
                   <div class="form-group">
                     <div class="col-md-6 control-label">
                       <label>Correo Electronico *</label>
-                      <input type="email" id="Email1" class="form-control" runat="server" placeholder="Example@www.com" />
+                      <input type="email" id="correo" class="form-control" runat="server" placeholder="Example@www.com" />
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@
                     <div class="col-md-4 control-label">
                       <div class="form-group">
                         <label>Verifique su Contraseña *</label>
-                        <input type="password" id="Password1" class="form-control" runat="server" placeholder="Verifique Contraseña" />
+                        <input type="password" id="rpassword" class="form-control" runat="server" placeholder="Verifique Contraseña" />
                       </div>
                     </div>
                   </div>

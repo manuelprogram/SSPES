@@ -10,69 +10,78 @@
 namespace SSPES.Views.Proyectos {
     
     
-    public partial class RegistrarProyecto {
+    public partial class AdministrarProyecto {
         
         /// <summary>
-        /// Control mensaje.
+        /// Control proyectos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
+        protected global::System.Web.UI.WebControls.DropDownList proyectos;
         
         /// <summary>
-        /// Control nombreProyecto.
+        /// Control seleccionar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreProyecto;
+        protected global::System.Web.UI.WebControls.Button seleccionar;
         
         /// <summary>
-        /// Control descripcionProyecto.
+        /// Control nombrePro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea descripcionProyecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombrePro;
         
         /// <summary>
-        /// Control fechaInicio.
+        /// Control radio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaInicio;
+        protected global::System.Web.UI.WebControls.CheckBoxList radio;
         
         /// <summary>
-        /// Control fechaFin.
+        /// Control asignarVariable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaFin;
+        protected global::System.Web.UI.WebControls.Button asignarVariable;
         
         /// <summary>
-        /// Control archivo.
+        /// Control users.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload archivo;
+        protected global::System.Web.UI.WebControls.CheckBoxList users;
         
         /// <summary>
-        /// Control Button1.
+        /// Control rolProyectos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList rolProyectos;
+        
+        /// <summary>
+        /// Control boton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button boton;
     }
 }

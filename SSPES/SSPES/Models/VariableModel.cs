@@ -29,7 +29,7 @@ namespace SSPES.Models {
             return con.RealizarTransaccion(ar);
         }
         
-        public DataTable consultarVariablesDisponibles(int pk_pro) {
+        public DataTable consultarVariablesDisponibles(string pk_pro) {
             string sql = "SELECT idVARIABLE, NOMBRE_VARIABLE ";
                 sql += "FROM variable WHERE NOT EXISTS ( ";
                 sql += "   SELECT * FROM variable_proyecto ";
@@ -45,6 +45,15 @@ namespace SSPES.Models {
             sql[0] = "INSERT INTO variable_proyecto (FK_PROYECTO, FK_VARIABLE)";
             sql[0] += "VALUES(" + pkProyecto + ", " + pkVariable + ");";
             return con.RealizarTransaccion(sql);
+        }
+
+        public DataTable consultarVariables(string pk_pro) {
+            string sql = @"SELECT idVARIABLE, NOMBRE_VARIABLE, 
+                if(EXISTS(SELECT FK_PROYECTO FROM variable_proyecto 
+                WHERE variable_proyecto.FK_PROYECTO='"+ pk_pro + @"' AND
+                variable_proyecto.FK_VARIABLE = variable.idVARIABLE
+                ), 'Si', 'No') as 'EXISTE' FROM variable;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
 }

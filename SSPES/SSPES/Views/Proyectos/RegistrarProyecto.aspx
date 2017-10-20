@@ -8,7 +8,7 @@
         <div class="col-md-6 control-label">
             <div class="form-group">
                 <br />
-                <label id="mensaje" runat="server" >Nombre Proyecto*</label>
+                <label id="mensaje" runat="server">Nombre Proyecto*</label>
                 <input type="text" id="nombreProyecto" name="pr" runat="server" class="form-control" placeholder="Nombre Proyecto" />
                 <br />
                 <label>Descripción</label>
@@ -18,15 +18,26 @@
         </div>
         <div class="form-group">
             <div class="col-md-6 control-label">
-                <br />
-                <label>fecha Inicio*</label>
-                <br />
-                <input type="date" runat="server" id="fechaInicio" />
+                <div class="row">
+                    <div class="col-md-5 control-label">
+                        <br />
+                        <label>fecha Inicio*</label>
+                        <br />
+                        <input type="date" runat="server" id="fechaInicio" />
+                    </div>
+                    <div class="col-md-5 control-label">
+                        <br />
+                        <label>fecha Fin*</label>
+                        <br />
+                        <input type="date" runat="server" id="fechaFin" />
+                    </div>
+                </div>
+
                 <br />
                 <br />
                 <br />
                 <label>Archivo</label>
-                <asp:FileUpload id="archivo" size="20" runat="server" />
+                <asp:FileUpload ID="archivo" size="20" runat="server" />
             </div>
         </div>
     </div>
@@ -35,7 +46,7 @@
         </div>
         <div class="col-md-4">
             <br />
-            <asp:button id="Button1" class="btn btn-primary btn-block" text="Registrar Proyecto" runat="server" onclick="Button1_Click" />
+            <asp:Button ID="Button1" class="btn btn-primary btn-block" Text="Registrar Proyecto" runat="server" OnClick="Button1_Click" />
             <br />
             <br />
         </div>

@@ -40,7 +40,7 @@ namespace SSPES.Views.AsignacionVariables {
         public void cargarVariables(int pk_pro) {
             variable.Items.Clear();
             VariableController obj = new VariableController();
-            dtVariables = obj.consulatarNombreVariablesDisponibles(pk_pro);
+            dtVariables = obj.consulatarNombreVariablesDisponibles(pk_pro.ToString());
             for (int i = 0; i < dtVariables.Rows.Count; i++) {
                 variable.Items.Add(dtVariables.Rows[i]["NOMBRE_VARIABLE"].ToString());
             }

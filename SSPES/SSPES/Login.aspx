@@ -46,7 +46,7 @@
                     <p><%=mjs %></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
