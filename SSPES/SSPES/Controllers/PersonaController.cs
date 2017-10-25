@@ -1,6 +1,7 @@
 ﻿using SSPES.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,6 +25,10 @@ namespace SSPES.Controllers {
             p.Telefono = g;
             p.Correo = h;
             p.rol = i;
+        }
+
+        public DataTable ConsultarDatosPersonas() {
+            return p.ConsultarDatosPersonas();
         }
 
         public string Insertar(PersonaModel obj, string user, string pass) {

@@ -16,8 +16,12 @@
     <link href="../../public/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../public/Admin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
     <link href="../../public/Admin/dist/css/sb-admin-2.css" rel="stylesheet" />
-    <link href="../../public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />
+    <%--<link href="../../public/Admin/vendor/morrisjs/morris.css" rel="stylesheet" />--%>
     <link href="../../public/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/Admin/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../../public/Admin/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet" />
+
+
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -338,16 +342,21 @@
 
         </div>
         <script src="../../public/Admin/vendor/jquery/jquery.min.js"></script>
-
         <script src="../../public/Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
-
         <script src="../../public/Admin/vendor/metisMenu/metisMenu.min.js"></script>
-        <script src="../../public/Admin/vendor/raphael/raphael.min.js"></script>
-        <script src="../../public/Admin/vendor/morrisjs/morris.min.js"></script>
-        <script src="../../public/Admin/data/morris-data.js"></script>
 
         <script src="../../public/Admin/dist/js/sb-admin-2.js"></script>
+        <script src="../../public/Admin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+        <script src="../../public/Admin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+        <script src="../../public/Admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+        </script>
 
 
     </form>

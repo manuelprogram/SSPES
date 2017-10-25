@@ -40,13 +40,13 @@
             <div class="modal-content info">
                 <div class="modal-header info">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+                    <h4 class="modal-title">Error</h4>
                 </div>
                 <div class="modal-body">
                     <p><%=mjs %></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>

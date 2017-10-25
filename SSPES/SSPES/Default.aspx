@@ -11,13 +11,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-
-    <%--<meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />--%>
-
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="" />
     <meta name="twitter:title" content="" />
@@ -43,7 +36,7 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#hero">Inicio</a></li>
-                    <li><a href="#about">A cerca de</a></li>
+                    <li><a href="#about">Acerca de</a></li>
                     <li><a href="#services">Servicios</a></li>
                     <li><a href="#team">Equipo</a></li>
                     <li><a href="#contact">Contacto</a></li>
@@ -80,9 +73,9 @@
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">a cerca de </h3>
+                    <h3 class="section-title">acerca de </h3>
                     <div class="section-title-divider"></div>
-                    <h4 class="section-description">Software para la sistematización en los drocesos de estudios de suelos </h4>
+                    <h4 class="section-description">Software para la sistematización en los procesos de estudios de suelos </h4>
                 </div>
             </div>
         </div>
@@ -94,13 +87,13 @@
                 <div class="col-md-6 about-content">
                     <h2 class="about-title section-description">Sobre que trata el software</h2>
                     <h4 class="about-text">
-                        SSPES es una idea innovadora desarrollada por tres estudiantes de la Univerdad de la Amazonia, y es pensada para los investigadores dedicados a la captura de datos cuantitavos que desarrollan investigaciones en gran escala, esta plataforma permite la gestión de la información de los proyectos de investigación. 
+                        SSPES es una idea innovadora desarrollada por tres estudiantes de la Universidad de la Amazonia, y es pensada para los investigadores dedicados a la captura de datos cuantitativos que desarrollan investigaciones en gran escala, esta plataforma permite la gestión de la información de los proyectos de investigación.
                     </h4>
                     <h4 class="about-text">
-                        Así mismo el director de las investigaciones podrá asociar investigadores a cada uno de sus proyectos, en este sentido les otorgará permisos para contribuir en el registro de nuevas muestra a sus proyectos en tiempo real.                                                                                         
+                        Así mismo el director de las investigaciones podrá asociar investigadores a cada uno de sus proyectos, en este sentido les otorgará permisos para contribuir en el registro de nuevas muestras a sus proyectos en tiempo real.
                     </h4>
                     <h4 class="about-text">
-                        A futuro se busca que el aplicativo web le permita al director la gestion de actividades por proyecto y de igual manera un procesamiento matématico de los datos una vez haya finalizado el proceso de recolección en cada proyecto.
+                        A futuro se busca que el aplicativo web le permita al director la gestión de actividades por proyecto y de igual manera un procesamiento matemático de los datos una vez haya finalizado el proceso de recolección en cada proyecto.
                     </h4>
                 </div>
             </div>
@@ -116,7 +109,7 @@
                 <div class="col-md-12">
                     <h3 class="section-title">Servicios</h3>
                     <div class="section-title-divider"></div>
-                    <h4 class="section-description">Estos son los servicios que brinda el aplicativo web</h4>
+                    <h4 class="section-description">Estos son algunos de los servicios brindados por el aplicativo web</h4>
                 </div>
             </div>
 
@@ -124,17 +117,17 @@
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-desktop"></i></div>
                     <h4 class="service-title"><a>Gestión de información</a></h4>
-                    <h4 class="service-description">La plataforma de forma segura permite administrar contenidos asociados a un proyecto de investigación en tiempo real.</h4>
+                    <h4 class="service-description">Podrás administrar de forma segura los contenidos asociados a un proyecto de investigación en tiempo real.</h4>
                 </div>
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
                     <h4 class="service-title"><a>Trazabilidad</a></h4>
-                    <h4 class="service-description">La plataforma llevará un registro minucioso de cada proyecto, evaluando constantemente el estado en el cúal se encuentra.</h4>
+                    <h4 class="service-description">Podrás llevar un registro minucioso de cada proyecto, evaluando constantemente el estado en el cual se encuentra.</h4>
                  </div>
                 <div class="col-md-4 service-item">
                     <div class="service-icon"><i class="fa fa fa-database"></i></div>
                     <h4 class="service-title"><a>Seguridad en información</a></h4>
-                    <h4 class="service-description">La plataforma cuanta con altos estadares de seguridad, debido a la sencibilidad de la información tratada.</h4>
+                    <h4 class="service-description">La plataforma cuenta con altos estándares de seguridad, debido a la sensibilidad de la información tratada.</h4>
                 </div>
             </div>
         </div>
@@ -148,11 +141,10 @@
             <div class="row">
                 <div class="col-lg-4"></div>
                 <div class="col-md-8 ">
-                    <h3 class="subscribe-title">Adquierelo Ya!</h3>
-                    <p class="subscribe-text">Cientos de investigadores al rededor del mundo lo usan  <br />¿ Qué esperas ?</p>
+                    <h3 class="subscribe-title">¡Adquiérelo Ya!</h3>
+                    <p class="subscribe-text">Cientos de investigadores alrededor del mundo lo usan  <br />¿Qué esperas?</p>
                 </div>
                 <div class="col-lg-4"></div>
-
                 <div class="col-md-4 subscribe-btn-container">
                     <a class="subscribe-btn" href="#contact">Contactar</a>
                 </div>
@@ -182,7 +174,7 @@
                         <span>Desarrollador Software</span>
                         <div class="social">
                             <a href=" https://www.facebook.com/manuel.hernandz.5" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/manuelstuner" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +188,7 @@
                         <span>Desarrolladora Software</span>
                         <div class="social">
                             <a href="https://www.facebook.com/juanavalentina.serna" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/ValentinaRiA" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +203,7 @@
                         <div class="social">
 
                             <a href="https://www.facebook.com/wilmeremiro.castrilloncalderon" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-github"></i></a>
+                            <a href="https://github.com/wilmercastrillon" target="_blank"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -226,7 +218,7 @@
         <div class="container wow fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Contactanos</h3>
+                    <h3 class="section-title">contáctenos</h3>
                     <div class="section-title-divider"></div>
                     <p class="section-description">Si quieres hacer uso de esta plataforma innovadora, simplemente envianos tu información</p>
                 </div>
