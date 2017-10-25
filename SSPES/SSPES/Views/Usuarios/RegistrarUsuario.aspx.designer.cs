@@ -13,6 +13,15 @@ namespace SSPES.Views.Usuarios {
     public partial class RegistrarUsuario {
         
         /// <summary>
+        /// Control Ver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Ver;
+        
+        /// <summary>
         /// Control labelnombre.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace SSPES.Views.Usuarios {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
         
         /// <summary>
-        /// Control rol.
+        /// Control Select1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect rol;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Select1;
         
         /// <summary>
         /// Control nTelefono.

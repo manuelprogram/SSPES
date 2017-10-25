@@ -23,7 +23,7 @@
                                 <i class="fa fa-folder-open fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">10</div>
+                                <div class="huge"><%= numeroPro %></div>
                                 <div>PROYECTOS</div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                 <i class="fa fa-street-view fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">14</div>
+                                <div class="huge"><%=numeroUser.ToString()%></div>
                                 <div>USUARIOS</div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 <i class="fa fa-folder-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">4</div>
+                                <div class="huge">0</div>
                                 <div>FINALIZADOS</div>
                             </div>
                         </div>

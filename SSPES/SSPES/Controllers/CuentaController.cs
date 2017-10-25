@@ -43,5 +43,9 @@ namespace SSPES.Controllers {
         public DataTable consultarUsuariosDisponiblesProyecto(string pk_pro) {
             return useres.consultarUsuariosDisponiblesProyecto(pk_pro);
         }
+
+        public string CantidadCuenta() {
+            return useres.CantidadCuentas();
+        }
     }
 }

@@ -19,5 +19,9 @@ namespace SSPES.Views.Usuarios {
                 drConsulta = dtConsulta.Rows[0];
             }
         }
+
+        protected void Nuevo_Click(object sender, EventArgs e) {
+            Response.Redirect("../Usuarios/RegistrarUsuario.aspx");
+        }
     }
 }

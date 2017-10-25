@@ -9,13 +9,10 @@ using System.Text.RegularExpressions;
 
 namespace SSPES.Views.Usuarios {
     public partial class RegistrarUsuario : System.Web.UI.Page {
+        public List<string> lista;
         protected void Page_Load(object sender, EventArgs e) {
             RolController p = new RolController();
-            List<string> lista = p.consultarRoles(p.modelo);
-            rol.Items.Clear();
-            for (int i = 0; i < lista.Count; i++) {
-                rol.Items.Add(lista[i]);
-            }
+            lista = p.consultarRoles(p.modelo);
         }
 
         protected bool validarNombre(string h, bool requerido) {
@@ -67,6 +64,9 @@ namespace SSPES.Views.Usuarios {
             Regex reg = new Regex("[^A-Z ^a-z ^0-9 ^.]");
             return (!reg.IsMatch(user) && !reg.IsMatch(pass));
         }
+        protected void Ver_Click(object sender, EventArgs e) {
+            Response.Redirect("../Usuarios/ConsultarUsuarios.aspx");
+        }
 
         protected void Registrar(object sender, EventArgs e) {
 
@@ -102,11 +102,14 @@ namespace SSPES.Views.Usuarios {
                     Response.Write("<script> alert('password no coinciden'); </script>");
                     return;
                 }
+                string frol = ((new RolController()).ConsultarPk(Select1.Value.ToString()));
                 PersonaController p = new PersonaController(nombre1.Value.ToString(), nombre2.Value.ToString(),
                                             apellido1.Value.ToString(), apellido2.Value.ToString(),
                                             tipoDocumento(), nDocumento.Value.ToString(), nTelefono.Value.ToString(),
-                                            correo.Value.ToString(), (new RolController()).ConsultarPk(rol.Value.ToString()));
-                Response.Write("<script> alert('" + p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString()) + "'); </script>");
+                                            correo.Value.ToString(), frol);
+                string aux = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
+                Response.Write("<script> alert('" + aux +"'); </script>");
+                Response.Redirect("../Usuarios/ConsultarUsuarios.aspx");
             } catch (Exception) {
                 Response.Write("<script> alert('Error inesperado!'); </script>");
             }

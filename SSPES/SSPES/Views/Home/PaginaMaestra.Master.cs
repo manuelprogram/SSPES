@@ -21,7 +21,8 @@ namespace SSPES.Views.Home {
             } else {
                 if (!this.IsPostBack) {
                     this.CargarMenu(Session["PK_CUENTA"].ToString());
-                }
+                    
+               }
             }
         }
 
