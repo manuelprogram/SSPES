@@ -41,5 +41,10 @@ namespace SSPES.Controllers {
         public bool agregarIntegrante(string a, string b, string c) {
             return obj.agregarIntegrante(Int32.Parse(a), Int32.Parse(b), Int32.Parse(c));
         }
+
+        public string CantidadProyecto(string pk_user) {
+            return obj.CantidadProyectos(pk_user);
+            
+        }
     }
 }

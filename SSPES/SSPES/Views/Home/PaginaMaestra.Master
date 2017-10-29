@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="SSPES.Views.Home.PaginaMaestra" %>
+﻿<%@ Master Language="C#" EnableViewState="true" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="SSPES.Views.Home.PaginaMaestra" %>
 
 <!DOCTYPE html>
 

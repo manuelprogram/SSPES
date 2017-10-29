@@ -35,6 +35,10 @@ namespace SSPES.Models {
             DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
             return data;
         }
+        public string CantidadProyectos(string pk_user) {
+            string sql = "select count(*) as numero from proyecto where fk_cuenta_proyecto='" + pk_user + "';";
+            return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["numero"].ToString();
+        }
 
         public bool registrarProyecto() {
             string[] sql = new string[1];
