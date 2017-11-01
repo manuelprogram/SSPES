@@ -175,13 +175,40 @@ namespace SSPES.Views.Proyectos {
         protected global::System.Web.UI.WebControls.TextBox texto;
         
         /// <summary>
-        /// Control radio.
+        /// Control listaVariablesDisponibles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList radio;
+        protected global::System.Web.UI.WebControls.ListBox listaVariablesDisponibles;
+        
+        /// <summary>
+        /// Control Asignar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Asignar;
+        
+        /// <summary>
+        /// Control noAsignar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button noAsignar;
+        
+        /// <summary>
+        /// Control listaVariablesSeleccionadas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listaVariablesSeleccionadas;
         
         /// <summary>
         /// Control asignarVariable.
@@ -202,13 +229,49 @@ namespace SSPES.Views.Proyectos {
         protected global::System.Web.UI.WebControls.Button crearVariable;
         
         /// <summary>
-        /// Control users.
+        /// Control listaVariablesActuales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList users;
+        protected global::System.Web.UI.WebControls.ListBox listaVariablesActuales;
+        
+        /// <summary>
+        /// Control ListUsuariosDisponibles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListUsuariosDisponibles;
+        
+        /// <summary>
+        /// Control moverUser1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button moverUser1;
+        
+        /// <summary>
+        /// Control moverUser2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button moverUser2;
+        
+        /// <summary>
+        /// Control ListUsuariosSeleccionados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListUsuariosSeleccionados;
         
         /// <summary>
         /// Control rolProyectos.
@@ -220,12 +283,30 @@ namespace SSPES.Views.Proyectos {
         protected global::System.Web.UI.WebControls.DropDownList rolProyectos;
         
         /// <summary>
-        /// Control boton.
+        /// Control Button3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button boton;
+        protected global::System.Web.UI.WebControls.Button Button3;
+        
+        /// <summary>
+        /// Control Button4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button4;
+        
+        /// <summary>
+        /// Control ListUsuariosAsignados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListUsuariosAsignados;
     }
 }

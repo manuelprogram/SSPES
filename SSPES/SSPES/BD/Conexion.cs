@@ -31,6 +31,7 @@ namespace SSPES.BD {
 
             return resultado.Tables[0];
         }
+
         public bool RealizarTransaccion(string[] cadena) {
             bool state = false;
             if (Conectar()) {

@@ -69,14 +69,11 @@ namespace SSPES.Models//push de prueba
             return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["numero"].ToString();
         }
 
-        public DataTable consultarUsuariosDisponiblesProyecto(string pk_pro) {
-            //string sql = @"SELECT PK_CUENTA, USUARIO, FK_PERSONA FROM cuenta WHERE NOT EXISTS ( 
-            //SELECT * FROM integrante_proyecto WHERE cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA 
-            //AND integrante_proyecto.FK_PROYECTO = '" + pk_pro + "' ) ORDER BY USUARIO ;";
-            string sql = @"SELECT PK_CUENTA, USUARIO, FK_PERSONA, NOMBRE_1, APELLIDO_1 FROM cuenta, persona
-                WHERE NOT EXISTS(SELECT * FROM integrante_proyecto WHERE cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA 
-                AND integrante_proyecto.FK_PROYECTO = '" + pk_pro + @"') 
-                AND persona.PK_PERSONA = cuenta.FK_PERSONA ORDER BY USUARIO; ";
+        public DataTable consultarUsuariosProyecto(string pk_pro) {
+            string sql = @"SELECT PK_CUENTA, FK_PERSONA, NOMBRE_1, APELLIDO_1, 
+                IF (EXISTS(SELECT * FROM integrante_proyecto WHERE cuenta.PK_CUENTA = integrante_proyecto.FK_CUENTA 
+                AND integrante_proyecto.FK_PROYECTO = '" + pk_pro + @"'), 'Si', 'No') AS 'Existe'
+                FROM cuenta, persona WHERE persona.PK_PERSONA = cuenta.FK_PERSONA ORDER BY NOMBRE_1;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
