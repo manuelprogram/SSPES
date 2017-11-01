@@ -40,19 +40,19 @@ namespace SSPES.Models {
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
-        public bool asignarVariable(int pkProyecto, int pkVariable) {
+        public bool asignarVariable(string pkProyecto, string pkVariable) {
             string[] sql = new string[1];
             sql[0] = "INSERT INTO variable_proyecto (FK_PROYECTO, FK_VARIABLE)";
             sql[0] += "VALUES(" + pkProyecto + ", " + pkVariable + ");";
             return con.RealizarTransaccion(sql);
         }
 
-        public DataTable consultarVariables(string pk_pro) {
+        public DataTable consultarEstadoVariablesProyecto(string pk_pro) {
             string sql = @"SELECT idVARIABLE, NOMBRE_VARIABLE, 
                 if(EXISTS(SELECT FK_PROYECTO FROM variable_proyecto 
                 WHERE variable_proyecto.FK_PROYECTO='"+ pk_pro + @"' AND
                 variable_proyecto.FK_VARIABLE = variable.idVARIABLE
-                ), 'Si', 'No') as 'EXISTE' FROM variable;";
+                ), 'Si', 'No') as 'EXISTE' FROM variable ORDER BY NOMBRE_VARIABLE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }

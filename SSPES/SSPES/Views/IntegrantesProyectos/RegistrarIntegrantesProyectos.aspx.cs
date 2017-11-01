@@ -54,7 +54,7 @@ namespace SSPES.Views.IntegrantesProyectos {
         public void llenarUsuarios(string pk_pro) {
             user.Items.Clear();
             CuentaController cc = new CuentaController();
-            dtintegrantes = cc.consultarUsuariosDisponiblesProyecto(pk_pro);
+            dtintegrantes = cc.consultarUsuariosProyecto(pk_pro);
             Session["dtIntegrantes"] = dtintegrantes;
             foreach (DataRow dr in dtintegrantes.Rows) {
                 user.Items.Add(dr["NOMBRE_1"].ToString() + "  " + dr["APELLIDO_1"].ToString());

@@ -58,10 +58,9 @@ namespace SSPES.Views.AsignacionVariables {
                 dtProyectos = (DataTable)Session["datos_dtProyecto"];
                 pk_pro = Int32.Parse(Session["pk_pro"].ToString());
                 dtVariables = (DataTable)Session["datos_dtVariables"];
-                int pk_var = Int32.Parse(dtVariables.Rows[index]["idVARIABLE"].ToString());
 
                 VariableController obj = new VariableController();
-                if (obj.asignarVariable(pk_pro, pk_var)) {
+                if (obj.asignarVariable(pk_pro.ToString(), dtVariables.Rows[index]["idVARIABLE"].ToString())) {
                     Response.Write("<script> alert('Exitoso'); </script>");
                 } else {
                     Response.Write("<script> alert('Error al asignar'); </script>");

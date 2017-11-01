@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="AdministrarProyecto.aspx.cs" Inherits="SSPES.Views.Proyectos.AdministrarProyecto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <script>
         function Confirm() {
             $('#myModal').modal('show');
@@ -15,7 +11,20 @@
             $('#crearVariableModal').modal('show');
             return true;
         };
+
+        function panelAsignarVariables() {
+            $('#hrefAsignar').trigger('click');
+            return true;
+        };
+
+        function panelAsignarUsuarios() {
+            $('#hrefAsignarIntegrantes').trigger('click');
+            return true;
+        };
     </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-sm info">
@@ -99,9 +108,9 @@
                                     <div class="col-lg-12">
                                         <ul class="nav nav-tabs">
                                             <li class="active"><a href="#Seleccionar" data-toggle="tab">Seleccionar</a> </li>
+                                            <li><a id="hrefAsignar" href="#AsignarVariables" data-toggle="tab">Asignar variables</a> </li>
+                                            <li><a id="hrefAsignarIntegrantes" href="#AsignarIntegrantes" data-toggle="tab">Asignar integrantes</a> </li>
                                             <li><a href="#CrearProyecto" data-toggle="tab">Crear proyecto</a> </li>
-                                            <li><a href="#AsignarVariables" data-toggle="tab">Asignar variables</a> </li>
-                                            <li><a href="#AsignarIntegrantes" data-toggle="tab">Asignar integrantes</a> </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -203,8 +212,8 @@
 
                                                         <br />
                                                         <br />
-
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -216,28 +225,55 @@
                                                 <div class="col-md-12 control-label">
                                                     <div class="panel panel-default">
                                                         <div class="panel-body">
-                                                            <h4>Asignacion de variables</h4>
-                                                            <br />
-                                                            <asp:CheckBoxList ID="radio"
-                                                                CssClass="chkBoxList" RepeatColumns="5" RepeatLayout="Table" RepeatDirection="Horizontal"
-                                                                runat="server">
-                                                            </asp:CheckBoxList>
-                                                            <br />
-                                                            <br />
 
+                                                            <div class="col-md-4 control-label">
+                                                                <br />
+                                                                <h4>Variables disponibles</h4>
+                                                                <asp:ListBox ID="listaVariablesDisponibles" runat="server" SelectionMode="Multiple"
+                                                                    Height="200" Width="255"></asp:ListBox>
+                                                                <br />
+                                                                <br />
+                                                            </div>
+                                                            <div class="col-md-1 control-label">
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <asp:Button ID="Asignar" runat="server" Text=">" OnClick="boton1_Click" />
+                                                                <asp:Button ID="noAsignar" runat="server" Text="<" OnClick="noAsignar_Click" />
+                                                            </div>
+                                                            <div class="col-md-4 control-label">
+                                                                <br />
+                                                                <h4>Variables a asignar</h4>
+                                                                <asp:ListBox ID="listaVariablesSeleccionadas" runat="server" SelectionMode="Multiple"
+                                                                    Height="200" Width="255"></asp:ListBox>
+                                                                <br />
+                                                                <br />
+                                                            </div>
                                                             <div class="row">
+                                                                <br />
+                                                                <br />
+                                                                <br />
                                                                 <div class="col-md-3 control-label">
                                                                     <asp:Button CssClass="btn btn-primary col-lg-9" ID="asignarVariable" runat="server"
                                                                         Text="Asignar variables" OnClick="asignarVariable_Click" />
                                                                 </div>
+                                                                <br />
+                                                                <br />
+                                                                <br />
                                                                 <div class="col-md-3 control-label">
                                                                     <asp:Button CssClass="btn btn-primary col-lg-9" ID="crearVariable" runat="server"
                                                                         Text="Crear variable" OnClick="llamarModalVariable_Click" />
                                                                 </div>
-                                                                <br />
-                                                                <br />
-                                                                <br />
                                                             </div>
+
+                                                            <h4>Variables asignadas</h4>
+                                                            <asp:ListBox ID="listaVariablesActuales" runat="server" Height="200" Width="330"></asp:ListBox>
+                                                            <br />
+                                                            <br />
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -251,29 +287,57 @@
                                                 <div class="panel panel-default">
                                                     <div class="panel-body">
 
-                                                        <h4>Asignacion de integrantes</h4>
-                                                        <br />
-
-                                                        <h4>¿Que usuarios desea agregar?</h4>
-                                                        <br />
-
-                                                        <asp:CheckBoxList ID="users"
-                                                            CssClass="chkBoxList" RepeatColumns="5" RepeatLayout="Table" RepeatDirection="Horizontal"
-                                                            runat="server">
-                                                        </asp:CheckBoxList>
-                                                        <br />
-
-                                                        <div class="col-lg-4">
-                                                            <h4>Seleccione el rol a asignar.</h4>
+                                                        <div class="col-md-4 control-label">
                                                             <br />
-                                                            <asp:DropDownList ID="rolProyectos" runat="server" CssClass="btn-default" Width="150"></asp:DropDownList>
-                                                            <br />
-                                                            <br />
-                                                            <asp:Button CssClass="btn btn-primary col-lg-6" ID="boton" runat="server" OnClick="boton_Click" Text="Asignar usuarios" />
-                                                            <br />
+                                                            <h4>Usuarios disponibles</h4>
+                                                            <asp:ListBox ID="ListUsuariosDisponibles" runat="server" SelectionMode="Multiple"
+                                                                Height="200" Width="255"></asp:ListBox>
                                                             <br />
                                                             <br />
                                                         </div>
+                                                        <div class="col-md-1 control-label">
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <asp:Button ID="moverUser1" runat="server" Text=">" OnClick="moverUser1_Click" />
+                                                            <asp:Button ID="moverUser2" runat="server" Text="<" OnClick="moverUser2_Click" />
+                                                        </div>
+                                                        <div class="col-md-4 control-label">
+                                                            <br />
+                                                            <h4>Usuarios a asignar</h4>
+                                                            <asp:ListBox ID="ListUsuariosSeleccionados" runat="server" SelectionMode="Multiple"
+                                                                Height="200" Width="255"></asp:ListBox>
+                                                            <br />
+                                                            <br />
+                                                        </div>
+                                                        <div class="row">
+                                                            <br />
+                                                            <br />
+                                                            <div class="col-md-3 control-label">
+                                                                <h4>Seleccione el rol</h4>
+                                                                <asp:DropDownList ID="rolProyectos" runat="server" CssClass="btn-default" Width="150"></asp:DropDownList>
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <asp:Button CssClass="btn btn-primary col-lg-9" ID="Button3" runat="server"
+                                                                    Text="Asignar Usuarios" OnClick="AsignarUsuraios_Click" />
+                                                                <br />
+                                                                <br />
+                                                                <br />
+                                                                <asp:Button CssClass="btn btn-primary col-lg-9" ID="Button4" runat="server"
+                                                                    Text="Crear Usuario" OnClick="redireccionUsuarios_Click" />
+                                                            </div>
+                                                        </div>
+
+                                                        <h4>Usuarios asignados</h4>
+                                                        <asp:ListBox ID="ListUsuariosAsignados" runat="server" Height="200" Width="330"></asp:ListBox>
+                                                        <br />
+                                                        <br />
+                                                        <br />
+
                                                     </div>
                                                 </div>
                                             </div>

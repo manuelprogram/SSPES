@@ -26,12 +26,12 @@ namespace SSPES.Controllers {
             return obj.consultarVariablesDisponibles(pk);
         }
 
-        public bool asignarVariable(int pro, int var) {
+        public bool asignarVariable(string pro, string var) {
             return obj.asignarVariable(pro, var);
         }
 
-        public DataTable consultarVariables(string pk_pro) {
-            return obj.consultarVariables(pk_pro);
+        public DataTable consultarEstadoVariablesProyecto(string pk_pro) {
+            return obj.consultarEstadoVariablesProyecto(pk_pro);
         }
     }
 }
