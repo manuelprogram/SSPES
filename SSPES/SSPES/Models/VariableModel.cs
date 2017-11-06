@@ -55,5 +55,13 @@ namespace SSPES.Models {
                 ), 'Si', 'No') as 'EXISTE' FROM variable ORDER BY NOMBRE_VARIABLE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
+
+        public DataTable consultarVariablesProyecto(string pk_pro) {
+            string sql = @"SELECT NOMBRE_VARIABLE, TIPO_DE_DATO, DESCRIPCION_VARIABLE, PK_VARIABLE_PROYECTO 
+                FROM variable INNER JOIN variable_proyecto ON variable.idVARIABLE = 
+                variable_proyecto.FK_VARIABLE AND variable_proyecto.FK_PROYECTO = '" + pk_pro + @"' ORDER 
+                BY NOMBRE_VARIABLE;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
     }
 }

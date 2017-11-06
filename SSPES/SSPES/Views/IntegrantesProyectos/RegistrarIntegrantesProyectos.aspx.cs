@@ -82,8 +82,7 @@ namespace SSPES.Views.IntegrantesProyectos {
 
             ProyectoController pc = new ProyectoController();
             if(pc.agregarIntegrante(dtintegrantes.Rows[user.SelectedIndex]["PK_CUENTA"].ToString(),
-                dtProyectos.Rows[proyectos.SelectedIndex - 1]["PK_PROYECTO"].ToString(),
-                dtroles.Rows[rolProyecto.SelectedIndex]["PK_ROL_PROYECTO"].ToString())) {
+                dtProyectos.Rows[proyectos.SelectedIndex - 1]["PK_PROYECTO"].ToString())) {
                 Response.Write("<script> alert('Exitoso'); </script>");
             } else {
                 Response.Write("<script> alert('Error al registrar'); </script>");

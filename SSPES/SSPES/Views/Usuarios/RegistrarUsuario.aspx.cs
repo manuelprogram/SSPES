@@ -109,7 +109,7 @@ namespace SSPES.Views.Usuarios {
                                             correo.Value.ToString(), frol);
                 string aux = p.Insertar(p.p, Usuario.Value.ToString(), password.Value.ToString());
                 Response.Write("<script> alert('" + aux +"'); </script>");
-                Response.Redirect("../Usuarios/ConsultarUsuarios.aspx");
+                //Response.Redirect("../Usuarios/ConsultarUsuarios.aspx");
             } catch (Exception) {
                 Response.Write("<script> alert('Error inesperado!'); </script>");
             }

@@ -317,8 +317,6 @@
                                                             <br />
                                                             <br />
                                                             <div class="col-md-3 control-label">
-                                                                <h4>Seleccione el rol</h4>
-                                                                <asp:DropDownList ID="rolProyectos" runat="server" CssClass="btn-default" Width="150"></asp:DropDownList>
                                                                 <br />
                                                                 <br />
                                                                 <br />

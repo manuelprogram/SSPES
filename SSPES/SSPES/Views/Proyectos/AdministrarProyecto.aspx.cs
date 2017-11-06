@@ -11,22 +11,23 @@ using System.Data;
 namespace SSPES.Views.Proyectos {
     public partial class AdministrarProyecto : System.Web.UI.Page {
 
-        private DataTable dtProyectos, dtVariables, dtIntegrantes, dtroles;
+        private DataTable dtProyectos, dtVariables, dtIntegrantes;
         public string msj = "";
-        private Dictionary<string, string> mapa, mapa2;
+        private Dictionary<string, string> mapa = new Dictionary<string, string>();
+        private List<string> list = new List<string>();//disponibles
+        private List<string> list2 = new List<string>();//a asignar
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 cargarProyectos();
             }
-            mapa = new Dictionary<string, string>();
-            mapa2 = new Dictionary<string, string>();
+            mapa.Clear();
         }
 
         protected void visualizar_Click(object sender, EventArgs e) {//redireccionar a visualizar
             Response.Redirect("VisualizarProyecto.aspx");
         }
-        
+
         protected void redireccionUsuarios_Click(object sender, EventArgs e) {//redireccionar a crear usuario
             Response.Redirect("../Usuarios/RegistrarUsuario.aspx");
         }
@@ -38,7 +39,6 @@ namespace SSPES.Views.Proyectos {
             listaVariablesSeleccionadas.Items.Clear();
             listaVariablesActuales.Items.Clear();
             proyecto.Items.Clear();
-            rolProyectos.Items.Clear();
 
             ProyectoController obj2 = new ProyectoController();
             dtProyectos = obj2.consultarProyectosDirector(Session["PK_CUENTA"].ToString());
@@ -61,7 +61,6 @@ namespace SSPES.Views.Proyectos {
             texto.Text = dtProyectos.Rows[index]["DESCRIPCION"].ToString();
             cargarVariables(pk_pro);
             llenarUsuarios(pk_pro);
-            llenarRoles();
         }
 
         //modal creacion de variables
@@ -84,8 +83,8 @@ namespace SSPES.Views.Proyectos {
                 return;
             }
 
-            VariableController obj = new VariableController(nombreVariable.Value.ToString(),
-                descripcionNuevaVariable.Value.ToString(), tDato.Value);
+            VariableController obj = new VariableController(nombreVariable.Value.ToString(), tDato.Value,
+                descripcionNuevaVariable.Value.ToString());
             if (obj.Registrar()) {
                 msj = "Exitoso";
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
@@ -157,7 +156,8 @@ namespace SSPES.Views.Proyectos {
                     msj = "Exitoso";
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 } else {
-                    msj = "Error al asignar alguno(s)";
+                    //msj = "Error al asignar alguno(s)";
+                    msj = mapa[listaVariablesSeleccionadas.Items[0].ToString()];
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 }
                 cargarVariables(Session["pk_pro"].ToString());
@@ -170,7 +170,11 @@ namespace SSPES.Views.Proyectos {
         //Asignacion integrantes
 
         protected void moverUser1_Click(object sender, EventArgs e) {
+            list = (List<string>)Session["list"];
+            list2 = (List<string>)Session["list2"];
             while (ListUsuariosDisponibles.GetSelectedIndices().Length > 0) {
+                list2.Add(list[ListUsuariosDisponibles.SelectedIndex]);
+                list.RemoveAt(ListUsuariosDisponibles.SelectedIndex);
                 ListUsuariosSeleccionados.Items.Add(ListUsuariosDisponibles.SelectedItem);
                 ListUsuariosDisponibles.Items.Remove(ListUsuariosDisponibles.SelectedItem);
             }
@@ -178,18 +182,25 @@ namespace SSPES.Views.Proyectos {
         }
 
         protected void moverUser2_Click(object sender, EventArgs e) {
+            list = (List<string>)Session["list"];
+            list2 = (List<string>)Session["list2"];
             while (ListUsuariosSeleccionados.GetSelectedIndices().Length > 0) {
+                list.Add(list2[ListUsuariosSeleccionados.SelectedIndex]);
+                list2.RemoveAt(ListUsuariosSeleccionados.SelectedIndex);
                 ListUsuariosDisponibles.Items.Add(ListUsuariosSeleccionados.SelectedItem);
                 ListUsuariosSeleccionados.Items.Remove(ListUsuariosSeleccionados.SelectedItem);
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarUsuarios();", true);
+            Session["list"] = list;
+            Session["list2"] = list2;
         }
 
         public void llenarUsuarios(string pk_pro) {
             ListUsuariosAsignados.Items.Clear();
             ListUsuariosDisponibles.Items.Clear();
             ListUsuariosSeleccionados.Items.Clear();
-            mapa2.Clear();
+            list.Clear();
+            list2 = new List<string>();
             CuentaController cc = new CuentaController();
             dtIntegrantes = cc.consultarUsuariosProyecto(pk_pro);
             Session["dtIntegrantes"] = dtIntegrantes;
@@ -200,43 +211,25 @@ namespace SSPES.Views.Proyectos {
                     ListUsuariosAsignados.Items.Add(str);
                 } else {
                     ListUsuariosDisponibles.Items.Add(str);
-                    mapa2.Add(str, dr["PK_CUENTA"].ToString());
+                    list.Add(dr["PK_CUENTA"].ToString());
                 }
             }
-            Session["mapa2"] = mapa2;
-        }
-
-        protected void llenarRoles() {
-            rolProyectos.Items.Clear();
-            RolProyectoController rpc = new RolProyectoController();
-            dtroles = rpc.consultarRoles();
-            Session["dtRoles"] = dtroles;
-            foreach (DataRow dr in dtroles.Rows) {
-                rolProyectos.Items.Add(dr["NOMBRE_ROL_PROYECTO"].ToString());
-            }
+            Session["list"] = list;
+            Session["list2"] = list2;
         }
 
         protected void AsignarUsuraios_Click(object sender, EventArgs e) {
-            if (rolProyectos.Items.Count == 0) {
-                msj = "Seleccione un proyecto";
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
-                return;
-            }
-
-            dtroles = (DataTable)Session["dtRoles"];
             dtIntegrantes = (DataTable)Session["dtIntegrantes"];
+            list2 = (List<string>)Session["list2"];
             ProyectoController pc = new ProyectoController();
-            mapa2 = (Dictionary<string, string>) Session["mapa2"];
             int con = 0, activos = 0;
 
             for (int i = 0; i < ListUsuariosSeleccionados.Items.Count; i++) {
                 activos++;
-                if (!pc.agregarIntegrante(mapa2[ListUsuariosSeleccionados.Items[i].ToString()],
-                    Session["pk_pro"].ToString(),
-                    dtroles.Rows[rolProyectos.SelectedIndex]["PK_ROL_PROYECTO"].ToString())) con++;
+                if (!pc.agregarIntegrante(list2[i], Session["pk_pro"].ToString())) con++;
             }
             if (activos == 0) {
-                msj = "Error, seleccione integrantes";
+                msj = "Seleccione integrantes";
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 return;
             }
