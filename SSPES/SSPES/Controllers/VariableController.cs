@@ -33,5 +33,9 @@ namespace SSPES.Controllers {
         public DataTable consultarEstadoVariablesProyecto(string pk_pro) {
             return obj.consultarEstadoVariablesProyecto(pk_pro);
         }
+
+        public DataTable consultarVariablesProyecto(string pk_pro) {
+            return obj.consultarVariablesProyecto(pk_pro);
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace SSPES.Views.Proyectos {
 
         protected void cargarProyectos() {
             ProyectoController pc = new ProyectoController();
-            dt = pc.consultarProyectosDirector(Session["PK_CUENTA"].ToString());
+            dt = pc.consultarProyectosPersona(Session["PK_CUENTA"].ToString());
             rep.DataSource = dt;
             rep.DataBind();
         }
@@ -47,8 +47,8 @@ namespace SSPES.Views.Proyectos {
                 Response.Clear();
                 Response.ClearHeaders();
                 Response.ClearContent();
-                Response.AddHeader("Content-Type", "application/msword");
-                Response.AddHeader("Content-disposition", "attachment; filename=" + nombre);
+                //Response.AddHeader("Content-Type", "application/msword");
+                //Response.AddHeader("Content-disposition", "attachment; filename=" + nombre);
                 Response.BinaryWrite(buffer);
                 Response.ContentType = "application/msword";
             } catch (Exception) {

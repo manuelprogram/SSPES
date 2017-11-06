@@ -67,18 +67,37 @@ namespace SSPES.Models {
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
-        public DataTable consultarProyectosDirector(string pk_dir) {
+        public DataTable consultarProyectosDirector(string pk_dir) {//los proyectos de un director
             string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
             sql += "AND FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
-        public bool agregarIntegrante(int pk_cuenta, int pk_pro, int pk_rolpro) {
+        public DataTable consultarProyectosPersona(string pk_dir) {//sus proyectos creados y a los que esta como integrante
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
+            sql += "AND(FK_CUENTA_PROYECTO = '" + pk_dir + "' OR EXISTS(SELECT * FROM integrante_proyecto ";
+            sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "')";
+            sql += ") ORDER BY NOMBRE; ";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
+
+        public bool agregarIntegrante(string pk_cuenta, string pk_pro) {
             string fecha = DateTime.Now.ToString("yyyy-MM-dd H:mm:ss");
             string[] sql = new string[1];
-            sql[0] = @"INSERT INTO integrante_proyecto (ESTADO, REGISTRO, FK_CUENTA, FK_PROYECTO, FK_ROL_PROYECTO) 
-                    VALUES('A', '" + fecha + "', '" + pk_cuenta + "', '" + pk_pro + "', '" + pk_rolpro + "') ;";
+            sql[0] = @"INSERT INTO integrante_proyecto (ESTADO, REGISTRO, FK_CUENTA, FK_PROYECTO) 
+                    VALUES('A', '" + fecha + "', '" + pk_cuenta + "', '" + pk_pro + "');";
             return con.RealizarTransaccion(sql);
         }
+
+        public string getPkIntegranteProyecto(string pk_cuenta, string pk_pro) {
+            string sql = "SELECT PK_INTEGRANTE_PROYECTO FROM integrante_proyecto WHERE FK_PROYECTO = ";
+            sql += "'" + pk_pro + "' AND FK_CUENTA = '" + pk_cuenta + "';";
+
+            try {
+                return con.EjecutarConsulta(sql, CommandType.Text).Rows[0][0].ToString();
+            } catch (Exception) {
+                return null;
+            }
+         }
     }
 }

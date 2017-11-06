@@ -38,13 +38,20 @@ namespace SSPES.Controllers {
             return obj.consultarProyectosDirector(pk_dir);
         }
 
-        public bool agregarIntegrante(string a, string b, string c) {
-            return obj.agregarIntegrante(Int32.Parse(a), Int32.Parse(b), Int32.Parse(c));
+        public DataTable consultarProyectosPersona(string pk_dir) {
+            return obj.consultarProyectosPersona(pk_dir);
+        }
+
+        public bool agregarIntegrante(string a, string b) {
+            return obj.agregarIntegrante(a, b);
         }
 
         public string CantidadProyecto(string pk_user) {
             return obj.CantidadProyectos(pk_user);
-            
+        }
+        
+        public string getPkIntegranteProyecto(string pk_cuent, string pk_proyecto) {
+            return obj.getPkIntegranteProyecto(pk_cuent, pk_proyecto);
         }
     }
 }
