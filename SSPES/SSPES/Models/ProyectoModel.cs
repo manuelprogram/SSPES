@@ -17,14 +17,16 @@ namespace SSPES.Models {
         public DateTime fechaFin { get; set; }
         public HttpPostedFile archivo { get; set; }
         public string fkCuenta { get; set; }
+        public int cantidad_muestras { get; set; }
 
-        public ProyectoModel(string a, string b, DateTime c, DateTime c2, HttpPostedFile d, string e) {
+        public ProyectoModel(string a, string b, DateTime c, DateTime c2, HttpPostedFile d, string e, int f) {
             nombre = a;
             descripcion = b;
             fecha = c;
             fechaFin = c2;
             archivo = d;
             fkCuenta = e;
+            cantidad_muestras = f;
         }
 
         public ProyectoModel() {
@@ -46,13 +48,13 @@ namespace SSPES.Models {
             string f2 = fechaFin.Year + "-" + fechaFin.Month + "-" + fechaFin.Day;
 
             if (archivo == null) {
-                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_FIN, ESTADO, FK_CUENTA_PROYECTO) VALUES(";
-                sql[0] += "'" + nombre + "', '" + descripcion + "', '" + f + "', '" + f2 + "', 'A', '" + fkCuenta + "');";
+                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_FIN, ESTADO, FK_CUENTA_PROYECTO, CANTIDAD_MUESTRAS) VALUES(";
+                sql[0] += "'" + nombre + "', '" + descripcion + "', '" + f + "', '" + f2 + "', 'A', '" + fkCuenta + "', '" + cantidad_muestras + "' );";
                 return con.RealizarTransaccion(sql);
             } else {
-                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_FIN, ESTADO, ARCHIVO, NOMBREARCHIVO, FK_CUENTA_PROYECTO) ";
-                sql[0] += " VALUES( '" + nombre + "', '" + descripcion + "', '" + f + "', '" + f2 + "' , 'A', @doc, ";
-                sql[0] += " '" + archivo.FileName + "', '" + fkCuenta + "');";
+                sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_FIN, ESTADO, ARCHIVO, NOMBREARCHIVO, FK_CUENTA_PROYECTO, ";
+                sql[0] += "CANTIDAD_MUESTRAS) VALUES( '" + nombre + "', '" + descripcion + "', '" + f + "', '" + f2 + "' , 'A', @doc, ";
+                sql[0] += " '" + archivo.FileName + "', '" + fkCuenta + "', '" + cantidad_muestras + "');";
                 return con.GuardarArchivo(sql[0], archivo);
             }
         }

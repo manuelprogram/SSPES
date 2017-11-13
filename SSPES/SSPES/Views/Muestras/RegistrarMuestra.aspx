@@ -12,6 +12,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <br />
     <div class="tab-content">
         <div class="tab-pane active">
@@ -79,6 +80,7 @@
                                             <div class="col-md-12 control-label">
                                                 <div class="panel panel-default">
                                                     <div class="panel-body">
+                                                        <h4 id="hNumeroMuestra" runat="server"></h4>
                                                         <h4>Variables</h4>
                                                         <br />
 

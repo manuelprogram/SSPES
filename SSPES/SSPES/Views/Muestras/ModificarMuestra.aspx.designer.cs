@@ -10,7 +10,7 @@
 namespace SSPES.Views.Muestras {
     
     
-    public partial class RegistrarMuestra {
+    public partial class ModificarMuestra {
         
         /// <summary>
         /// Control proyecto.
@@ -58,13 +58,67 @@ namespace SSPES.Views.Muestras {
         protected global::System.Web.UI.WebControls.TextBox texto;
         
         /// <summary>
-        /// Control hNumeroMuestra.
+        /// Control cantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hNumeroMuestra;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cantidad;
+        
+        /// <summary>
+        /// Control H1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
+        
+        /// <summary>
+        /// Control ListaMuestras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListaMuestras;
+        
+        /// <summary>
+        /// Control H2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H2;
+        
+        /// <summary>
+        /// Control muestraSeleccionada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox muestraSeleccionada;
+        
+        /// <summary>
+        /// Control H3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H3;
+        
+        /// <summary>
+        /// Control descripcionMuestra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox descripcionMuestra;
         
         /// <summary>
         /// Control rep.
@@ -76,21 +130,12 @@ namespace SSPES.Views.Muestras {
         protected global::System.Web.UI.WebControls.Repeater rep;
         
         /// <summary>
-        /// Control observaciones.
+        /// Control ActualizarMuestra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox observaciones;
-        
-        /// <summary>
-        /// Control registrarMuestras.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registrarMuestras;
+        protected global::System.Web.UI.WebControls.Button ActualizarMuestra;
     }
 }

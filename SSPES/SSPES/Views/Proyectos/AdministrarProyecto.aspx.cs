@@ -249,9 +249,23 @@ namespace SSPES.Views.Proyectos {
             return !reg.IsMatch(h);
         }
 
+        public bool validarNumeros(string h) {
+            if (h.Length == 0 || h.Length > 4) return false;
+            for (int i = 0; i < h.Length; i++)
+                if (h[i] < '0' || h[i] > '9') return false;
+
+            return true;
+        }
+
         protected void registrarProyecto_Click(object sender, EventArgs e) {
             if (!validarLetrasYNumeros(nombreProyectoNuevo.Value.ToString()) || nombreProyectoNuevo.Value.Length < 3) {
                 msj = "Nombre de proyecto no valido";
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
+                return;
+            }
+
+            if (!validarNumeros(canMuestras.Value)) {
+                msj = "Error cantidad de muestras";
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 return;
             }
@@ -278,18 +292,22 @@ namespace SSPES.Views.Proyectos {
             ProyectoController p;
             if (archivo.HasFile) {
                 p = new ProyectoController(nombreProyectoNuevo.Value.ToString(),
-                    descripcionProyecto.Value.ToString(), d, dfin, archivo.PostedFile, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, archivo.PostedFile, Session["PK_CUENTA"].ToString(),
+                    Int32.Parse(canMuestras.Value));
             } else {
                 p = new ProyectoController(nombreProyectoNuevo.Value.ToString(),
-                    descripcionProyecto.Value.ToString(), d, dfin, null, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, null, Session["PK_CUENTA"].ToString(),
+                    Int32.Parse(canMuestras.Value));
             }
 
             if (p.insertarProyecto()) {
                 msj = "Exitoso";
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
+                Response.Redirect("AdministrarProyecto.aspx");
             } else {
                 msj = "Error al crear proyecto";
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
             }
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
         }
     }
 }

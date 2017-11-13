@@ -44,14 +44,15 @@ namespace SSPES.Views.Proyectos {
             ProyectoController p;
             if (archivo.HasFile) {
                 p = new ProyectoController(nombreProyecto.Value.ToString(), 
-                    descripcionProyecto.Value.ToString(), d, dfin, archivo.PostedFile, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, archivo.PostedFile, Session["PK_CUENTA"].ToString(), 10);
             }else {
                 p = new ProyectoController(nombreProyecto.Value.ToString(),
-                    descripcionProyecto.Value.ToString(), d, dfin, null, Session["PK_CUENTA"].ToString());
+                    descripcionProyecto.Value.ToString(), d, dfin, null, Session["PK_CUENTA"].ToString(), 10);
             }
 
             if (p.insertarProyecto()) {
                 Response.Write("<script> alert('exitoso'); </script>");
+                Response.Redirect("../Home/Principal.spx");
             }else {
                 Response.Write("<script> alert('Error al crear proyecto'); </script>");
             }

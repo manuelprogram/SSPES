@@ -151,11 +151,16 @@
                                                                             <br />
                                                                             <input type="date" runat="server" id="fechaFin" />
                                                                         </div>
-                                                                    </div>
 
-                                                                    <br />
-                                                                    <br />
-                                                                    <br />
+                                                                        <div class="col-md-7 control-label">
+                                                                            <br />
+                                                                            <br />
+                                                                            <label>Cantidad de muestras:</label>
+                                                                            <input type="text" id="canMuestras" name="pr" runat="server" class="form-control" />
+                                                                            <br />
+                                                                        </div>
+
+                                                                    </div>
                                                                     <label>Archivo</label>
                                                                     <asp:FileUpload ID="archivo" size="20" runat="server" />
                                                                 </div>

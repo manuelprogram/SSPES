@@ -18,12 +18,20 @@ namespace SSPES.Controllers {
             obj = new MuestraModel(observaciones, fecha, fk_proyecto, fk_int_pro);
         }
 
-        public bool registrarMuestra() {
-            return obj.registrarMuestra();
+        public bool registrarMuestra(int numero) {
+            return obj.registrarMuestra(numero.ToString());
         }
 
-        public string getPk() {
-            return obj.getPk();
+        public string getPk(int numeroMuestra) {
+            return obj.getPk(numeroMuestra.ToString());
+        }
+
+        public string getNumeroMuestras() {
+            return obj.getNumeroMuestras();
+        }
+
+        public string getNumeroMuestras(string fkProyecto) {
+            return obj.getNumeroMuestras(fkProyecto);
         }
 
         public bool resgitrarValorMuestra(string valor, string fk_muestra, string fk_var_pro) {
@@ -36,6 +44,14 @@ namespace SSPES.Controllers {
 
         public DataTable getValorVariablesMuestras(string pk_muestra) {
             return obj.getValorVariablesMuestra(pk_muestra);
+        }
+
+        public bool ActualizarVariableMuestra(string pk_muestra, string pk_variable_pro, string valor) {
+            return obj.ActualizarVariableMuestra(pk_muestra, pk_variable_pro, valor);
+        }
+
+        public bool ActualizarObservacionesMuestra(string pk_muestra, string obs) {
+            return obj.ActualizarObservacionesMuestra(pk_muestra, obs);
         }
     }
 }
