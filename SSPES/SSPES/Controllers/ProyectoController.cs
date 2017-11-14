@@ -14,8 +14,8 @@ namespace SSPES.Controllers {
             obj = new ProyectoModel();
         }
 
-        public ProyectoController(string a, string b, DateTime c, DateTime c2, HttpPostedFile d, string e) {
-            obj = new ProyectoModel(a, b, c, c2, d, e);
+        public ProyectoController(string a, string b, DateTime c, DateTime c2, HttpPostedFile d, string e, int f) {
+            obj = new ProyectoModel(a, b, c, c2, d, e, f);
         }
 
         public DataTable consultarNombreProyectos() {

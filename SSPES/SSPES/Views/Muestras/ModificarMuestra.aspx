@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="VisualizarMuestra.aspx.cs" Inherits="SSPES.Views.Muestras.VisualizarMuestra" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="ModificarMuestra.aspx.cs" Inherits="SSPES.Views.Muestras.ModificarMuestra" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script>
@@ -19,7 +19,7 @@
                         <div class="panel-body">
                             <div class="card card-inverse" style="padding: 5px; background-color: #0099CC; border-color: #333;">
                                 <div class="card-block">
-                                    <h1 class="page-header" style="color: #ffffff;" align="center">Visualizar Muestras</h1>
+                                    <h1 class="page-header" style="color: #ffffff;" align="center">Modificar Muestras</h1>
                                 </div>
                             </div>
                             <%--<fin del encabezado>--%>
@@ -29,7 +29,7 @@
                                     <div class="col-lg-12">
                                         <ul class="nav nav-tabs">
                                             <li class="active"><a href="#Seleccionar" data-toggle="tab">Seleccionar</a> </li>
-                                            <li><a id="hrefAsignar" href="#AsignarVariables" data-toggle="tab">Visualizar muestras</a> </li>
+                                            <li><a id="hrefAsignar" href="#AsignarVariables" data-toggle="tab">Modificar muestras</a> </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,8 +106,9 @@
                                                             <asp:Repeater ID="rep" runat="server">
                                                                 <ItemTemplate>
                                                                     <div class="col-md-4">
-                                                                        <h5>Nombre: <%# Eval("NOMBRE_VARIABLE")%></h5>
-                                                                        <asp:TextBox ID="text" runat="server" Text='<%# Eval("VALOR_VARIABLE")%>' Width="250" ReadOnly="true"></asp:TextBox>
+                                                                        <label>Nombre: <%# Eval("NOMBRE_VARIABLE")%></label>
+                                                                        <h5>Tipo: <%# Eval("TIPO_DE_DATO")%></h5>
+                                                                        <asp:TextBox ID="text" runat="server" Text='<%# Eval("VALOR_VARIABLE")%>' Width="250"></asp:TextBox>
                                                                         <br />
                                                                         <br />
                                                                         <br />
@@ -118,6 +119,11 @@
                                                         <br />
                                                         <br />
 
+                                                        <div class="col-md-4">
+                                                            <asp:Button ID="ActualizarMuestra" runat="server" OnClick="ActualizarMuestra_Click" Class="btn btn-primary btn-block" Text="Actualizar muestra" />
+                                                        </div>
+                                                        <br />
+                                                        <br />
                                                     </div>
                                                 </div>
                                             </div>

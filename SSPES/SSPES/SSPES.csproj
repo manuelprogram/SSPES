@@ -142,6 +142,7 @@
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
     <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
+    <Content Include="Views\Muestras\ModificarMuestra.aspx" />
     <Content Include="Views\Muestras\RegistrarMuestra.aspx" />
     <Content Include="Views\Muestras\VisualizarMuestra.aspx" />
     <Content Include="Views\Proyectos\AdministrarProyecto.aspx" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.designer.cs">
       <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Muestras\ModificarMuestra.aspx.cs">
+      <DependentUpon>ModificarMuestra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Muestras\ModificarMuestra.aspx.designer.cs">
+      <DependentUpon>ModificarMuestra.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Muestras\RegistrarMuestra.aspx.cs">
       <DependentUpon>RegistrarMuestra.aspx</DependentUpon>
