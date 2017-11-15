@@ -42,8 +42,8 @@ namespace SSPES.Controllers {
             return obj.consultarProyectosPersona(pk_dir);
         }
 
-        public bool agregarIntegrante(string a, string b) {
-            return obj.agregarIntegrante(a, b);
+        public bool agregarIntegrante(string pk_cuenta, string pk_proyecto) {
+            return obj.agregarIntegrante(pk_cuenta, pk_proyecto);
         }
 
         public string CantidadProyecto(string pk_user) {
@@ -52,6 +52,10 @@ namespace SSPES.Controllers {
         
         public string getPkIntegranteProyecto(string pk_cuent, string pk_proyecto) {
             return obj.getPkIntegranteProyecto(pk_cuent, pk_proyecto);
+        }
+
+        public string getPkProyecto() {
+            return obj.getPk();
         }
     }
 }
