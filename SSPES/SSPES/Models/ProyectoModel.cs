@@ -18,6 +18,7 @@ namespace SSPES.Models {
         public HttpPostedFile archivo { get; set; }
         public string fkCuenta { get; set; }
         public int cantidad_muestras { get; set; }
+        private string f, f2;
 
         public ProyectoModel(string a, string b, DateTime c, DateTime c2, HttpPostedFile d, string e, int f) {
             nombre = a;
@@ -44,8 +45,8 @@ namespace SSPES.Models {
 
         public bool registrarProyecto() {
             string[] sql = new string[1];
-            string f = fecha.Year + "-" + fecha.Month + "-" + fecha.Day;
-            string f2 = fechaFin.Year + "-" + fechaFin.Month + "-" + fechaFin.Day;
+            f = fecha.Year + "-" + fecha.Month + "-" + fecha.Day;
+            f2 = fechaFin.Year + "-" + fechaFin.Month + "-" + fechaFin.Day;
 
             if (archivo == null) {
                 sql[0] = "INSERT INTO proyecto (NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_FIN, ESTADO, FK_CUENTA_PROYECTO, CANTIDAD_MUESTRAS) VALUES(";
@@ -101,5 +102,14 @@ namespace SSPES.Models {
                 return null;
             }
          }
+
+        public string getPk() {
+            string sql = @"SELECT PK_PROYECTO FROM proyecto WHERE NOMBRE = '" + nombre + @"' AND ESTADO = 'A' 
+                AND DESCRIPCION = '" + descripcion + @"' AND FK_CUENTA_PROYECTO = '" + fkCuenta + @"' AND 
+                CANTIDAD_MUESTRAS = '" + cantidad_muestras + @"' AND FECHA_INICIO = '" + f + @"'
+                AND FECHA_FIN = '" + f2 + @"' ORDER BY PK_PROYECTO; ";
+            DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
+            return dt.Rows[dt.Rows.Count - 1]["PK_PROYECTO"].ToString();
+        }
     }
 }

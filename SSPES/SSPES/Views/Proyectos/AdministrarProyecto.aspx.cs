@@ -301,6 +301,7 @@ namespace SSPES.Views.Proyectos {
             }
 
             if (p.insertarProyecto()) {
+                p.agregarIntegrante(Session["PK_CUENTA"].ToString(), p.getPkProyecto());
                 msj = "Exitoso";
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 Response.Redirect("AdministrarProyecto.aspx");
