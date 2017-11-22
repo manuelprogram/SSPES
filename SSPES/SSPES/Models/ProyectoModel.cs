@@ -92,6 +92,13 @@ namespace SSPES.Models {
             return con.RealizarTransaccion(sql);
         }
 
+        public bool eliminarIntegrante(string pk_cuenta, string pk_pro) {
+            string[] sql = new string[1];
+            sql[0] = @"DELETE FROM integrante_proyecto WHERE FK_CUENTA = '" + pk_cuenta + 
+                @"' AND FK_PROYECTO = '" + pk_pro + "';";
+            return con.RealizarTransaccion(sql);
+        }
+
         public string getPkIntegranteProyecto(string pk_cuenta, string pk_pro) {
             string sql = "SELECT PK_INTEGRANTE_PROYECTO FROM integrante_proyecto WHERE FK_PROYECTO = ";
             sql += "'" + pk_pro + "' AND FK_CUENTA = '" + pk_cuenta + "';";

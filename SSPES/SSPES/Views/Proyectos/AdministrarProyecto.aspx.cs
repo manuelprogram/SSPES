@@ -13,9 +13,10 @@ namespace SSPES.Views.Proyectos {
 
         private DataTable dtProyectos, dtVariables, dtIntegrantes;
         public string msj = "";
-        private Dictionary<string, string> mapa = new Dictionary<string, string>();
-        private List<string> list = new List<string>();//disponibles
-        private List<string> list2 = new List<string>();//a asignar
+        private Dictionary<string, int> mapa = new Dictionary<string, int>();//Para variables, nombre e indice en el dtVariables
+        private List<KeyValuePair<string, bool>> listDis = new List<KeyValuePair<string, bool>>();//disponibles
+        private List<KeyValuePair<string, bool>> listAsig = new List<KeyValuePair<string, bool>>();//a asignar
+        //private List<bool> asignados = new List<bool>();//si ese integrante ya esta 
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
@@ -36,8 +37,7 @@ namespace SSPES.Views.Proyectos {
 
         public void cargarProyectos() {
             listaVariablesDisponibles.Items.Clear();
-            listaVariablesSeleccionadas.Items.Clear();
-            listaVariablesActuales.Items.Clear();
+            listaVariablesAsignadas.Items.Clear();
             proyecto.Items.Clear();
 
             ProyectoController obj2 = new ProyectoController();
@@ -99,108 +99,131 @@ namespace SSPES.Views.Proyectos {
 
         public void cargarVariables(string pk_pro) {
             listaVariablesDisponibles.Items.Clear();
-            listaVariablesSeleccionadas.Items.Clear();
-            listaVariablesActuales.Items.Clear();
+            listaVariablesAsignadas.Items.Clear();
+            listaVariablesDisponibles.Enabled = true;
+            listaVariablesAsignadas.Enabled = true;
             mapa.Clear();
             VariableController obj = new VariableController();
             dtVariables = obj.consultarEstadoVariablesProyecto(pk_pro);
             string str, str2;
+            int con = 0;
             foreach (DataRow dr in dtVariables.Rows) {
                 str = dr["EXISTE"].ToString();
                 str2 = dr["NOMBRE_VARIABLE"].ToString();
-                if (str.Equals("Si")) {
-                    listaVariablesActuales.Items.Add(str2);
-                } else {
-                    listaVariablesDisponibles.Items.Add(str2);
-                    mapa.Add(str2, dr["idVARIABLE"].ToString());
-                }
+                if (str.Equals("Si")) listaVariablesAsignadas.Items.Add(str2);
+                else listaVariablesDisponibles.Items.Add(str2);
+                mapa.Add(str2, con++);
             }
             Session["mapa"] = mapa;
-            Session["datos_dtVariables"] = dtVariables;
+            Session["dtVariables"] = dtVariables;
+
+            MuestraController mc = new MuestraController();
+            if (!mc.getNumeroMuestras(Session["pk_pro"].ToString()).Equals("0")) {
+                listaVariablesDisponibles.Enabled = false;
+                listaVariablesAsignadas.Enabled = false;
+            }
         }
 
         //evento de cambiar variables
         protected void boton1_Click(object sender, EventArgs e) {
             while (listaVariablesDisponibles.GetSelectedIndices().Length > 0) {
-                listaVariablesSeleccionadas.Items.Add(listaVariablesDisponibles.SelectedItem);
+                listaVariablesAsignadas.Items.Add(listaVariablesDisponibles.SelectedItem);
                 listaVariablesDisponibles.Items.Remove(listaVariablesDisponibles.SelectedItem);
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarVariables();", true);
         }
 
         protected void noAsignar_Click(object sender, EventArgs e) {
-            while (listaVariablesSeleccionadas.GetSelectedIndices().Length > 0) {
-                listaVariablesDisponibles.Items.Add(listaVariablesSeleccionadas.SelectedItem);
-                listaVariablesSeleccionadas.Items.Remove(listaVariablesSeleccionadas.SelectedItem);
+            while (listaVariablesAsignadas.GetSelectedIndices().Length > 0) {
+                listaVariablesDisponibles.Items.Add(listaVariablesAsignadas.SelectedItem);
+                listaVariablesAsignadas.Items.Remove(listaVariablesAsignadas.SelectedItem);
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarVariables();", true);
         }
 
         protected void asignarVariable_Click(object sender, EventArgs e) {
             try {
+                if (listaVariablesAsignadas.Enabled == false) {
+                    Response.Write("<script> alert('Error, Hay muestras registradas'); </script>");
+                    return;
+                }
                 VariableController obj = new VariableController();
+                dtVariables = (DataTable)Session["dtVariables"];
                 int con = 0, activos = 0;
-                mapa = (Dictionary<string, string>)Session["mapa"];
-                for (int i = 0; i < listaVariablesSeleccionadas.Items.Count; i++) {
-                    activos++;
-                    if (!obj.asignarVariable(Session["pk_pro"].ToString(), mapa[listaVariablesSeleccionadas.Items[i].ToString()])) {
-                        con++;
+                mapa = (Dictionary<string, int>)Session["mapa"];
+                msj = "Se cambian ";
+                DataRow dr;
+
+                for (int i = 0; i < listaVariablesAsignadas.Items.Count; i++) {
+                    dr = dtVariables.Rows[mapa[listaVariablesAsignadas.Items[i].ToString()]];
+                    if (!dr["EXISTE"].ToString().Equals("Si")) {
+                        activos++;
+                        if (!obj.asignarVariable(Session["pk_pro"].ToString(), dr["idVARIABLE"].ToString())) con++;
+                        else dtVariables.Rows[mapa[listaVariablesAsignadas.Items[i].ToString()]]["EXISTE"] = "Si";
                     }
                 }
+
+                for (int i = 0; i < listaVariablesDisponibles.Items.Count; i++) {
+                    dr = dtVariables.Rows[mapa[listaVariablesDisponibles.Items[i].ToString()]];
+                    if (dr["EXISTE"].ToString().Equals("Si")) {
+                        activos++;
+                        if (!obj.eliminarVariable(Session["pk_pro"].ToString(), dr["idVARIABLE"].ToString())) con++;
+                        else dtVariables.Rows[mapa[listaVariablesDisponibles.Items[i].ToString()]]["EXISTE"] = "No";
+                    }
+                }
+
                 if (activos == 0) {
-                    msj = "Seleccione al menos una variable";
+                    msj = "Sin cambios";
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                     return;
                 }
                 if (con == 0) {
-                    msj = "Exitoso";
+                    msj += " " + activos;
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 } else {
-                    //msj = "Error al asignar alguno(s)";
-                    msj = mapa[listaVariablesSeleccionadas.Items[0].ToString()];
+                    msj = "Error al actualizar alguno(s)";
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 }
-                cargarVariables(Session["pk_pro"].ToString());
+
             } catch (Exception) {
                 Response.Write("<script> alert('Error inesperado'); </script>");
-                cargarVariables(Session["pk_pro"].ToString());
             }
+            cargarVariables(Session["pk_pro"].ToString());
         }
 
         //Asignacion integrantes
 
         protected void moverUser1_Click(object sender, EventArgs e) {
-            list = (List<string>)Session["list"];
-            list2 = (List<string>)Session["list2"];
+            listDis = (List<KeyValuePair<string, bool>>)Session["listDis"];
+            listAsig = (List<KeyValuePair<string, bool>>)Session["listAsig"];
             while (ListUsuariosDisponibles.GetSelectedIndices().Length > 0) {
-                list2.Add(list[ListUsuariosDisponibles.SelectedIndex]);
-                list.RemoveAt(ListUsuariosDisponibles.SelectedIndex);
-                ListUsuariosSeleccionados.Items.Add(ListUsuariosDisponibles.SelectedItem);
+                listAsig.Add(listDis[ListUsuariosDisponibles.SelectedIndex]);
+                listDis.RemoveAt(ListUsuariosDisponibles.SelectedIndex);
+                ListUsuariosAsignados.Items.Add(ListUsuariosDisponibles.SelectedItem);
                 ListUsuariosDisponibles.Items.Remove(ListUsuariosDisponibles.SelectedItem);
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarUsuarios();", true);
         }
 
         protected void moverUser2_Click(object sender, EventArgs e) {
-            list = (List<string>)Session["list"];
-            list2 = (List<string>)Session["list2"];
-            while (ListUsuariosSeleccionados.GetSelectedIndices().Length > 0) {
-                list.Add(list2[ListUsuariosSeleccionados.SelectedIndex]);
-                list2.RemoveAt(ListUsuariosSeleccionados.SelectedIndex);
-                ListUsuariosDisponibles.Items.Add(ListUsuariosSeleccionados.SelectedItem);
-                ListUsuariosSeleccionados.Items.Remove(ListUsuariosSeleccionados.SelectedItem);
+            listDis = (List<KeyValuePair<string, bool>>)Session["listDis"];
+            listAsig = (List<KeyValuePair<string, bool>>)Session["listAsig"];
+            while (ListUsuariosAsignados.GetSelectedIndices().Length > 0) {
+                listDis.Add(listAsig[ListUsuariosAsignados.SelectedIndex]);
+                listAsig.RemoveAt(ListUsuariosAsignados.SelectedIndex);
+                ListUsuariosDisponibles.Items.Add(ListUsuariosAsignados.SelectedItem);
+                ListUsuariosAsignados.Items.Remove(ListUsuariosAsignados.SelectedItem);
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarUsuarios();", true);
-            Session["list"] = list;
-            Session["list2"] = list2;
+            Session["listDis"] = listDis;
+            Session["listAsig"] = listAsig;
         }
 
         public void llenarUsuarios(string pk_pro) {
-            ListUsuariosAsignados.Items.Clear();
             ListUsuariosDisponibles.Items.Clear();
-            ListUsuariosSeleccionados.Items.Clear();
-            list.Clear();
-            list2 = new List<string>();
+            ListUsuariosAsignados.Items.Clear();
+            listDis.Clear();
+            listAsig = new List<KeyValuePair<string, bool>>();
             CuentaController cc = new CuentaController();
             dtIntegrantes = cc.consultarUsuariosProyecto(pk_pro);
             Session["dtIntegrantes"] = dtIntegrantes;
@@ -209,34 +232,45 @@ namespace SSPES.Views.Proyectos {
                 str = dr["NOMBRE_1"].ToString() + "  " + dr["APELLIDO_1"].ToString();
                 if (dr["EXISTE"].ToString().Equals("Si")) {
                     ListUsuariosAsignados.Items.Add(str);
+                    listAsig.Add(new KeyValuePair<string, bool>(dr["PK_CUENTA"].ToString(), true));
                 } else {
                     ListUsuariosDisponibles.Items.Add(str);
-                    list.Add(dr["PK_CUENTA"].ToString());
+                    listDis.Add(new KeyValuePair<string, bool>(dr["PK_CUENTA"].ToString(), false));
                 }
             }
-            Session["list"] = list;
-            Session["list2"] = list2;
+            Session["listDis"] = listDis;
+            Session["listAsig"] = listAsig;
         }
 
         protected void AsignarUsuraios_Click(object sender, EventArgs e) {
-            dtIntegrantes = (DataTable)Session["dtIntegrantes"];
-            list2 = (List<string>)Session["list2"];
+            listAsig = (List<KeyValuePair<string, bool>>)Session["listAsig"];
+            listDis = (List<KeyValuePair<string, bool>>)Session["listDis"];
             ProyectoController pc = new ProyectoController();
             int con = 0, activos = 0;
 
-            for (int i = 0; i < ListUsuariosSeleccionados.Items.Count; i++) {
-                activos++;
-                if (!pc.agregarIntegrante(list2[i], Session["pk_pro"].ToString())) con++;
+            for (int i = 0; i < listAsig.Count; i++) {
+                if (!listAsig[i].Value) {
+                    activos++;
+                    if (!pc.agregarIntegrante(listAsig[i].Key, Session["pk_pro"].ToString())) con++;
+                }
             }
+
+            for (int i = 0; i < listDis.Count; i++) {
+                if (listDis[i].Value) {
+                    activos++;
+                    if (!pc.eliminarIntegrante(listDis[i].Key, Session["pk_pro"].ToString())) con++;
+                }
+            }
+
             if (activos == 0) {
-                msj = "Seleccione integrantes";
+                msj = "Sin cambios " + listDis.Count;
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 return;
             }
             if (con == 0) {
                 msj = "Exitoso";
             } else {
-                msj = "Error al registrar alguno(s)";
+                msj = "Error al cambiar alguno(s)\nrevise que no tengas muestras registradas";
             }
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
             llenarUsuarios(Session["pk_pro"].ToString());
@@ -301,7 +335,6 @@ namespace SSPES.Views.Proyectos {
             }
 
             if (p.insertarProyecto()) {
-                p.agregarIntegrante(Session["PK_CUENTA"].ToString(), p.getPkProyecto());
                 msj = "Exitoso";
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "Confirm();", true);
                 Response.Redirect("AdministrarProyecto.aspx");

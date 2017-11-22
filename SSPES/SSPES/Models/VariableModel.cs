@@ -63,5 +63,12 @@ namespace SSPES.Models {
                 BY NOMBRE_VARIABLE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
+
+        public bool eliminarAsignacion(string pkProyecto, string pkVariable) {
+            string[] sql = new string[1];
+                sql[0] = @"DELETE FROM variable_proyecto WHERE FK_PROYECTO = '" + pkProyecto + @"' 
+                 AND FK_VARIABLE = '" + pkVariable + "' ;";
+            return con.RealizarTransaccion(sql);
+        }
     }
 }

@@ -252,7 +252,7 @@
                                                             <div class="col-md-4 control-label">
                                                                 <br />
                                                                 <h4>Variables a asignar</h4>
-                                                                <asp:ListBox ID="listaVariablesSeleccionadas" runat="server" SelectionMode="Multiple"
+                                                                <asp:ListBox ID="listaVariablesAsignadas" runat="server" SelectionMode="Multiple"
                                                                     Height="200" Width="255"></asp:ListBox>
                                                                 <br />
                                                                 <br />
@@ -274,11 +274,9 @@
                                                                 </div>
                                                             </div>
 
-                                                            <h4>Variables asignadas</h4>
-                                                            <asp:ListBox ID="listaVariablesActuales" runat="server" Height="200" Width="330"></asp:ListBox>
                                                             <br />
                                                             <br />
-
+                                                            <br />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -313,7 +311,7 @@
                                                         <div class="col-md-4 control-label">
                                                             <br />
                                                             <h4>Usuarios a asignar</h4>
-                                                            <asp:ListBox ID="ListUsuariosSeleccionados" runat="server" SelectionMode="Multiple"
+                                                            <asp:ListBox ID="ListUsuariosAsignados" runat="server" SelectionMode="Multiple"
                                                                 Height="200" Width="255"></asp:ListBox>
                                                             <br />
                                                             <br />
@@ -334,9 +332,6 @@
                                                                     Text="Crear Usuario" OnClick="redireccionUsuarios_Click" />
                                                             </div>
                                                         </div>
-
-                                                        <h4>Usuarios asignados</h4>
-                                                        <asp:ListBox ID="ListUsuariosAsignados" runat="server" Height="200" Width="330"></asp:ListBox>
                                                         <br />
                                                         <br />
                                                         <br />

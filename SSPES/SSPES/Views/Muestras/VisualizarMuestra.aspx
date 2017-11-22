@@ -1,12 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Home/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="VisualizarMuestra.aspx.cs" Inherits="SSPES.Views.Muestras.VisualizarMuestra" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script>
-        function panelAsignarVariables() {
-            $('#hrefAsignar').trigger('click');
-            return true;
-        };
-    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -25,14 +19,6 @@
                             <%--<fin del encabezado>--%>
 
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#Seleccionar" data-toggle="tab">Seleccionar</a> </li>
-                                            <li><a id="hrefAsignar" href="#AsignarVariables" data-toggle="tab">Visualizar muestras</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
 
                                 <div class="tab-content">
 
@@ -65,18 +51,9 @@
                                                         </div>
                                                         <br />
                                                         <br />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="tab-pane fade" id="AsignarVariables">
 
-                                        <div class="row">
-                                            <div class="col-md-12 control-label">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-body">
+
                                                         <h4>Muestras</h4>
                                                         <h5 id="cantidad" runat="server"></h5>
 
@@ -102,21 +79,21 @@
                                                         <br />
 
                                                         <h4>Variables</h4>
-                                                        <div class="row">
-                                                            <asp:Repeater ID="rep" runat="server">
-                                                                <ItemTemplate>
-                                                                    <div class="col-md-4">
-                                                                        <h5>Nombre: <%# Eval("NOMBRE_VARIABLE")%></h5>
-                                                                        <asp:TextBox ID="text" runat="server" Text='<%# Eval("VALOR_VARIABLE")%>' Width="250" ReadOnly="true"></asp:TextBox>
-                                                                        <br />
-                                                                        <br />
-                                                                        <br />
-                                                                    </div>
-                                                                </ItemTemplate>
-                                                            </asp:Repeater>
-                                                        </div>
                                                         <br />
                                                         <br />
+
+
+
+                                                        <table id="tablaMuestras" class="table table-bordered table-hover" runat="server">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>N°</th>
+                                                                    <th>Nombre Variable</th>
+                                                                    <th>Valor</th>
+                                                                    <th>Descripcion</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
 
                                                     </div>
                                                 </div>
@@ -124,7 +101,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <br />
                             </div>
                         </div>
