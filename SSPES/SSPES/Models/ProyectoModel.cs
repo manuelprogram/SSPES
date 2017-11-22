@@ -39,7 +39,7 @@ namespace SSPES.Models {
             return data;
         }
         public string CantidadProyectos(string pk_user) {
-            string sql = "select count(*) as numero from proyecto where fk_cuenta_proyecto='" + pk_user + "';";
+            string sql = "select count(*) as numero from integrante_proyecto where fk_cuenta='" + pk_user + "';";
             return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["numero"].ToString();
         }
 
@@ -94,7 +94,7 @@ namespace SSPES.Models {
 
         public bool eliminarIntegrante(string pk_cuenta, string pk_pro) {
             string[] sql = new string[1];
-            sql[0] = @"DELETE FROM integrante_proyecto WHERE FK_CUENTA = '" + pk_cuenta + 
+            sql[0] = @"DELETE FROM integrante_proyecto WHERE FK_CUENTA = '" + pk_cuenta +
                 @"' AND FK_PROYECTO = '" + pk_pro + "';";
             return con.RealizarTransaccion(sql);
         }
@@ -108,7 +108,7 @@ namespace SSPES.Models {
             } catch (Exception) {
                 return null;
             }
-         }
+        }
 
         public string getPk() {
             string sql = @"SELECT PK_PROYECTO FROM proyecto WHERE NOMBRE = '" + nombre + @"' AND ESTADO = 'A' 
