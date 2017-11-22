@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace SSPES.Views.Muestras {
@@ -37,12 +38,34 @@ namespace SSPES.Views.Muestras {
             }
         }
 
+        //llenar tabla
+
+        private void llenarTabla(DataTable aux) {
+            for (int i = 0; i < aux.Rows.Count; i++) {
+                HtmlTableRow htr = new HtmlTableRow();
+                DataRow dr = aux.Rows[i];
+                
+                HtmlTableCell c0 = new HtmlTableCell(), c1 = new HtmlTableCell(), c2 = new HtmlTableCell(), 
+                    c3 = new HtmlTableCell();
+                c0.InnerText = (i + 1) + "";
+                c1.InnerText = dr["NOMBRE_VARIABLE"].ToString();
+                c2.InnerText = dr["VALOR_VARIABLE"].ToString();
+                c3.InnerText = dr["DESCRIPCION_VARIABLE"].ToString();
+                htr.Cells.Add(c0);
+                htr.Cells.Add(c1);
+                htr.Cells.Add(c2);
+                htr.Cells.Add(c3);
+
+                tablaMuestras.Rows.Add(htr);
+            }
+        }
+
         //cargar proyectos
 
         public void cargarProyectos() {
             proyecto.Items.Clear();
             ListaMuestras.Items.Clear();
-            rep.Visible = false;
+            tablaMuestras.Rows.Clear();
             muestraSeleccionada.Text = "";
             descripcionMuestra.Text = "";
             ProyectoController obj2 = new ProyectoController();
@@ -71,7 +94,7 @@ namespace SSPES.Views.Muestras {
 
         protected void llenarMuestras() {
             ListaMuestras.Items.Clear();
-            rep.Visible = false;
+            tablaMuestras.Rows.Clear();
             muestraSeleccionada.Text = "";
             descripcionMuestra.Text = "";
             MuestraController mc = new MuestraController();
@@ -96,10 +119,8 @@ namespace SSPES.Views.Muestras {
             descripcionMuestra.Text = dtMuestras.Rows[ListaMuestras.SelectedIndex]["OBSERVACIONES"].ToString();
 
             MuestraController mc = new MuestraController();
-            rep.DataSource = mc.getValorVariablesMuestras(dtMuestras.Rows[ListaMuestras.SelectedIndex]["PK_MUESTRA"].ToString());
-            rep.DataBind();
-            rep.Visible = true;
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "panelAsignarVariables();", true);
+            DataTable aux = mc.getValorVariablesMuestras(dtMuestras.Rows[ListaMuestras.SelectedIndex]["PK_MUESTRA"].ToString());
+            llenarTabla(aux);
         }
     }
 }

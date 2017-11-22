@@ -46,6 +46,10 @@ namespace SSPES.Controllers {
             return obj.agregarIntegrante(pk_cuenta, pk_proyecto);
         }
 
+        public bool eliminarIntegrante(string pk_cuenta, string pk_proyecto) {
+            return obj.eliminarIntegrante(pk_cuenta, pk_proyecto);
+        }
+
         public string CantidadProyecto(string pk_user) {
             return obj.CantidadProyectos(pk_user);
         }

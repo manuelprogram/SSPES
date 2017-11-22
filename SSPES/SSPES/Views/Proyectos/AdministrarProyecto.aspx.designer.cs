@@ -211,13 +211,13 @@ namespace SSPES.Views.Proyectos {
         protected global::System.Web.UI.WebControls.Button noAsignar;
         
         /// <summary>
-        /// Control listaVariablesSeleccionadas.
+        /// Control listaVariablesAsignadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listaVariablesSeleccionadas;
+        protected global::System.Web.UI.WebControls.ListBox listaVariablesAsignadas;
         
         /// <summary>
         /// Control asignarVariable.
@@ -236,15 +236,6 @@ namespace SSPES.Views.Proyectos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button crearVariable;
-        
-        /// <summary>
-        /// Control listaVariablesActuales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listaVariablesActuales;
         
         /// <summary>
         /// Control ListUsuariosDisponibles.
@@ -274,13 +265,13 @@ namespace SSPES.Views.Proyectos {
         protected global::System.Web.UI.WebControls.Button moverUser2;
         
         /// <summary>
-        /// Control ListUsuariosSeleccionados.
+        /// Control ListUsuariosAsignados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListUsuariosSeleccionados;
+        protected global::System.Web.UI.WebControls.ListBox ListUsuariosAsignados;
         
         /// <summary>
         /// Control Button3.
@@ -299,14 +290,5 @@ namespace SSPES.Views.Proyectos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
-        
-        /// <summary>
-        /// Control ListUsuariosAsignados.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListUsuariosAsignados;
     }
 }

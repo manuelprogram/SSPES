@@ -30,6 +30,10 @@ namespace SSPES.Controllers {
             return obj.asignarVariable(pro, var);
         }
 
+        public bool eliminarVariable(string pro, string var) {
+            return obj.eliminarAsignacion(pro, var);
+        }
+
         public DataTable consultarEstadoVariablesProyecto(string pk_pro) {
             return obj.consultarEstadoVariablesProyecto(pk_pro);
         }
