@@ -139,6 +139,7 @@
     <Content Include="public\Inicio\lib\wow\wow.min.js" />
     <Content Include="Views\AsignacionVariables\AsignarVariables.aspx" />
     <Content Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx" />
+    <Content Include="Views\Cuenta\Cuentas.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
     <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx.designer.cs">
       <DependentUpon>EliminarAsignacionVariables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuenta\Cuentas.aspx.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cuenta\Cuentas.aspx.designer.cs">
+      <DependentUpon>Cuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
@@ -418,7 +426,6 @@
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
     <Folder Include="Views\Grupo\" />
-    <Folder Include="Views\Plataforma\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
