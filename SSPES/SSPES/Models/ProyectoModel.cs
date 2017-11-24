@@ -77,8 +77,8 @@ namespace SSPES.Models {
         }
 
         public DataTable consultarProyectosPersona(string pk_dir) {//sus proyectos creados y a los que esta como integrante
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
-            sql += "AND(FK_CUENTA_PROYECTO = '" + pk_dir + "' OR EXISTS(SELECT * FROM integrante_proyecto ";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ";
+            sql += "(FK_CUENTA_PROYECTO = '" + pk_dir + "' OR EXISTS(SELECT * FROM integrante_proyecto ";
             sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "')";
             sql += ") ORDER BY NOMBRE; ";
             return con.EjecutarConsulta(sql, CommandType.Text);
@@ -117,6 +117,12 @@ namespace SSPES.Models {
                 AND FECHA_FIN = '" + f2 + @"' ORDER BY PK_PROYECTO; ";
             DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
             return dt.Rows[dt.Rows.Count - 1]["PK_PROYECTO"].ToString();
+        }
+
+        public string getNumeroProyectoFinal(string pk_cuenta) {
+            string sql = "select count(pr.PK_PROYECTO) as numero from proyecto pr inner join integrante_proyecto ip on ip.FK_PROYECTO=pr.PK_PROYECTO and ip.FK_CUENTA='" + pk_cuenta + "' where pr.ESTADO='I';";
+            DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
+            return dt.Rows[0]["numero"].ToString();
         }
     }
 }

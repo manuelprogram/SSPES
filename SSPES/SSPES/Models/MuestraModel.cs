@@ -72,11 +72,7 @@ namespace SSPES.Models {
         }
 
         public DataTable getValorVariablesMuestra(string pk_muestra) {
-            string sql = @"SELECT PK_MUESTRA_VARIABLE, VALOR_VARIABLE, PK_VARIABLE_PROYECTO, NOMBRE_VARIABLE, TIPO_DE_DATO, 
-                DESCRIPCION_VARIABLE FROM muestra_variable, variable_proyecto, variable WHERE 
-                variable_proyecto.PK_VARIABLE_PROYECTO = muestra_variable.FK_VARIABLE_PROYECTO AND 
-                muestra_variable.FK_MUESTRA = '" + pk_muestra + @"' AND variable.idVARIABLE = 
-                variable_proyecto.FK_VARIABLE ORDER BY NOMBRE_VARIABLE;";
+            string sql = "call getValorVariablesMuestra('" + pk_muestra + "');";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 

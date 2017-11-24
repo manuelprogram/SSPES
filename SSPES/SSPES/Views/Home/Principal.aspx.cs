@@ -12,6 +12,8 @@ namespace SSPES.Views.Home {
         ProyectoController proyecto = new ProyectoController();
         public string numeroUser;
         public string numeroPro;
+        public string numeroTer;
+
 
         protected void Page_Load(object sender, EventArgs e) {
             Session["datos_dtVariables"] = null;
@@ -21,6 +23,7 @@ namespace SSPES.Views.Home {
             Session["dtRoles"] = null;
             numeroUser = cuenta.CantidadCuenta();
             numeroPro = proyecto.CantidadProyecto(Session["PK_CUENTA"].ToString());
+            numeroTer = proyecto.getNumeroProyectoFinal(Session["PK_CUENTA"].ToString());
         }
     }
 }
