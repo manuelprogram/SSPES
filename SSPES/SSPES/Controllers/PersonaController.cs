@@ -31,6 +31,14 @@ namespace SSPES.Controllers {
             return p.ConsultarDatosPersonas();
         }
 
+        public DataRow ConsultarUpdate(string pk) {
+            return p.ConsultarUpdate(pk);
+        }
+
+        public bool RealizarUpdate(string tipo, string numero, string celular, string correo, string pk) {
+            return p.RealizarUpdate(tipo,numero,celular, correo,pk);
+        }
+
         public string Insertar(PersonaModel obj, string user, string pass) {
             CuentaController c = new CuentaController();
             RolCuentaController rcc = new RolCuentaController();

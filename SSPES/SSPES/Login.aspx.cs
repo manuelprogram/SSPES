@@ -32,6 +32,7 @@ namespace SSPES {
                     if (aux.Rows.Count > 0) {
                         dato = aux.Rows[0];
                         Session["PK_CUENTA"] = dato["PK_CUENTA"].ToString();
+                        Session["FK_PERSONA"] = dato["FK_PERSONA"].ToString();
                         Session["Id_Session"] = Session.SessionID.ToString();
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {

@@ -13,6 +13,7 @@ namespace SSPES.Views.Proyectos {
 
         public DataTable dt;
         public DataRow dr;
+        public string flag;
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!this.IsPostBack) {
@@ -56,6 +57,16 @@ namespace SSPES.Views.Proyectos {
                 return;
             }
         }
-        
+        public string ProcessMyDataItem(object myValue) {
+            if (myValue.ToString().Equals("R")) {
+                return "panel panel-danger";
+            } else if (myValue.ToString().Equals("A")) {
+                return "panel panel-warning";
+            } else {
+                return "panel panel-success";
+            }
+
+        }
+
     }
 }

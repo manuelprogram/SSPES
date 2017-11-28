@@ -71,16 +71,16 @@ namespace SSPES.Models {
         }
 
         public DataTable consultarProyectosDirector(string pk_dir) {//los proyectos de un director
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
-            sql += "AND FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE";
+            sql += " FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
         public DataTable consultarProyectosPersona(string pk_dir) {//sus proyectos creados y a los que esta como integrante
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ";
-            sql += "(FK_CUENTA_PROYECTO = '" + pk_dir + "' OR EXISTS(SELECT * FROM integrante_proyecto ";
-            sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "')";
-            sql += ") ORDER BY NOMBRE; ";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO FROM proyecto WHERE ";
+            sql += "EXISTS(SELECT * FROM integrante_proyecto ";
+            sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "') ";
+            sql += "ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
