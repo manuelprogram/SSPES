@@ -61,5 +61,10 @@ namespace SSPES.Controllers {
         public string getPkProyecto() {
             return obj.getPk();
         }
+
+        public string getNumeroProyectoFinal(string pk_cuenta) {
+            return obj.getNumeroProyectoFinal(pk_cuenta);
+        }
+
     }
 }

@@ -39,7 +39,7 @@ namespace SSPES.Models {
             return data;
         }
         public string CantidadProyectos(string pk_user) {
-            string sql = "select count(*) as numero from proyecto where fk_cuenta_proyecto='" + pk_user + "';";
+            string sql = "select count(*) as numero from integrante_proyecto where fk_cuenta='" + pk_user + "';";
             return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["numero"].ToString();
         }
 
@@ -71,16 +71,16 @@ namespace SSPES.Models {
         }
 
         public DataTable consultarProyectosDirector(string pk_dir) {//los proyectos de un director
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
-            sql += "AND FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE";
+            sql += " FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
         public DataTable consultarProyectosPersona(string pk_dir) {//sus proyectos creados y a los que esta como integrante
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A' ";
-            sql += "AND(FK_CUENTA_PROYECTO = '" + pk_dir + "' OR EXISTS(SELECT * FROM integrante_proyecto ";
-            sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "')";
-            sql += ") ORDER BY NOMBRE; ";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO FROM proyecto WHERE ";
+            sql += "EXISTS(SELECT * FROM integrante_proyecto ";
+            sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "') ";
+            sql += "ORDER BY NOMBRE;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 
@@ -94,7 +94,7 @@ namespace SSPES.Models {
 
         public bool eliminarIntegrante(string pk_cuenta, string pk_pro) {
             string[] sql = new string[1];
-            sql[0] = @"DELETE FROM integrante_proyecto WHERE FK_CUENTA = '" + pk_cuenta + 
+            sql[0] = @"DELETE FROM integrante_proyecto WHERE FK_CUENTA = '" + pk_cuenta +
                 @"' AND FK_PROYECTO = '" + pk_pro + "';";
             return con.RealizarTransaccion(sql);
         }
@@ -108,7 +108,7 @@ namespace SSPES.Models {
             } catch (Exception) {
                 return null;
             }
-         }
+        }
 
         public string getPk() {
             string sql = @"SELECT PK_PROYECTO FROM proyecto WHERE NOMBRE = '" + nombre + @"' AND ESTADO = 'A' 
@@ -117,6 +117,12 @@ namespace SSPES.Models {
                 AND FECHA_FIN = '" + f2 + @"' ORDER BY PK_PROYECTO; ";
             DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
             return dt.Rows[dt.Rows.Count - 1]["PK_PROYECTO"].ToString();
+        }
+
+        public string getNumeroProyectoFinal(string pk_cuenta) {
+            string sql = "select count(pr.PK_PROYECTO) as numero from proyecto pr inner join integrante_proyecto ip on ip.FK_PROYECTO=pr.PK_PROYECTO and ip.FK_CUENTA='" + pk_cuenta + "' where pr.ESTADO='I';";
+            DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
+            return dt.Rows[0]["numero"].ToString();
         }
     }
 }

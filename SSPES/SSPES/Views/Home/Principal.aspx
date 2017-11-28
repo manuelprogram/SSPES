@@ -67,7 +67,7 @@
                                 <i class="fa fa-folder-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">0</div>
+                                <div class="huge"><%=numeroTer%></div>
                                 <div>FINALIZADOS</div>
                             </div>
                         </div>
