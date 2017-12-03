@@ -13,21 +13,24 @@ namespace SSPES.Views.Cuenta {
         DataRow datos;
         public string name;
         string pk_person;
+        bool flag = true;
         protected void Page_Load(object sender, EventArgs e) {
-            pk_person = Session["FK_PERSONA"].ToString();
-            datos = persona.ConsultarUpdate(pk_person);
-            string tipe = datos["tipo"].ToString();
-            if (tipe.Equals("CC")) {
-                udtipodoc.SelectedIndex = 1;
-            } else if (tipe.Equals("TI")) {
-                udtipodoc.SelectedIndex = 0;
-            } else {
-                udtipodoc.SelectedIndex = 2;
+            if (udnumero.Value.ToString()=="") {
+                pk_person = Session["FK_PERSONA"].ToString();
+                datos = persona.ConsultarUpdate(pk_person);
+                string tipe = datos["tipo"].ToString();
+                if (tipe.Equals("CC")) {
+                    udtipodoc.SelectedIndex = 1;
+                } else if (tipe.Equals("TI")) {
+                    udtipodoc.SelectedIndex = 0;
+                } else {
+                    udtipodoc.SelectedIndex = 2;
+                }
+                udcelular.Value = datos["celular"].ToString();
+                udemail.Value = datos["correo"].ToString();
+                udnumero.Value = datos["numero"].ToString();
+                name = Session["NombreUsuario"].ToString();
             }
-            udcelular.Value = datos["celular"].ToString();
-            udemail.Value = datos["correo"].ToString();
-            udnumero.Value = datos["numero"].ToString();
-            name = Session["NombreUsuario"].ToString();
         }
 
         public string select() {
@@ -43,8 +46,8 @@ namespace SSPES.Views.Cuenta {
         }
 
         protected void Button1_Click(object sender, EventArgs e) {
-            if (persona.RealizarUpdate(select(), udnumero.Value, udcelular.Value, udemail.Value, pk_person)) {
-                Response.Write("<script> alert('" + udcelular.Value.ToString() + "'); </script>");
+            if (persona.RealizarUpdate(select(), udnumero.Value, udcelular.Value, udemail.Value, Session["FK_PERSONA"].ToString())) {
+                Response.Write("<script> alert('Actualizacion Exitosa'); </script>");
             } else {
                 Response.Write("<script> alert('ERROR ACTULIZACIÓN'); </script>");
             }

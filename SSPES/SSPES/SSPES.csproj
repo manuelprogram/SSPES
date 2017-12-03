@@ -140,6 +140,7 @@
     <Content Include="Views\AsignacionVariables\AsignarVariables.aspx" />
     <Content Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx" />
     <Content Include="Views\Cuenta\Cuentas.aspx" />
+    <Content Include="Views\Grupo\AdminGrupo.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
     <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
     <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
@@ -170,6 +171,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BD\Conexion.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\MuestraController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
@@ -195,6 +197,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CuentaModel.cs" />
+    <Compile Include="Models\GrupoModel.cs" />
     <Compile Include="Models\MuestraModel.cs" />
     <Compile Include="Models\PersonaModel.cs" />
     <Compile Include="Models\ProyectoModel.cs" />
@@ -223,6 +226,13 @@
     </Compile>
     <Compile Include="Views\Cuenta\Cuentas.aspx.designer.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Grupo\AdminGrupo.aspx.cs">
+      <DependentUpon>AdminGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Grupo\AdminGrupo.aspx.designer.cs">
+      <DependentUpon>AdminGrupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
@@ -425,7 +435,6 @@
     <Folder Include="public\Admin\js\" />
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
-    <Folder Include="Views\Grupo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

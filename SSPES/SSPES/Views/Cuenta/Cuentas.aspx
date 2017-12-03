@@ -36,7 +36,7 @@
                                                         <div class="col-md-4 text-center">
                                                             <div class="thumbnail">
                                                                 <img src="../../Imagenes/user.jpg" class="img-rounded img-responsive" alt="Lights" style="width: 100%" />
-                                                                <label id="nombre"><%= name %></label>
+                                                                <label id="nombre"><%= Session["NombreUsuario"].ToString() %></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8">
@@ -73,13 +73,13 @@
                                                                             <div class="col-md-6 control-label">
                                                                                 <div class="form-group">
                                                                                     <label>Correo Electronico</label>
-                                                                                    <input type="email" id="udemail" class="form-control" runat="server" required="" />
+                                                                                    <input type="email" id="udemail" class="form-control" runat="server"   required="" />
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-4"></div>
                                                                             <div class="col-md-4">
                                                                                 <br />
-                                                                                <asp:Button ID="Button1" align="center" Class="btn btn-primary btn-block" Text="Actualizar" OnClick="Button1_Click" runat="server" />
+                                                                                <asp:Button ID="Button1" align="center" Class="btn btn-primary btn-block" Text="Actualizar" OnClick="Button1_Click" runat="server"/>
                                                                                 <br />
                                                                             </div>
                                                                         </div>
