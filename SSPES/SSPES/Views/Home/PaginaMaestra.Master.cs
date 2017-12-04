@@ -19,10 +19,7 @@ namespace SSPES.Views.Home {
             if (Session["PK_CUENTA"] == null) {
                 Response.Redirect("../../Login.aspx");
             } else {
-                if (!this.IsPostBack) {
-                    this.CargarMenu(Session["PK_CUENTA"].ToString());
-                    
-               }
+                this.CargarMenu(Session["PK_CUENTA"].ToString());
             }
         }
 

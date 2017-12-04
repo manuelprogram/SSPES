@@ -48,8 +48,7 @@ namespace SSPES.Models {
 
         public bool RealizarUpdate(string tipo, string numero, string celular, string correo, string pk) {
             string[] sql = new string[1];
-            sql[0] = @"UPDATE persona SET T_DOCUMENTO='" + tipo + "', N_DOCUMENTO = '" + numero + @"',
-                    CELULAR='" + celular + "', correo ='" + correo + "' WHERE PK_PERSONA = '" + pk + "';";
+            sql[0] = "UPDATE persona SET T_DOCUMENTO='" + tipo + "', N_DOCUMENTO = '" + numero +"', CELULAR = '" + celular + "', CORREO ='" + correo + "' WHERE PK_PERSONA = '" + pk + "';";
             return con.RealizarTransaccion(sql);
         }
 
