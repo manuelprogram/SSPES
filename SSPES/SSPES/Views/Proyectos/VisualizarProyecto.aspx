@@ -29,7 +29,9 @@
                                                 <p><%# Eval("DESCRIPCION") %></p>
                                             </div>
                                             <div class="panel-footer">
-                                                <%# "Fecha de inicio " + Eval("FECHA_INICIO").ToString().Substring(0, 10) + ", " %>
+                                                <%# "Fecha de Inicio : " + Eval("FECHA_INICIO").ToString().Substring(0, 10) %>
+                                                <br />
+                                                <%# "Fecha de Fin &nbsp;&nbsp;: " + Eval("FECHA_FIN").ToString().Substring(0, 10)+ "&nbsp;--> "%>
                                                 <asp:LinkButton ID="linkboton"
                                                     runat="server"
                                                     CommandArgument='<%# Eval("PK_PROYECTO") %>'

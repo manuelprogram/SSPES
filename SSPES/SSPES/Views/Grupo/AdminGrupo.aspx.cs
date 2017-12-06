@@ -15,9 +15,20 @@ namespace SSPES.Views.Grupo {
         protected void Page_Load(object sender, EventArgs e) {
             dt = grupos.ConsultarGrupo();
             dr = dt.Rows[0];
-            sigla.Value = dr["SIGLAS"].ToString();
-            descripcion.Value = dr["DESCRIPCION"].ToString();
-            institucion.Value = dr["institucion"].ToString();
+            if (nombre.Value.ToString()=="") {
+                sigla.Value = dr["SIGLAS"].ToString();
+                nombre.Value = dr["NOMBRE"].ToString();
+                descripcion.Value = dr["DESCRIPCION"].ToString();
+                institucion.Value = dr["institucion"].ToString();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e) {
+            if (grupos.ActualizarGrupo(sigla.Value,nombre.Value,descripcion.Value,institucion.Value)) {
+                Response.Write("<script> alert('Actualización Exitosa'); </script>");
+            } else {
+                Response.Write("<script> alert('Error Actulización'); </script>");
+            }
         }
     }
 }

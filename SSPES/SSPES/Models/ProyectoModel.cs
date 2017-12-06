@@ -77,7 +77,7 @@ namespace SSPES.Models {
         }
 
         public DataTable consultarProyectosPersona(string pk_dir) {//sus proyectos creados y a los que esta como integrante
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO FROM proyecto WHERE ";
+            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO, ESTADO, FECHA_FIN FROM proyecto WHERE ";
             sql += "EXISTS(SELECT * FROM integrante_proyecto ";
             sql += "WHERE integrante_proyecto.FK_PROYECTO = PK_PROYECTO AND integrante_proyecto.FK_CUENTA = '" + pk_dir + "') ";
             sql += "ORDER BY NOMBRE;";
