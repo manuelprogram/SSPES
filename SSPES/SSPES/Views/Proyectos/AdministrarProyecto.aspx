@@ -272,6 +272,8 @@
                                                                     <asp:Button CssClass="btn btn-primary col-lg-9" ID="crearVariable" runat="server"
                                                                         Text="Crear variable" OnClick="llamarModalVariable_Click" />
                                                                 </div>
+                                                                <br />
+                                                                <br />
                                                             </div>
 
                                                             <br />

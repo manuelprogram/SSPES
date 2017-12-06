@@ -31,7 +31,9 @@ namespace SSPES.Models//push de prueba
         }
 
         public DataTable ConsultarCuenta(CuentaModel obj) {
-            string sql = "SELECT PK_CUENTA, Fk_PERSONA FROM CUENTA where(USUARIO='" + obj.Usuario + "' AND PASSWORD= '" + obj.Password + "' AND ESTADO= 'A');";
+            string sql = @"SELECT * FROM CUENTA, rol_cuenta, rol where(USUARIO='" + obj.Usuario + 
+                @"' AND PASSWORD= '" + obj.Password + @"') 
+                AND rol_cuenta.FK_CUENTA = cuenta.PK_CUENTA AND rol.PK_ROL = rol_cuenta.FK_ROL;";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
 

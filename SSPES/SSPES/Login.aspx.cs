@@ -20,6 +20,7 @@ namespace SSPES {
 
         protected void Page_Load(object sender, EventArgs e) {
             Session.Clear();
+            Session["ENTRADA"] = "F";
         }
 
         protected void BIniciarSesion_Click(object sender, EventArgs e) {
@@ -34,6 +35,7 @@ namespace SSPES {
                         Session["PK_CUENTA"] = dato["PK_CUENTA"].ToString();
                         Session["FK_PERSONA"] = dato["FK_PERSONA"].ToString();
                         Session["ENTRADA"] = "T";
+                        Session["ROL"] = dato["ROL_NOMBRE"].ToString();
                         Response.Redirect("Views/Home/Principal.aspx");
                     } else {
                         mjs = "VERIFIQUE SUS DATOS";

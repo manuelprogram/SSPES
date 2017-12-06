@@ -16,6 +16,9 @@ namespace SSPES.Views.Proyectos {
         public string flag;
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             if (!this.IsPostBack) {
                 cargarProyectos();
             }

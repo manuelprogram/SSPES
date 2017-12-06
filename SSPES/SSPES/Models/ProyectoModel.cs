@@ -32,12 +32,7 @@ namespace SSPES.Models {
 
         public ProyectoModel() {
         }
-
-        public DataTable consultarNombreProyectos() {
-            string sql = "SELECT NOMBRE, PK_PROYECTO FROM proyecto WHERE ESTADO = 'A' ORDER BY NOMBRE;";
-            DataTable data = con.EjecutarConsulta(sql, CommandType.Text);
-            return data;
-        }
+        
         public string CantidadProyectos(string pk_user) {
             string sql = "select count(*) as numero from integrante_proyecto where fk_cuenta='" + pk_user + "';";
             return con.EjecutarConsulta(sql, CommandType.Text).Rows[0]["numero"].ToString();
@@ -64,12 +59,7 @@ namespace SSPES.Models {
             string sql = "SELECT ARCHIVO, NOMBREARCHIVO FROM proyecto WHERE PK_PROYECTO = '" + pk + "' AND ESTADO = 'A';";
             return con.EjecutarConsulta(sql, CommandType.Text);
         }
-
-        public DataTable consultarProyectos() {
-            string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE ESTADO = 'A';";
-            return con.EjecutarConsulta(sql, CommandType.Text);
-        }
-
+        
         public DataTable consultarProyectosDirector(string pk_dir) {//los proyectos de un director
             string sql = "SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO FROM proyecto WHERE";
             sql += " FK_CUENTA_PROYECTO = '" + pk_dir + "' ORDER BY NOMBRE;";
@@ -123,6 +113,16 @@ namespace SSPES.Models {
             string sql = "select count(pr.PK_PROYECTO) as numero from proyecto pr inner join integrante_proyecto ip on ip.FK_PROYECTO=pr.PK_PROYECTO and ip.FK_CUENTA='" + pk_cuenta + "' where pr.ESTADO='I';";
             DataTable dt = con.EjecutarConsulta(sql, CommandType.Text);
             return dt.Rows[0]["numero"].ToString();
+        }
+
+        public DataTable EstadoProyectos(string pk_dir) {//mis proyectos
+            string sql = @"SELECT PK_PROYECTO, NOMBRE, DESCRIPCION, Date_Format(FECHA_INICIO, '%d/%m/%Y') as FECHA_INICIAL, 
+                Date_Format(FECHA_FIN, '%d/%m/%Y') AS FECHA_FINAL, 
+                IF(ESTADO ='A','Activo',IF(ESTADO='I', 'Terminado', 'Retrasado')) as ESTADOS 
+                FROM proyecto WHERE 
+                EXISTS(select * from integrante_proyecto as ip where ip.FK_CUENTA = '" + pk_dir + @"' and ip.FK_PROYECTO = 
+                proyecto.PK_PROYECTO) ORDER BY NOMBRE;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
         }
     }
 }

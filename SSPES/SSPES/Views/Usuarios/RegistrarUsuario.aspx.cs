@@ -9,8 +9,16 @@ using System.Text.RegularExpressions;
 
 namespace SSPES.Views.Usuarios {
     public partial class RegistrarUsuario : System.Web.UI.Page {
+
         public List<string> lista;
+
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
+            if (!Session["ROL"].ToString().Equals("director")) {
+                Response.Redirect("../Home/Principal.aspx");
+            }
             RolController p = new RolController();
             lista = p.consultarRoles(p.modelo);
         }

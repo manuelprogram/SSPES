@@ -13,7 +13,14 @@ namespace SSPES.Views.Usuarios {
         public DataRow drConsulta;
         
         PersonaController Persona = new PersonaController();
+
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
+            if (!Session["ROL"].ToString().Equals("director")) {
+                Response.Redirect("../Home/Principal.aspx");
+            }
             dtConsulta = Persona.ConsultarDatosPersonas();
             if (dtConsulta.Rows.Count > 0) {
                 drConsulta = dtConsulta.Rows[0];

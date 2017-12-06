@@ -17,6 +17,12 @@
                                 </div>
                             </div>
                             <br />
+                            
+                            <div class="row">
+                                <div class="col-lg-9"></div>
+                                <a href="../Reportes/Reporte.aspx?tipo=1" class="btn btn-primary">Generar reporte de proyectos</a>
+                            </div>
+                            <br />
 
                             <asp:Repeater ID="rep" runat="server">
                                 <ItemTemplate>

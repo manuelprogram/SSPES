@@ -19,6 +19,12 @@ namespace SSPES.Views.Proyectos {
         //private List<bool> asignados = new List<bool>();//si ese integrante ya esta 
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
+            if (!Session["ROL"].ToString().Equals("director")) {
+                Response.Redirect("../Home/Principal.aspx");
+            }
             if (!IsPostBack) {
                 cargarProyectos();
             }

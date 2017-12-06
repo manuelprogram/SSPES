@@ -16,6 +16,9 @@ namespace SSPES.Views.Home {
 
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             Session["datos_dtVariables"] = null;
             Session["datos_dtProyecto"] = null;
             Session["dtProyectos"] = null;
