@@ -89,5 +89,20 @@ namespace SSPES.Models {
             sql[0] = "UPDATE muestra set OBSERVACIONES = '" + obs + "' WHERE PK_MUESTRA = '" + pk_muestra + "';";
             return con.RealizarTransaccion(sql);
         }
+
+        public DataTable ReporteMuestrasProyecto(string pk_pro) {
+            string sql = @"select PK_PROYECTO, NOMBRE, DESCRIPCION, FECHA_INICIO AS FECHA_INICIAL, FECHA_FIN AS FECHA_FINAL, 
+                PK_MUESTRA, NUMERO_MUESTRA, OBSERVACIONES,
+                PK_MUESTRA_VARIABLE, VALOR_VARIABLE,
+                PK_VARIABLE_PROYECTO,
+                idVARIABLE, NOMBRE_VARIABLE, TIPO_DE_DATO, DESCRIPCION_VARIABLE
+                from proyecto as p, muestra as m, muestra_variable as mv, variable_proyecto as vp, variable as v
+                where p.PK_PROYECTO = '" + pk_pro + @"'and  
+					 m.FK_PROYECTO = p.PK_PROYECTO
+                and m.PK_MUESTRA = mv.FK_MUESTRA and mv.FK_VARIABLE_PROYECTO = vp.PK_VARIABLE_PROYECTO
+                and v.idVARIABLE = vp.FK_VARIABLE
+                order by NOMBRE, NUMERO_MUESTRA;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace SSPES.Controllers {
         }
 
         public bool RealizarUpdate(string tipo, string numero, string celular, string correo, string pk) {
-            return p.RealizarUpdate(tipo,numero,celular, correo,pk);
+            return p.RealizarUpdate(tipo, numero, celular, correo, pk);
         }
 
         public string Insertar(PersonaModel obj, string user, string pass) {
@@ -55,6 +55,10 @@ namespace SSPES.Controllers {
             } else {
                 return "Error al crear cuenta";
             }
+        }
+
+        public DataTable ConsultarPersonas() {
+            return p.ConsultarPersonas();
         }
     }
 }

@@ -18,10 +18,6 @@ namespace SSPES.Controllers {
             obj = new ProyectoModel(a, b, c, c2, d, e, f);
         }
 
-        public DataTable consultarNombreProyectos() {
-            return obj.consultarNombreProyectos();
-        }
-
         public bool insertarProyecto() {
             return obj.registrarProyecto();
         }
@@ -30,10 +26,6 @@ namespace SSPES.Controllers {
             return obj.cargarDocumento(pk);
         }
 
-        public DataTable consultarProyectos() {
-            return obj.consultarProyectos();
-        }
-        
         public DataTable consultarProyectosDirector(string pk_dir) {
             return obj.consultarProyectosDirector(pk_dir);
         }
@@ -53,7 +45,7 @@ namespace SSPES.Controllers {
         public string CantidadProyecto(string pk_user) {
             return obj.CantidadProyectos(pk_user);
         }
-        
+
         public string getPkIntegranteProyecto(string pk_cuent, string pk_proyecto) {
             return obj.getPkIntegranteProyecto(pk_cuent, pk_proyecto);
         }
@@ -66,5 +58,8 @@ namespace SSPES.Controllers {
             return obj.getNumeroProyectoFinal(pk_cuenta);
         }
 
+        public DataTable EstadoProyectos(string pk_dir) {
+            return obj.EstadoProyectos(pk_dir);
+        }
     }
 }

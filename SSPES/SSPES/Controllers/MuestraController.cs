@@ -53,5 +53,9 @@ namespace SSPES.Controllers {
         public bool ActualizarObservacionesMuestra(string pk_muestra, string obs) {
             return obj.ActualizarObservacionesMuestra(pk_muestra, obs);
         }
+
+        public DataTable ReporteMuestrasProyecto(string pk_pro) {
+            return obj.ReporteMuestrasProyecto(pk_pro);
+        }
     }
 }

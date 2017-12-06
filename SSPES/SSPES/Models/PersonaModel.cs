@@ -63,5 +63,12 @@ namespace SSPES.Models {
                     , obj.N_documento, obj.Telefono, obj.Correo, fecha);
             return con.RealizarTransaccion(ar);
         }
+
+        public DataTable ConsultarPersonas() {
+            string sql = @"SELECT USUARIO, NOMBRE_1, APELLIDO_1, T_DOCUMENTO, N_DOCUMENTO,
+                Date_Format(REGISTRO, '%d/%m/%Y') as REGISTRADO FROM persona, cuenta
+                where persona.PK_PERSONA = cuenta.FK_PERSONA order by NOMBRE_1, APELLIDO_1;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
     }
 }

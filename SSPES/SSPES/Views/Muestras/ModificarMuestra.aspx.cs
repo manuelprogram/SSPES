@@ -13,6 +13,9 @@ namespace SSPES.Views.Muestras {
         private DataTable dtProyectos, dtMuestras, dtVariables;
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             if (!IsPostBack) {
                 cargarProyectos();
             }

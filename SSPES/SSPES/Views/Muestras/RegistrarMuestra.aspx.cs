@@ -15,6 +15,9 @@ namespace SSPES.Views.Muestras {
         private DataTable dtProyectos, dtVariables;
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             if (!IsPostBack) {
                 cargarProyectos();
             }
@@ -136,7 +139,7 @@ namespace SSPES.Views.Muestras {
                 if (con == 0) Response.Write("<script> alert('Exitoso'); </script>");
                 else Response.Write("<script> alert('Error al registrar algunas variables'); </script>");
             }
-            Response.Redirect("RegistrarMuestra.aspx");
+            Response.Write("<script> alert('Exitoso'); </script>");
         }
     }
 }

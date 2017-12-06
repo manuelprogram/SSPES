@@ -13,6 +13,12 @@ namespace SSPES.Views.Grupo {
         private DataTable dt;
         GrupoController grupos = new GrupoController();
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
+            if (!Session["ROL"].ToString().Equals("superadmin")) {
+                Response.Redirect("../Home/Principal.aspx");
+            }
             dt = grupos.ConsultarGrupo();
             dr = dt.Rows[0];
             if (nombre.Value.ToString()=="") {

@@ -43,6 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -137,32 +149,17 @@
     <Content Include="public\Inicio\lib\superfish\superfish.min.js" />
     <Content Include="public\Inicio\lib\wow\wow.js" />
     <Content Include="public\Inicio\lib\wow\wow.min.js" />
-    <Content Include="Views\AsignacionVariables\AsignarVariables.aspx" />
-    <Content Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx" />
+    <Content Include="Views\Reportes\Reporte.aspx" />
     <Content Include="Views\Cuenta\Cuentas.aspx" />
     <Content Include="Views\Grupo\AdminGrupo.aspx" />
     <Content Include="Views\Home\Principal.aspx" />
-    <Content Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx" />
-    <Content Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx" />
     <Content Include="Views\Muestras\ModificarMuestra.aspx" />
     <Content Include="Views\Muestras\RegistrarMuestra.aspx" />
     <Content Include="Views\Muestras\VisualizarMuestra.aspx" />
     <Content Include="Views\Proyectos\AdministrarProyecto.aspx" />
-    <Content Include="Views\Proyectos\EliminarProyecto.aspx" />
-    <Content Include="Views\Proyectos\ModificarProyecto.aspx" />
-    <Content Include="Views\Proyectos\RegistrarProyecto.aspx" />
     <Content Include="Views\Proyectos\VisualizarProyecto.aspx" />
-    <Content Include="Views\RolesProyectos\EliminarRolesProyectos.aspx" />
-    <Content Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx" />
-    <Content Include="Views\Roles\Administrar.aspx" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.aspx" />
-    <Content Include="Views\Usuarios\EliminarUsuarios.aspx" />
-    <Content Include="Views\Usuarios\ModificarUsuarios.aspx" />
     <Content Include="Views\Usuarios\RegistrarUsuario.aspx" />
-    <Content Include="Views\Variables\EliminarVariables.aspx" />
-    <Content Include="Views\Variables\ModificarVariables.aspx" />
-    <Content Include="Views\Variables\RegistrarVariables.aspx" />
-    <Content Include="Views\Variables\VisualizarVariables.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -206,19 +203,17 @@
     <Compile Include="Models\RolProyectoModel.cs" />
     <Compile Include="Models\VariableModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\AsignacionVariables\AsignarVariables.aspx.cs">
-      <DependentUpon>AsignarVariables.aspx</DependentUpon>
+    <Compile Include="Views\Reportes\DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reportes\Reporte.aspx.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AsignacionVariables\AsignarVariables.aspx.designer.cs">
-      <DependentUpon>AsignarVariables.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx.cs">
-      <DependentUpon>EliminarAsignacionVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\AsignacionVariables\EliminarAsignacionVariables.aspx.designer.cs">
-      <DependentUpon>EliminarAsignacionVariables.aspx</DependentUpon>
+    <Compile Include="Views\Reportes\Reporte.aspx.designer.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Cuenta\Cuentas.aspx.cs">
       <DependentUpon>Cuentas.aspx</DependentUpon>
@@ -248,20 +243,6 @@
     <Compile Include="Views\Home\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx.cs">
-      <DependentUpon>EliminarIntegrantesProyectos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\IntegrantesProyectos\EliminarIntegrantesProyectos.aspx.designer.cs">
-      <DependentUpon>EliminarIntegrantesProyectos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.cs">
-      <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\IntegrantesProyectos\RegistrarIntegrantesProyectos.aspx.designer.cs">
-      <DependentUpon>RegistrarIntegrantesProyectos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Muestras\ModificarMuestra.aspx.cs">
       <DependentUpon>ModificarMuestra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,27 +271,6 @@
     <Compile Include="Views\Proyectos\AdministrarProyecto.aspx.designer.cs">
       <DependentUpon>AdministrarProyecto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Proyectos\EliminarProyecto.aspx.cs">
-      <DependentUpon>EliminarProyecto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Proyectos\EliminarProyecto.aspx.designer.cs">
-      <DependentUpon>EliminarProyecto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Proyectos\ModificarProyecto.aspx.cs">
-      <DependentUpon>ModificarProyecto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Proyectos\ModificarProyecto.aspx.designer.cs">
-      <DependentUpon>ModificarProyecto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Proyectos\RegistrarProyecto.aspx.cs">
-      <DependentUpon>RegistrarProyecto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Proyectos\RegistrarProyecto.aspx.designer.cs">
-      <DependentUpon>RegistrarProyecto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Proyectos\VisualizarProyecto.aspx.cs">
       <DependentUpon>VisualizarProyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -318,26 +278,23 @@
     <Compile Include="Views\Proyectos\VisualizarProyecto.aspx.designer.cs">
       <DependentUpon>VisualizarProyecto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\RolesProyectos\EliminarRolesProyectos.aspx.cs">
-      <DependentUpon>EliminarRolesProyectos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Views\Reportes\ReporteMuestras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteMuestras.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\RolesProyectos\EliminarRolesProyectos.aspx.designer.cs">
-      <DependentUpon>EliminarRolesProyectos.aspx</DependentUpon>
+    <Compile Include="Views\Reportes\ReportePersonas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportePersonas.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx.cs">
-      <DependentUpon>RegistrarRolesProyectos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\RolesProyectos\RegistrarRolesProyectos.aspx.designer.cs">
-      <DependentUpon>RegistrarRolesProyectos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Roles\Administrar.aspx.cs">
-      <DependentUpon>Administrar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Roles\Administrar.aspx.designer.cs">
-      <DependentUpon>Administrar.aspx</DependentUpon>
+    <Compile Include="Views\Reportes\ReporteProyectos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteProyectos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
@@ -346,54 +303,12 @@
     <Compile Include="Views\Usuarios\ConsultarUsuarios.aspx.designer.cs">
       <DependentUpon>ConsultarUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Usuarios\EliminarUsuarios.aspx.cs">
-      <DependentUpon>EliminarUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Usuarios\EliminarUsuarios.aspx.designer.cs">
-      <DependentUpon>EliminarUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Usuarios\ModificarUsuarios.aspx.cs">
-      <DependentUpon>ModificarUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Usuarios\ModificarUsuarios.aspx.designer.cs">
-      <DependentUpon>ModificarUsuarios.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Usuarios\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Usuarios\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables\EliminarVariables.aspx.cs">
-      <DependentUpon>EliminarVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Variables\EliminarVariables.aspx.designer.cs">
-      <DependentUpon>EliminarVariables.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables\ModificarVariables.aspx.cs">
-      <DependentUpon>ModificarVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Variables\ModificarVariables.aspx.designer.cs">
-      <DependentUpon>ModificarVariables.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables\RegistrarVariables.aspx.cs">
-      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Variables\RegistrarVariables.aspx.designer.cs">
-      <DependentUpon>RegistrarVariables.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables\VisualizarVariables.aspx.cs">
-      <DependentUpon>VisualizarVariables.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Variables\VisualizarVariables.aspx.designer.cs">
-      <DependentUpon>VisualizarVariables.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +336,17 @@
     <Content Include="public\Inicio\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="public\Inicio\lib\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\sspes.pubxml" />
+    <Content Include="Views\Reportes\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Views\Reportes\DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Reportes\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -435,6 +361,23 @@
     <Folder Include="public\Admin\js\" />
     <Folder Include="public\Admin\less\" />
     <Folder Include="public\Admin\vendor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Reportes\ReporteMuestras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteMuestras.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\ReportePersonas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportePersonas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\ReporteProyectos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteProyectos.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

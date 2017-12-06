@@ -18,11 +18,12 @@
                             </div>
                             <br />
                             <div class="row">
-                                <div class="col-lg-10"></div>
-                                <%--<button type="button" class="btn btn-success" runat="server" onclick="Nuevo_Click">  Agregar Usuario</button>--%>
-                                <asp:Button ID="Nuevo" CssClass="btn btn-success" EnableViewState="false" runat="server" Text="Registrar Usuario" OnClick="Nuevo_Click"/>
+                                <div class="col-lg-7"></div>
+                                <a href="../Reportes/Reporte.aspx?tipo=3" class="btn btn-success">reporte de usuarios</a>
+                                <div class="col-lg-1"></div>
+                                <asp:Button ID="Nuevo" CssClass="btn btn-success" EnableViewState="false" runat="server" Text="Registrar Usuario" OnClick="Nuevo_Click" />
                             </div>
-                            <br /> 
+                            <br />
                             <div class="row col-lg-12">
                                 <table id="dataTables-example" class="table table-bordered table-hover">
                                     <thead>

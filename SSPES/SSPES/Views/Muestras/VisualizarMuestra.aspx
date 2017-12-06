@@ -50,10 +50,11 @@
                                                             </div>
                                                         </div>
                                                         <br />
+
+                                                        <asp:Button ID="botonReporte" runat="server" Text="Generar reporte de Muestras" class="btn btn-primary" OnClick="botonReporte_Click" />
                                                         <br />
-
-
-
+                                                        <br />
+                                                        <br />
                                                         <h4>Muestras</h4>
                                                         <h5 id="cantidad" runat="server"></h5>
 

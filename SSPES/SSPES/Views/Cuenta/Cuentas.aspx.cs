@@ -18,6 +18,9 @@ namespace SSPES.Views.Cuenta {
         string pk_person;
         
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             dt = grupo.ConsultarGrupo();
             dr = dt.Rows[0];
             lsigla.Text = dr["SIGLAS"].ToString();

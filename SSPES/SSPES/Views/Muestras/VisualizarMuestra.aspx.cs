@@ -14,11 +14,14 @@ namespace SSPES.Views.Muestras {
         private DataTable dtProyectos, dtMuestras;
 
         protected void Page_Load(object sender, EventArgs e) {
+            if (Session["ENTRADA"].ToString().Equals("F")) {
+                Response.Redirect("../../Login.aspx");
+            }
             if (!IsPostBack) {
                 cargarProyectos();
             }
         }
-        
+
         protected string dias(string h) {
             switch (h) {
                 case "Sunday":
@@ -44,8 +47,8 @@ namespace SSPES.Views.Muestras {
             for (int i = 0; i < aux.Rows.Count; i++) {
                 HtmlTableRow htr = new HtmlTableRow();
                 DataRow dr = aux.Rows[i];
-                
-                HtmlTableCell c0 = new HtmlTableCell(), c1 = new HtmlTableCell(), c2 = new HtmlTableCell(), 
+
+                HtmlTableCell c0 = new HtmlTableCell(), c1 = new HtmlTableCell(), c2 = new HtmlTableCell(),
                     c3 = new HtmlTableCell();
                 c0.InnerText = (i + 1) + "";
                 c1.InnerText = dr["NOMBRE_VARIABLE"].ToString();
@@ -111,6 +114,15 @@ namespace SSPES.Views.Muestras {
                 ListaMuestras.Items.Add("Muestra " + i + " de " + mostrar);
             }
             Session["dtMuestas"] = dtMuestras;
+        }
+
+        protected void botonReporte_Click(object sender, EventArgs e) {
+            if (Session["pk_pro"] == null) {
+                Response.Write("<script> alert('Seleccione un proyecto'); </script>");
+                return;
+            }
+
+            Response.Redirect("../Reportes/Reporte.aspx?tipo=5&idpro=" + Session["pk_pro"].ToString());
         }
 
         protected void ListaMuestras_SelectedIndexChanged(object sender, EventArgs e) {

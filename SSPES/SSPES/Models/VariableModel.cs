@@ -70,5 +70,10 @@ namespace SSPES.Models {
                  AND FK_VARIABLE = '" + pkVariable + "' ;";
             return con.RealizarTransaccion(sql);
         }
+
+        public DataTable consultarVariables() {
+            string sql = @"SELECT NOMBRE_VARIABLE, TIPO_DE_DATO, DESCRIPCION_VARIABLE  FROM variable;";
+            return con.EjecutarConsulta(sql, CommandType.Text);
+        }
     }
 }
