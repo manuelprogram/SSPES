@@ -95,9 +95,17 @@
 
                                     <div class="tab-pane fade" id="migrupo">
                                         <div class="row">
+                                           <br />
+                                            <h1>Siglas</h1>
+                                            <asp:Label ID="lsigla" runat="server" Text="Label"></asp:Label>
+                                            <h1>Nombre</h1>
+                                            <asp:Label ID="lnombre" runat="server" Text="Label"></asp:Label>
+                                            <h1>Institución</h1>
+                                            <asp:Label ID="linstitucion" runat="server" Text="Label"></asp:Label>
+                                            <h1>Descripción</h1>
+                                            <asp:Label ID="ldescripcion" runat="server" Text="Label"></asp:Label>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 

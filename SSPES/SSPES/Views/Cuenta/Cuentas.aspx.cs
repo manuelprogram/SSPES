@@ -10,11 +10,21 @@ using System.Web.UI.WebControls;
 namespace SSPES.Views.Cuenta {
     public partial class Cuentas : System.Web.UI.Page {
         PersonaController persona = new PersonaController();
+        GrupoController grupo = new GrupoController();
+        private DataRow dr;
+        private DataTable dt;
         DataRow datos;
         public string name;
         string pk_person;
-        bool flag = true;
+        
         protected void Page_Load(object sender, EventArgs e) {
+            dt = grupo.ConsultarGrupo();
+            dr = dt.Rows[0];
+            lsigla.Text = dr["SIGLAS"].ToString();
+            lnombre.Text= dr["NOMBRE"].ToString();
+            ldescripcion.Text = dr["DESCRIPCION"].ToString();
+            linstitucion.Text = dr["institucion"].ToString();
+
             if (udnumero.Value.ToString()=="") {
                 pk_person = Session["FK_PERSONA"].ToString();
                 datos = persona.ConsultarUpdate(pk_person);
